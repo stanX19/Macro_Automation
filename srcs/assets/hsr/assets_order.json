@@ -1,0 +1,25 @@
+{
+  "templates": {
+    "navigation": {
+      "domain_types": [
+        "calyx_gold",
+        "calyx_crimson",
+        "open_world_boss",
+        "relics_domain",
+        "abyss",
+        "weekly_boss_domain"
+      ],
+      "domains": {
+        "calyx_crimson": [
+          "destruction",
+          "preservation",
+          "hunt",
+          "abundance",
+          "erudition",
+          "harmony",
+          "nihility"
+        ]
+      }
+    }
+  }
+}
