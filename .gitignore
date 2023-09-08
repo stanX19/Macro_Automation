@@ -1,0 +1,8 @@
+__pycache__/
+srcs/assets/test/
+/test/
+Lib/
+Scripts/
+trash_can/
+.idea/
+pyvenv.cfg
