@@ -1,19 +1,23 @@
 import pyautogui
-import time
+from pyautogui import moveTo as move_to
 
-def delayed_click_center(cords: tuple[4], delay=0.5):
+
+def delayed_click_center(cords: tuple[int, int, int, int], delay=0.5):
     time.sleep(delay)
     click_center(cords)
+
 
 def delayed_relative_click(top_left: tuple, displacement, delay=0.5):
     time.sleep(delay)
     relative_click(top_left, displacement)
 
-def click_center(cords: tuple[4]):
+
+def click_center(cords: tuple[int, int, int, int]):
     x = (cords[0] + cords[2]) / 2
     y = (cords[1] + cords[3]) / 2
     pyautogui.moveTo(x, y)
     pyautogui.click()
+
 
 def relative_click(top_left: tuple, displacement):
     x = top_left[0] + displacement[0]
@@ -21,10 +25,18 @@ def relative_click(top_left: tuple, displacement):
     pyautogui.moveTo(x, y)
     pyautogui.click()
 
-def move_to_center(cords: tuple[4]):
+
+def move_relative(top_left: tuple, displacement):
+    x = top_left[0] + displacement[0]
+    y = top_left[1] + displacement[1]
+    pyautogui.moveTo(x, y)
+
+
+def move_to_center(cords: tuple[int, int, int, int]):
     x = (cords[0] + cords[2]) / 2
     y = (cords[1] + cords[3]) / 2
     pyautogui.moveTo(x, y)
+
 
 def move_away_from(cords):
     x = cords[2] + 1
@@ -36,17 +48,31 @@ def move_away_from(cords):
         y = screen_height - 1
     pyautogui.moveTo(x, y)
 
+
 def scroll_up(y: int):
     for i in range(y):
         pyautogui.vscroll(1)
+
 
 def scroll_down(y: int):
     for i in range(y):
         pyautogui.scroll(-1)
 
+
+def click():
+    pyautogui.click()
+
+
+def alt_and_click(loc: tuple, displacement: tuple):
+    pyautogui.keyDown("alt")
+    relative_click(loc, displacement)
+    pyautogui.keyUp("alt")
+
+
 pyautogui.FAILSAFE = False
 if __name__ == '__main__':
     import time
+
     while True:
         scroll_down(18)
         time.sleep(3)

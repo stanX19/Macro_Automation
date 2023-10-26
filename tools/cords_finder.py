@@ -1,3 +1,5 @@
+import time
+import pyperclip
 import cv2
 import numpy as np
 import pyautogui
@@ -32,6 +34,9 @@ def read_mouse(event, x, y, flags, param):
         drawing = False
         bot_right = (x, y)
 
+def wait_for_key_release(key):
+    while keyboard.is_pressed(key):
+        pass
 
 def main():
     global top_left, bot_right, drawing
@@ -39,9 +44,16 @@ def main():
     bot_right = (0, 0)
     drawing = False
 
-    keyboard.wait("space")
-    while keyboard.is_pressed("space"):
-        pass
+    while True:
+        if keyboard.is_pressed("space"):
+            wait_for_key_release("space")
+            break
+        elif keyboard.is_pressed("tab"):
+            wait_for_key_release("tab")
+            print("paused")
+            keyboard.wait("tab")
+            wait_for_key_release("tab")
+            print("running")
     # Space key pressed, capture screenshot
     screenshot = capture_screenshot()
     cv2.namedWindow("Screenshot")
@@ -53,13 +65,15 @@ def main():
         cv2.rectangle(displayed, top_left, bot_right, (255, 255, 0))
         cv2.imshow("Screenshot", displayed)
         key_select = cv2.waitKey(1) & 0xFF
-        if key_select == ord(" "):
+        if keyboard.is_pressed("space"):
+            wait_for_key_release("space")
             break
 
     # Return coordinates of selected region
     top_left = top_left
     bottom_right = bot_right
 
+    pyperclip.copy(str(top_left + bottom_right))
     print("Combined:", top_left + bottom_right)
 
     cv2.destroyAllWindows()
@@ -67,4 +81,7 @@ def main():
 
 if __name__ == "__main__":
     while True:
-        main()
+        try:
+            main()
+        except KeyboardInterrupt:
+            break

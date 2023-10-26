@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 468, in session_catch_timeout
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 456, in session
+    self.navigate.navigate_to_domain(category, domain)
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 181, in navigate_to_domain
+    raise TimeoutError(f"Last matching template: {template_data.template}")
+TimeoutError: Last matching template: <Template.Template object at 0x000002192BDD2A60>

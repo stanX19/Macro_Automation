@@ -6,3 +6,5 @@ Scripts/
 trash_can/
 .idea/
 pyvenv.cfg
+srcs/exception_log/
+*.bat

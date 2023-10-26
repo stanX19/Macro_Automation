@@ -1,12 +1,13 @@
 import cv2
 import numpy as np
-from Template import Template
+from template import Template
 
 # Load the image and the template
-image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\test\screenshot\img_9.png')
-path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\calyx_farm\get_support.png"
+image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\test\screenshot\img_12.png')
+path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\update\unclickable_play.png"
+path2 = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\login\launcher_play.png"
 
-template = Template(path, (1675, 704, 1833, 769), 0.9)
+template = Template(path2, (1277, 768, 1606, 875), 0.975)
 
 # Extract the ROI from the image
 x1, y1, x2, y2 = template.roi

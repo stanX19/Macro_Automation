@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\honkai_star_rial_macro.py", line 516, in session_catch_timeout
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\honkai_star_rial_macro.py", line 502, in session
+    self.login.log_in_to_game()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\honkai_star_rial_macro.py", line 50, in log_in_to_game
+    raise TimeoutError("failed to log in")
+TimeoutError: failed to log in

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 335, in session_catch_timeout
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 323, in session
+    self.navigate.navigate_to_domain(category, domain)
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 91, in navigate_to_domain
+    self.click_menu_bar((285, 33))
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 80, in click_menu_bar
+    menu_bar = Matcher(self.menu_bar).wait_and_get_location()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\Template.py", line 100, in wait_and_get_location
+    return self.wait_for_matches(timeout=timeout)[0].location
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\Template.py", line 115, in wait_for_matches
+    raise TimeoutError
+TimeoutError

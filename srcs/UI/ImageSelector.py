@@ -70,9 +70,9 @@ class ImageSelector:
         if event == cv2.EVENT_MOUSEWHEEL:
             delta = flags
             if delta > 0:
-                self._scroll_y -= 25  # Scroll up
+                self._scroll_y -= 50  # Scroll up
             else:
-                self._scroll_y += 25  # Scroll down
+                self._scroll_y += 50  # Scroll down
 
             # Ensure scroll_y stays within valid bounds
             self._scroll_y = max(0, min(self._scroll_y, self._canvas_height - self._displayed_height))
