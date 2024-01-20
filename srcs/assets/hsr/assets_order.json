@@ -19,18 +19,19 @@
       "choose_server",
       "start_game",
       "checkbox",
-      "accept"
+      "accept",
+      "confirm"
     ],
     "navigation": {
       "domains": {
         "calyx_crimson": [
-          "destruction",
-          "preservation",
-          "hunt",
-          "abundance",
-          "erudition",
-          "harmony",
-          "nihility"
+          "img",
+          "img_1",
+          "img_2",
+          "img_3",
+          "img_4",
+          "img_5",
+          "img_6"
         ],
         "calyx_gold": [
           "img",
@@ -49,7 +50,9 @@
           "img_8",
           "img_9",
           "img_10",
-          "img_11"
+          "img_13",
+          "img_11",
+          "img_12"
         ],
         "relics_domain": [
           "img",
@@ -58,12 +61,14 @@
           "img_3",
           "img_4",
           "img_5",
-          "img_6"
+          "img_6",
+          "img_7"
         ],
         "weekly_boss_domain": [
           "img",
           "img_1",
-          "img_2"
+          "img_2",
+          "img_3"
         ]
       },
       "domain_types": [
@@ -71,7 +76,6 @@
         "calyx_crimson",
         "open_world_boss",
         "relics_domain",
-        "abyss",
         "weekly_boss_domain"
       ]
     },
@@ -85,6 +89,17 @@
       "accept",
       "game_update",
       "unclickable_play"
+    ],
+    "dailies": [
+      "daily_claim",
+      "daily_primo",
+      "assignment_claim",
+      "assignment_re",
+      "assignment_red_dot",
+      "goto_assignment",
+      "assignment_logo",
+      "daily_logo",
+      "daily_tab_button"
     ]
   }
 }

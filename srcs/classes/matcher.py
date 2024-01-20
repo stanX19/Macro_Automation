@@ -81,12 +81,25 @@ class Matcher:
 
         raise TimeoutError
 
-    def while_exist_do(self, function, args=None, kwargs=None, exist=True, delay=1):
+    def wait_for_unmatch(self, delay=1):
+        while self.exists():
+            time.sleep(delay)
+
+    def while_exist_do(self, function, args=None, kwargs=None, delay=1):
         if kwargs is None:
             kwargs = {}
         if args is None:
             args = []
-        while self.exists() == exist:
+        while self.exists():
+            function(*args, **kwargs)
+            time.sleep(delay)
+
+    def while_not_exist_do(self, function, args=None, kwargs=None, delay=1):
+        if kwargs is None:
+            kwargs = {}
+        if args is None:
+            args = []
+        while not self.exists():
             function(*args, **kwargs)
             time.sleep(delay)
 
@@ -103,7 +116,7 @@ class Matcher:
         button = self.wait_and_match()
         exists = 1
         while exists:
-            mouse.relative_click(button.location, displacement)
+            mouse.click_relative(button.location, displacement)
             time.sleep(delay)
             mouse.move_away_from(button.template.roi)
             exists = self.exists()

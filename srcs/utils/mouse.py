@@ -1,5 +1,13 @@
 import pyautogui
+import time
 from pyautogui import moveTo as move_to
+
+
+def click():
+    pyautogui.mouseDown(button="left")
+    time.sleep(0.1)
+    pyautogui.mouseUp(button="left")
+    time.sleep(0.1)
 
 
 def delayed_click_center(cords: tuple[int, int, int, int], delay=0.5):
@@ -9,21 +17,21 @@ def delayed_click_center(cords: tuple[int, int, int, int], delay=0.5):
 
 def delayed_relative_click(top_left: tuple, displacement, delay=0.5):
     time.sleep(delay)
-    relative_click(top_left, displacement)
+    click_relative(top_left, displacement)
 
 
 def click_center(cords: tuple[int, int, int, int]):
     x = (cords[0] + cords[2]) / 2
     y = (cords[1] + cords[3]) / 2
     pyautogui.moveTo(x, y)
-    pyautogui.click()
+    click()
 
 
-def relative_click(top_left: tuple, displacement):
+def click_relative(top_left: tuple, displacement):
     x = top_left[0] + displacement[0]
     y = top_left[1] + displacement[1]
     pyautogui.moveTo(x, y)
-    pyautogui.click()
+    click()
 
 
 def move_relative(top_left: tuple, displacement):
@@ -58,18 +66,21 @@ def scroll_down(y: int):
     for i in range(y):
         pyautogui.scroll(-1)
 
-
-def click():
-    pyautogui.click()
-
-
 def alt_and_click(loc: tuple, displacement: tuple):
     pyautogui.keyDown("alt")
-    relative_click(loc, displacement)
+    click_relative(loc, displacement)
     pyautogui.keyUp("alt")
 
 
+def click_and_move_away(loc: tuple, interval=1):
+    click_center(loc)
+    time.sleep(interval)
+    move_away_from(loc)
+
+
 pyautogui.FAILSAFE = False
+
+
 if __name__ == '__main__':
     import time
 

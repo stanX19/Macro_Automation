@@ -1,7 +1,14 @@
+import keyboard
 import mouse
 import time
 from matcher import Matcher
 from template import Template
+
+
+def press_and_release(key: str):
+    keyboard.press(key)
+    time.sleep(0.1)
+    keyboard.release(key)
 
 
 def scroll_and_find(matcher: Matcher, scroll_location: tuple, scroll_tick: int, timeout=1800)\

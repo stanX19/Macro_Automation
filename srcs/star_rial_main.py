@@ -4,7 +4,7 @@ import honkai_star_rial_macro
 def main():
     hsr_macro = honkai_star_rial_macro.HSRMacro()
     while True:
-        if hsr_macro.session_catch_timeout():
+        if hsr_macro.session_catch():
             break
 
 

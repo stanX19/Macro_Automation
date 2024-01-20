@@ -3,7 +3,7 @@ import os
 import utils
 
 settings_json = r"config\settings.json"
-exc_log_dir = r"exception_logs"
+exc_log_dir = r"logs"
 _parent = os.path.dirname
 cwd = _parent(_parent(os.path.realpath(__file__)))
 os.chdir(cwd)
@@ -19,6 +19,6 @@ for _dir in assets_path_dict:
     with open(assets_path_dict[_dir]["assets_order"], "r") as f:
         _dir_assets_order = json.load(f)
     utils.sort_dict_by_order(assets_path_dict[_dir], _dir_assets_order)
+    _new_assets_order = utils.dict_to_order(assets_path_dict[_dir])
     with open(assets_path_dict[_dir]["assets_order"], "w+") as f:
-        _new_assets_order = utils.dict_to_order(assets_path_dict[_dir])
         json.dump(_new_assets_order, f, indent=2)

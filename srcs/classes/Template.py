@@ -1,5 +1,6 @@
 import cv2
 import win32api
+import utils
 
 
 class Template:
@@ -9,6 +10,7 @@ class Template:
             raise ValueError(f"Failed to load template image from '{template_path}'")
 
         self.path = template_path
+        self.file_name = utils.get_file_name(template_path)
         self.image = image
         self.template = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         self.template_h, self.template_w = self.template.shape
@@ -50,3 +52,6 @@ class Template:
         bot_right_screen = (top_left_screen[0] + self.template_w, top_left_screen[1] + self.template_h)
 
         return top_left_screen + bot_right_screen
+
+    def __str__(self):
+        return f"({self.file_name}, {self.roi}, {self.threshold})"

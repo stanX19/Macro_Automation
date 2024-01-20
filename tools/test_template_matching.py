@@ -3,11 +3,11 @@ import numpy as np
 from template import Template
 
 # Load the image and the template
-image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\test\screenshot\img_12.png')
-path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\update\unclickable_play.png"
-path2 = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\login\launcher_play.png"
+image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\test\screenshot\img_14.png')
+path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\navigation\domain_types\calyx_crimson.png"
+path2 = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\navigation\domain_types\img.png"
 
-template = Template(path2, (1277, 768, 1606, 875), 0.975)
+template = Template(path2, (244, 271, 686, 918), 0.9)
 
 # Extract the ROI from the image
 x1, y1, x2, y2 = template.roi
@@ -22,13 +22,19 @@ template_height, template_width = template.template.shape
 # Convert both the ROI and template to grayscale
 roi_gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
 template_gray = template.template
-# Match the template using template matching method
+
+locations = ([],)
+
 result = cv2.matchTemplate(roi_gray, template_gray, cv2.TM_CCOEFF_NORMED)
 
-# Set a threshold to identify good matches
-threshold = template.threshold
-locations = np.where(result >= threshold)
+template.threshold += 0.001
+while not len(locations[0]) > 0 and template.threshold >= 0:
+    # Set a threshold to identify good matches
+    template.threshold -= 0.001
+    locations = np.where(result >= template.threshold)
 
+
+print(template.threshold)
 # Draw rectangles around the matched areas in the ROI
 for pt in zip(*locations[::-1]):
     cv2.rectangle(roi, pt, (pt[0] + template.template.shape[1], pt[1] + template.template.shape[0]), (0, 255, 0), 2)

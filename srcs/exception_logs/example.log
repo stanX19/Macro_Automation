@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\HonkaiStarRialMacro.py", line 335, in run_with_catch
-    raise TimeoutError
-TimeoutError

@@ -4,16 +4,17 @@ def sort_dict_by_order(data_dict: dict, order_dict: dict):
     """
     for key, value in order_dict.items():
         if key not in data_dict:
-            raise KeyError(key)
-
+            continue
         if isinstance(value, dict):
             for x in value:
+                if x not in data_dict[key]:
+                    continue
                 if isinstance(data_dict[key][x], dict):
                     continue
                 cause = data_dict[key][x]
                 raise TypeError(f"{cause} {type(cause)} instance is unsortable")
-        actual_order = list(value)
-        actual_order.extend(x for x in data_dict[key] if x not in value)
+        actual_order = [x for x in value if x in data_dict[key]]
+        actual_order.extend([x for x in data_dict[key] if x not in actual_order])
         data_dict[key] = {
             item: data_dict[key][item] for item in actual_order
         }

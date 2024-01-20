@@ -7,6 +7,12 @@ from matcher import Matcher
 from template import Template
 
 
+class StatusData:
+    def __init__(self, _time, _loc):
+        self.time = _time
+        self.loc = _loc
+
+
 class StatusMatcher:
     def __init__(self, *templates: Template):
         self._delta_time = 0
@@ -78,19 +84,23 @@ class StatusMatcher:
     def ignore_template_for(self, template: Template, secs: float):
         self._counter[template] = -secs
 
-    def get_all_template_status(self) -> list[tuple[Template, int, Union[tuple[int, int, int, int], None]]]:
+    def get_all_template_status_list(self) -> list[tuple[Template, float, Union[tuple[int, int, int, int], None]]]:
         self.update()
-        return self.__iter__()
+        return list(self.__iter__())
 
-    def counter(self, template: Template):
+    def get_all_template_status_dict(self) -> dict[Template, tuple[float, Union[tuple[int, int, int, int], None]]]:
+        self.update()
+        return {t: StatusData(s, l) for t, s, l in self}
+
+    def counter(self, template: Template) -> float:
         return self._counter[template]
 
-    def location(self, template: Template):
+    def location(self, template: Template) -> Union[tuple[int, int, int, int], None]:
         return self._locations.get(template, None)
 
-    def __getitem__(self, template: Template) -> tuple[int, Union[tuple[int, int, int, int], None]]:
-        return max(0, self._counter[template]), self._locations.get(template, None)
+    def __getitem__(self, template: Template) -> StatusData:
+        return StatusData(max(0, self._counter[template]), self._locations.get(template, None))
 
-    def __iter__(self) -> list[tuple[Template, int, Union[tuple[int, int, int, int], None]]]:
+    def __iter__(self) -> list[tuple[Template, float, Union[tuple[int, int, int, int], None]]]:
         return [(template, max(0, self._counter[template]), self._locations.get(template, None)) for template in
                 self._counter]

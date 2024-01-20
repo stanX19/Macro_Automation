@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Load the image
-path = r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\navigation\menu_bar_2.png'
+path = r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\dailies\goto_assignment.png'
 
 image = cv2.imread(path, cv2.IMREAD_UNCHANGED)
 # Create a copy of the image for visualization

@@ -17,7 +17,7 @@ class LogIn:
     def __init__(self):
         assets = Paths.assets_path_dict["genshin"]["templates"]["login"]
         self.templates = assets
-        self.launcher_exe = macro_settings.genshin_launcher_exe
+        self.launcher_exe = macro_settings.genshin["launcher_exe"]
         self.launcher_play = Template(assets["launcher_play"], (1290, 780, 1592, 865))
         self.choose_server = Template(assets["start_game"], (831, 468, 1087, 549))
         self.click_to_start = Template(assets["click_to_start"], (0, 0, 1920, 1080))
