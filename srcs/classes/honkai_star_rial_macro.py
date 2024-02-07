@@ -33,13 +33,13 @@ class Update:
         self.launcher_play = Template(assets["launcher_play"], self.game_update.roi, self.unclickable_play.threshold)
 
     def update_launcher(self):
-        status_matcher = StatusMatcher(self.launcher_update, self.open_launcher,
+        status_matcher = StatusMatcher(selfl.launcher_update, self.open_launcher,
                                        self.launcher_play, self.downloading_resources)
         start_time = time.time()
         timeout = 1800
         logger.info("started")
         while start_time + timeout >= time.time():
-            for template, exist_time, loc in status_matcher.get_all_template_status_list():
+            for template, loc, exist_time in status_matcher.get_all_template_status_list():
                 if exist_time < 1:
                     continue
                 if template is self.launcher_play:
@@ -65,9 +65,9 @@ class Update:
 
             update_done = True
             for data in matched:
-                logger.debug(f"{data.template.file_name} matched {data.location}")
+                logger.debug(f"{data.template.file_name} matched {data.loc}")
                 if data.template is self.game_update:
-                    mouse.click_and_move_away(data.location, 1)
+                    mouse.click_and_move_away(data.loc, 1)
                 elif data.template is self.unclickable_play:
                     update_done = False
                 elif data.template is self.launcher_play and update_done:
@@ -87,7 +87,7 @@ class Update:
         start_time = time.time()
         timeout = 300
         while start_time + timeout >= time.time():
-            for template, exist_time, loc in status_matcher.get_all_template_status_list():
+            for template, loc, exist_time in status_matcher.get_all_template_status_list():
                 if exist_time < 1:
                     continue
                 logger.debug(f"{template.file_name} matched {loc}")
@@ -103,6 +103,7 @@ class LogIn:
     def __init__(self):
         assets = Paths.assets_path_dict["hsr"]["templates"]["login"]
         self.assets = assets
+        self.menu_bar = MenuBar()
         self.launcher_exe = macro_settings.hsr["launcher_exe"]
         self.launcher_play = Template(assets["launcher_play"], (1277, 768, 1606, 875))
         self.choose_server = Template(assets["choose_server"], (708, 782, 1225, 967))
@@ -113,7 +114,6 @@ class LogIn:
         self.confirm = Template(assets["confirm"], (740, 603, 1194, 743), 0.9)
 
         assets = Paths.assets_path_dict["hsr"]["templates"]["navigation"]
-        self.menu_bar = Template(assets["menu_bar"], (1304, 1, 1895, 95), 0.8)
 
         self.updater = Update()
 
@@ -122,33 +122,34 @@ class LogIn:
         logger.info("ok")
 
     def log_in_to_game(self):
-        status_matcher = StatusMatcher(self.updater.launcher_update, self.updater.pre_install,
-                                       self.updater.accept, self.updater.game_update,
+        status_matcher = StatusMatcher(  # self.updater.launcher_update, self.updater.pre_install,
+                                         # self.updater.accept, self.updater.game_update,
                                        self.checkbox, self.accept, self.confirm,
                                        self.launcher_play,
-                                       self.start_game, self.click_to_start, self.menu_bar)
+                                       self.start_game, self.click_to_start,
+                                       *self.menu_bar.templates)
 
         start_time = time.time()
         logger.info("started")
         while start_time + 1800 >= time.time():
-            for template, exist_time, loc in status_matcher.get_all_template_status_list():
+            for template, loc, exist_time in status_matcher.get_all_template_status_list():
                 if exist_time < 1:
                     continue
                 logger.debug(f"{template.file_name} matched {loc}")
-                if template is self.menu_bar:
+                if template in self.menu_bar.templates:
                     logger.info("completed")
                     return
-                if template is self.updater.launcher_update:
-                    self.updater.update_launcher()
-                    start_time = time.time()
-                    continue
-                if template is self.updater.pre_install:
-                    self.updater.run_pre_install()
-                    continue
-                if template is self.updater.game_update:
-                    self.updater.update_game()
-                    start_time = time.time()
-                    continue
+                # if template is self.updater.launcher_update:
+                #     self.updater.update_launcher()
+                #     start_time = time.time()
+                #     continue
+                # if template is self.updater.pre_install:
+                #     self.updater.run_pre_install()
+                #     continue
+                # if template is self.updater.game_update:
+                #     self.updater.update_game()
+                #     start_time = time.time()
+                #     continue
 
                 mouse.click_and_move_away(loc, 1)
                 status_matcher.reset_template(template)
@@ -160,12 +161,53 @@ class LogIn:
         self.log_in_to_game()
 
 
+class MenuBar:
+    def __init__(self):
+        assets = Paths.assets_path_dict["hsr"]["templates"]["navigation"]
+
+        self.templates = [
+            # Template(assets["menu_bar_0"], (1275, 0, 1961, 114), 0.8),
+            # Template(assets["menu_bar_2"], (1386, 5, 1904, 91), 0.8),
+            Template(assets["menu_bar_3_0"], (1557, 4, 1891, 91), 0.7),
+            Template(assets["menu_bar_3_1"], (1557, 4, 1891, 91), 0.7),
+            # Template(assets["menu_bar_3_2"], (1557, 4, 1891, 91), 0.7),
+        ]
+        self.nav_btn_displacement = {self.templates[i]: cord for i, cord in enumerate([
+            # (285, 33),
+            # (196, 29),
+            (30, 30),
+            (30, 30),
+            # (30, 30),
+        ])}
+
+    def exists(self):
+        return Matcher(*self.templates).exists()
+
+    def click_nav(self, data: TemplateData):
+        mouse.alt_and_click(data.loc, self.nav_btn_displacement[data.template])
+        logger.info(f"clicked {data}")
+
+    def wait_and_click_nav(self):
+        logger.info("started")
+        exists = True
+        while exists:
+            logger.debug("Waiting for any menu bar to match")
+            matched = Matcher(*self.templates).wait_and_match()
+            logger.debug(f"found menu bar: location={matched.loc}")
+            displacement = self.nav_btn_displacement[matched.template]
+            logger.debug(f"Alt clicking menu bar, location={matched.loc}; displacement={displacement}")
+            mouse.alt_and_click(matched.loc, displacement)
+            mouse.move_away_from(matched.loc)
+            time.sleep(1.5)
+            exists = Matcher(*self.templates).exists()
+        logger.info("completed")
+
+
 class Navigation:
     def __init__(self):
         assets = Paths.assets_path_dict["hsr"]["templates"]["navigation"]
         self.assets = assets
-        self.menu_bar = Template(assets["menu_bar"], (1275, 0, 1961, 114), 0.7)
-        self.menu_bar_2 = Template(assets["menu_bar_2"], (1275, 0, 1961, 114), 0.7)
+        self.menu_bar = MenuBar()
         self.survival_guide = Template(assets["survival_guide"], (543, 170, 670, 256), 0.95)
         self.teleport = Template(assets["teleport"], threshold=0.95)
 
@@ -184,9 +226,6 @@ class Navigation:
 
             for key, path in domains.items():
                 self.domains[category][key] = Template(path, (678, 280, 1680, 950), 0.975)
-
-        self.nav_btn_displacement = (285, 33)
-        self.nav_btn_2_displacement = (196, 29)
 
         assets = Paths.assets_path_dict["hsr"]["templates"]["domain_farm"]
         self.start_challenge = Template(assets["start_challenge"], (1343, 947, 1893, 1022), 0.9)
@@ -218,20 +257,6 @@ class Navigation:
         logger.info(f"category={category}, domain={domain}")
         return category, domain
 
-    def wait_and_click_menu_bar(self, displacement):
-        logger.info("started")
-        logger.debug("Waiting for menu bar to match")
-        menu_bar_loc = Matcher(self.menu_bar).wait_and_get_location()
-        exists = True
-        time.sleep(1.5)
-        while exists:
-            logger.debug("Alt clicking menu bar")
-            mouse.alt_and_click(menu_bar_loc, displacement)
-            mouse.move_away_from(menu_bar_loc)
-            time.sleep(1.5)
-            exists = Matcher(self.menu_bar).exists()
-        logger.info("completed")
-
     def navigate_to_domain(self, category_key, domain_key):
         category_templates = list(self.category_templates.values())
         target_cat = self.category_templates[category_key]
@@ -240,7 +265,7 @@ class Navigation:
         target_domain = self.domains[category_key][domain_key]
         target_dom_idx = domain_templates.index(target_domain)
 
-        status_matcher = StatusMatcher(self.menu_bar, self.menu_bar_2, self.survival_guide,
+        status_matcher = StatusMatcher(*self.menu_bar.templates, self.survival_guide,
                                        *self.category_templates.values(),
                                        *self.domains[category_key].values(),
                                        self.start_challenge)
@@ -259,14 +284,12 @@ class Navigation:
             cat_loc = ()
             dom_loc = ()
 
-            for template, exist_time, loc in status_matcher.get_all_template_status_list():
+            clicked_menu = False
+            for template, loc, exist_time in status_matcher.get_all_template_status_list():
                 # logger.debug(f"{template.file_name} matched [{exist_time}, {loc}]")
-                if template is self.menu_bar and exist_time > THRESHOLD_1:
-                    mouse.alt_and_click(loc, self.nav_btn_displacement)
-                    mouse.move_away_from(loc)
-                elif template is self.menu_bar_2 and exist_time > THRESHOLD_1:
-                    mouse.alt_and_click(loc, self.nav_btn_2_displacement)
-                    mouse.move_away_from(loc)
+                if template in self.menu_bar.templates and exist_time > THRESHOLD_1 and not clicked_menu:
+                    self.menu_bar.click_nav(TemplateData(template, loc))
+                    clicked_menu = True
                 elif template is self.survival_guide and exist_time > THRESHOLD_2:
                     mouse.click_center(loc)
                 elif template is self.start_challenge and exist_time > THRESHOLD_1:
@@ -316,6 +339,7 @@ class Navigation:
                     mouse.scroll_down(5)
                 else:
                     mouse.scroll_up(5)
+                mouse.click()
 
 
 class Dailies:
@@ -348,7 +372,7 @@ class Dailies:
         all_daily_primo = [self.daily_primo5, self.daily_primo4, self.daily_primo3,
                            self.daily_primo2, self.daily_primo1]
         status_matcher = StatusMatcher(self.daily_claim, *all_daily_primo, self.goto_assignment,
-                                       self.navigator.menu_bar, self.navigator.menu_bar_2,
+                                       *self.navigator.menu_bar.templates,
                                        self.daily_tab)
 
         start_time = time.time()
@@ -357,23 +381,14 @@ class Dailies:
         self.claimed_primo_slot = 0
 
         logger.info("started")
-        while start_time + 180 > time.time():
+        while start_time + 120 > time.time():
             status_matcher.update()
 
             if last_seen + 15 < time.time():
                 logger.debug("last_seen > 15s, break")
                 break
-            if status_matcher[self.navigator.menu_bar].time > THRESHOLD:
-                mouse.alt_and_click(status_matcher[self.navigator.menu_bar].loc,
-                                    self.navigator.nav_btn_displacement)
-                logger.debug("click menu bar")
 
-            elif status_matcher[self.navigator.menu_bar_2].time > THRESHOLD:
-                mouse.alt_and_click(status_matcher[self.navigator.menu_bar_2].loc,
-                                    self.navigator.nav_btn_2_displacement)
-                logger.debug("click menu bar 2")
-
-            elif status_matcher[self.daily_tab].time > THRESHOLD:
+            if status_matcher[self.daily_tab].time > THRESHOLD:
                 mouse.click_center(status_matcher[self.daily_tab].loc)
 
             elif status_matcher[self.goto_assignment].time > THRESHOLD and self.claimed_assignments < 0:
@@ -389,6 +404,13 @@ class Dailies:
                 mouse.click_and_move_away(status_matcher[self.daily_claim].loc)
                 logger.debug("Claim daily task +1")
             else:
+                for menu_bar in self.navigator.menu_bar.templates:
+                    if status_matcher[menu_bar].time > THRESHOLD:
+                        self.navigator.menu_bar.click_nav(status_matcher[menu_bar])
+                        logger.debug("click menu bar")
+                        break
+                else:
+                    continue
                 for idx, claim_t in enumerate(all_daily_primo):
                     if status_matcher[claim_t].time > THRESHOLD:
                         self.claimed_primo_slot = len(all_daily_primo) - idx
@@ -422,10 +444,10 @@ class Dailies:
 
         logger.info(f"started")
         redeploying = False
-        while start_time + 60 > time.time():
+        while start_time + 30 > time.time():
             status_matcher.update()
 
-            if last_seen + 10 < time.time():
+            if last_seen + 5 < time.time():
                 logger.debug("last_seen > 10s, break")
                 break
             if self.claimed_assignments >= MAX_ASSIGNMENT:
@@ -481,41 +503,48 @@ class DomainFarm:
         self.support_end_of_list = Template(assets["support"]["end_of_list"], (520, 810, 560, 940), 0.90)
         self.support_list_title = Template(assets["support"]["list_title"], (236, 80, 364, 133), 0.85)
         self.support_priority_list = [
-            Template(path, (43, 57, 554, 1024), 0.95) for path in assets["support"]["priority"].values()
+            Template(path, (71, 187, 528, 957), 0.7) for path in assets["support"]["priority"].values()
         ][::-1]  # new first, old last
 
         self._get_support = True
 
-    def select_prioritised_support(self, timeout=30):
+    def select_prioritised_support(self, timeout=15):
         if not self.support_priority_list:
             return None
         logger.info("started")
         logger.debug("waiting for support_list_title to match")
         title_loc = Matcher(self.support_list_title).wait_and_get_location(timeout=30)
+        logger.debug("found support_list_title")
 
         support_matcher = Matcher(*self.support_priority_list)
         start_time = time.time()
 
         chosen_index = float("inf")
-        logger.debug("scrolling down")
+
+        logger.debug("click second tab in list")
+        mouse.click_relative(title_loc, (90, 300))
+        if not support_matcher.get_matching_templates():  # if the first characters is not desired
+            logger.debug("first tab is not desired, click first tab")
+            mouse.click_relative(title_loc, (90, 150))
 
         while start_time + timeout >= time.time():
             for data in support_matcher.get_matching_templates():
-                logger.debug(f"{data.template.file_name} matched at {data.location}")
+                logger.debug(f"{data.template.file_name} matched at {data.loc}")
                 found_index = self.support_priority_list.index(data.template)
                 if found_index < chosen_index:
                     chosen_index = found_index
-                    mouse.click_center(data.location)
-                    logger.debug(f"clicked on: {data.template.file_name}")
+                    mouse.click_center(data.loc)
+                    logger.debug(f"clicked on: {data}")
                 if chosen_index == 0:
                     logger.info("found most prioritized support")
-                    logger.debug(f"waiting for {data.template.file_name} to unmatch (turn white)")
+                    logger.debug(f"waiting for {data} to unmatch (turn white)")
                     Matcher(data.template).wait_for_unmatch()
                     break
             if chosen_index == 0:
                 break
             mouse.move_relative(title_loc, (90, 150))
             mouse.scroll_down(5)
+            logger.debug("scrolling down [5]")
         if chosen_index < len(self.support_priority_list):
             name = self.support_priority_list[chosen_index].file_name
             logger.info(f"completed, selected support: {name} ({chosen_index})")
@@ -585,7 +614,7 @@ class DomainFarm:
     def activate_open_world_boss(self):
         logger.info("started")
         keyboard.press("up")  # holds down
-        Matcher(self.navigator.menu_bar).while_exist_do(
+        Matcher(*self.navigator.menu_bar.templates).while_exist_do(
             mouse.click, delay=1
         )
         keyboard.release("up")
@@ -602,10 +631,11 @@ class DomainFarm:
         Matcher(self.start_challenge_2).click_center_when_exist()
 
         logger.debug("Waiting for auto_battle or menu_bar to match")
-        domain_type = Matcher(self.auto_battle_off,
-                              self.navigator.menu_bar,
-                              self.navigator.menu_bar_2).wait_and_match(60.00)  # 1 minutes
-        if domain_type.template is self.navigator.menu_bar or domain_type.template is self.navigator.menu_bar_2:
+        domain_type = Matcher(
+            self.auto_battle_off,
+            *self.navigator.menu_bar.templates
+        ).wait_and_match(60.00)  # 1 minutes
+        if domain_type.template in self.navigator.menu_bar.templates:
             self.activate_open_world_boss()
         self.start_battle_and_repeat(max_count)
         logger.info("completed")
@@ -737,6 +767,14 @@ class HSRMacro:
         self.sleep_command = "rundll32.exe powrprof.dll,SetSuspendState 0,1,0"
         self.shut_down_command = "shutdown /s /t 0"
 
+    def sleep(self):
+        logger.info("execute sleep command")
+        os.system(self.sleep_command)
+
+    def shut_down(self):
+        logger.info("execute shut down command")
+        os.system(self.shut_down_command)
+
     def option_menu(self):
         self.cfg["category"] = self.cfg["domain"] = None
         while True:
@@ -781,9 +819,9 @@ class HSRMacro:
         if self.options["claim dailies"]:
             self.dailies.claim_dailies()
         if self.options["shut down when done"]:
-            os.system(self.shut_down_command)
+            self.shut_down()
         elif self.options["sleep when done"]:
-            os.system(self.sleep_command)
+            self.sleep()
         if CLOSE:
             return -1
         return 0
@@ -812,9 +850,9 @@ class HSRMacro:
 
         # if error (didn't return before this)
         if self.options["shut down when done"]:
-            os.system(self.shut_down_command)
+            self.shut_down()
         elif self.options["sleep when done"]:
-            os.system(self.sleep_command)
+            self.sleep()
         return -1
 
 
@@ -822,6 +860,7 @@ def main():
     # d = Dailies()
     # d.claim_dailies()
     s = HSRMacro()
+    logger.edit_stream_logger(log_level=logging.DEBUG)
     # while not Matcher(s.navigate.survival_guide).exists():
     #     print("no")
     # print("yes")
@@ -834,7 +873,7 @@ def main():
     #         hsr_helper.press_and_release("esc")
     # for template in s.navigate.domains["open_world_boss"]:
     #     print(template)
-    # Matcher(s.domain_farm.support_end_of_list).click_center_when_exist()
+    # s.domain_farm.domain_start_farm(100)
 
 
 if __name__ == '__main__':
