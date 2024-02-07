@@ -1,16 +1,9 @@
 import time
 from typing import Union
-
 import mouse
 import pyautogui
-from matcher import Matcher
+from matcher import Matcher, TemplateData
 from template import Template
-
-
-class StatusData:
-    def __init__(self, _time, _loc):
-        self.time = _time
-        self.loc = _loc
 
 
 class StatusMatcher:
@@ -84,13 +77,13 @@ class StatusMatcher:
     def ignore_template_for(self, template: Template, secs: float):
         self._counter[template] = -secs
 
-    def get_all_template_status_list(self) -> list[tuple[Template, float, Union[tuple[int, int, int, int], None]]]:
+    def get_all_template_status_list(self) -> list[tuple[Template, Union[tuple[int, int, int, int], None], float]]:
         self.update()
         return list(self.__iter__())
 
     def get_all_template_status_dict(self) -> dict[Template, tuple[float, Union[tuple[int, int, int, int], None]]]:
         self.update()
-        return {t: StatusData(s, l) for t, s, l in self}
+        return {t: TemplateData(t, l, s) for t, s, l in self}  # {t: template, s: second, l: location}
 
     def counter(self, template: Template) -> float:
         return self._counter[template]
@@ -98,9 +91,9 @@ class StatusMatcher:
     def location(self, template: Template) -> Union[tuple[int, int, int, int], None]:
         return self._locations.get(template, None)
 
-    def __getitem__(self, template: Template) -> StatusData:
-        return StatusData(max(0, self._counter[template]), self._locations.get(template, None))
+    def __getitem__(self, template: Template) -> TemplateData:
+        return TemplateData(template, self._locations.get(template, None), max(0, self._counter[template]))
 
-    def __iter__(self) -> list[tuple[Template, float, Union[tuple[int, int, int, int], None]]]:
-        return [(template, max(0, self._counter[template]), self._locations.get(template, None)) for template in
+    def __iter__(self) -> list[tuple[Template, Union[tuple[int, int, int, int], None], float]]:
+        return [(template, self._locations.get(template, None), max(0, self._counter[template])) for template in
                 self._counter]

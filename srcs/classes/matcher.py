@@ -7,16 +7,19 @@ from template import Template
 
 
 class TemplateData:
-    def __init__(self, template, location):
+    def __init__(self, template=None, location=None, time=None):
         self.template = template
-        self.location = location
+        self.loc = location
+        self.time = time
 
     def __getitem__(self, index):
-        return [self.template, self.location][index]
+        return [self.template, self.loc, self.time][index]
 
     def pair(self):
-        return self.template, self.location
+        return self.template, self.loc
 
+    def __str__(self):
+        return f"{self.template} {self.loc}"
 
 class Matcher:
     def __init__(self, *templates: Template, timeout=3600):
@@ -35,7 +38,7 @@ class Matcher:
     def get_location_if_match(self) -> [tuple[int, int, int, int], None]:
         match = self.get_matching_templates()
         if match:
-            return match[0].location
+            return match[0].loc
         return None
 
     def get_matching_templates(self) -> list[TemplateData]:
@@ -51,7 +54,7 @@ class Matcher:
         return matching_templates
 
     def wait_and_get_location(self, timeout=None) -> tuple[int, int, int, int]:
-        return self.wait_for_matches(timeout=timeout)[0].location
+        return self.wait_for_matches(timeout=timeout)[0].loc
 
     def wait_and_match(self, timeout=None) -> TemplateData:
         return self.wait_for_matches(timeout=timeout)[0]
@@ -107,7 +110,7 @@ class Matcher:
         button = self.wait_and_match()
         exists = 1
         while exists:
-            mouse.click_center(button.location)
+            mouse.click_center(button.loc)
             time.sleep(delay)
             mouse.move_away_from(button.template.roi)
             exists = self.exists()
@@ -116,7 +119,7 @@ class Matcher:
         button = self.wait_and_match()
         exists = 1
         while exists:
-            mouse.click_relative(button.location, displacement)
+            mouse.click_relative(button.loc, displacement)
             time.sleep(delay)
             mouse.move_away_from(button.template.roi)
             exists = self.exists()
