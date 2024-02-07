@@ -1,3 +1,4 @@
+import keyboard
 import pyautogui
 import time
 from pyautogui import moveTo as move_to
@@ -66,8 +67,10 @@ def scroll_down(y: int):
     for i in range(y):
         pyautogui.scroll(-1)
 
+
 def alt_and_click(loc: tuple, displacement: tuple):
     pyautogui.keyDown("alt")
+    time.sleep(0.1)
     click_relative(loc, displacement)
     pyautogui.keyUp("alt")
 
