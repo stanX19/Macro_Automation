@@ -69,17 +69,18 @@ def main():
             wait_for_key_release("space")
             break
 
-    # Return coordinates of selected region
-    top_left = top_left
-    bottom_right = bot_right
-
-    pyperclip.copy(str(top_left + bottom_right))
-    print("Combined:", top_left + bottom_right)
+    if top_left[0] < bot_right[0]:
+        top_left[0], bot_right[0] = bot_right[0], top_left[0]
+    if top_left[1] < bot_right[1]:
+        top_left[1], bot_right[1] = bot_right[1], top_left[1]
+    pyperclip.copy(str(top_left + bot_right))
+    print("Combined:", top_left + bot_right)
 
     cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
+    print("press space to capture screenshot")
     while True:
         try:
             main()

@@ -3,11 +3,11 @@ import numpy as np
 from template import Template
 
 # Load the image and the template
-image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\test\screenshot\img_14.png')
-path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\navigation\domain_types\calyx_crimson.png"
+image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\test\screenshot\img_15.png')
+path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\domain_farm\support\priority\BangWoSu69 JingLiu.png"
 path2 = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\navigation\domain_types\img.png"
 
-template = Template(path2, (244, 271, 686, 918), 0.9)
+template = Template(path, (71, 187, 528, 957), 0.9)
 
 # Extract the ROI from the image
 x1, y1, x2, y2 = template.roi
