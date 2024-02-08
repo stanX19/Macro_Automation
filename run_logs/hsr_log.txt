@@ -695,3 +695,156 @@ OSError: screen grab failed
 [00:00:23]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
 [00:00:24]: INFO:HSR_Macro:select_auto_battle: completed
 [00:00:24]: INFO:HSR_Macro:start_battle_and_repeat: started
+
+[Date: 2024-02-08 : Time: 10:14:58 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:07]: INFO:HSR_Macro:ui_choose_domain: category=relics_domain, domain=img_3
+[00:00:07]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': 1, 'log in (default server)': 1, 'navigate to domain': 1, 'farm domain (all stamina)': 1, '    get support (from first friend)': 1, 'claim dailies': 1, 'sleep when done': 0, 'shut down when done': True}
+[00:00:07]: INFO:HSR_Macro:launch_game: ok
+[00:00:07]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:15]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:00:17]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:01:20]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862)
+[00:02:14]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (395, 113, 1481, 1036)
+[00:02:16]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (394, 115, 1480, 1038)
+[00:03:17]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
+[00:03:17]: INFO:HSR_Macro:log_in_to_game: completed
+[00:03:17]: INFO:HSR_Macro:navigate_to_domain: started
+[00:03:19]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:03:21]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:04:00]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:04:04]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:04:05]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:04:06]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:08]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:04:08]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:04:10]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:04:13]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:04:13]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:04:13]: INFO:HSR_Macro:domain_farm_bulk: started, max_count=inf
+[00:04:13]: DEBUG:HSR_Macro:domain_farm_bulk: clicking start_challenge when exist
+[00:04:15]: DEBUG:HSR_Macro:domain_farm_bulk: Waiting for start_challenge or not_enough_stamina to match
+[00:04:17]: INFO:HSR_Macro:get_support: started
+[00:04:17]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:04:18]: INFO:HSR_Macro:select_prioritised_support: started
+[00:04:18]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:04:19]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:04:19]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:04:20]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye IL matched at (79, 211, 327, 258)
+[00:04:21]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye IL, (71, 187, 528, 957), 0.7) (79, 211, 327, 258)
+[00:04:21]: INFO:HSR_Macro:select_prioritised_support: found most prioritized support
+[00:04:21]: DEBUG:HSR_Macro:select_prioritised_support: waiting for (SengKhye IL, (71, 187, 528, 957), 0.7) (79, 211, 327, 258) to unmatch (turn white)
+[00:04:22]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: SengKhye IL (0)
+[00:04:22]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:04:24]: INFO:HSR_Macro:get_support: completed
+[00:04:24]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:04:26]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:04:38]: INFO:HSR_Macro:select_auto_battle: started
+[00:04:38]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:04:39]: INFO:HSR_Macro:select_auto_battle: completed
+[00:04:39]: INFO:HSR_Macro:start_battle_and_repeat: started
+[00:06:27]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:06:28]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:08:05]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:08:06]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:09:51]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:09:51]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:11:47]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:11:47]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:13:32]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:13:33]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:13:33]: DEBUG:HSR_Macro:start_battle_and_repeat: not enough stamina
+[00:13:37]: INFO:HSR_Macro:start_battle_and_repeat: completed
+[00:13:37]: INFO:HSR_Macro:domain_start_farm: completed
+[00:13:37]: INFO:HSR_Macro:claim_dailies: started
+[00:13:40]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:13:40]: DEBUG:HSR_Macro:claim_dailies: click menu bar
+[00:13:44]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:13:44]: DEBUG:HSR_Macro:claim_dailies: found assignment, entering
+[00:13:45]: INFO:HSR_Macro:do_assignments: started
+[00:13:47]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:48]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:48]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:13:48]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:13:49]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:13:50]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:13:50]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:52]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:13:52]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:13:53]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:53]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:54]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:55]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:13:55]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:13:56]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:57]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:57]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:13:59]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:13:59]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:13:59]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed MAX_ASSIGNMENTS, break
+[00:13:59]: INFO:HSR_Macro:do_assignments: claimed and redeployed 4 assignments
+[00:13:59]: INFO:HSR_Macro:do_assignments: ended
+[00:13:59]: DEBUG:HSR_Macro:claim_dailies: exiting assignment (esc)
+[00:14:01]: DEBUG:HSR_Macro:claim_dailies: exited assignment
+[00:14:03]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:14:05]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:14:07]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:14:22]: DEBUG:HSR_Macro:claim_dailies: last_seen > 15s, break
+[00:14:22]: DEBUG:HSR_Macro:claim_dailies: exiting dailies (esc)
+[00:14:25]: DEBUG:HSR_Macro:claim_dailies: exited dailies
+[00:14:25]: INFO:HSR_Macro:claim_dailies: completed, claimed 0 slots of primo
+[00:14:25]: INFO:HSR_Macro:shut_down: execute shut down command
+
+[Date: 2024-02-08 : Time: 11:04:31 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': 1, 'log in (default server)': 1, 'navigate to domain': False, 'farm domain (all stamina)': False, '    get support (from first friend)': False, 'claim dailies': False, 'sleep when done': 0, 'shut down when done': 0}
+[00:00:00]: INFO:HSR_Macro:launch_game: ok
+[00:00:00]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:03]: ERROR:HSR_Macro:session_catch: screen grab failed
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\honkai_star_rial_macro.py", line 839, in session_catch
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\honkai_star_rial_macro.py", line 835, in session
+    return self.execute_session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\honkai_star_rial_macro.py", line 814, in execute_session
+    self.login.log_in_to_game()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\honkai_star_rial_macro.py", line 135, in log_in_to_game
+    for template, loc, exist_time in status_matcher.get_all_template_status_list():
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\status_matcher.py", line 81, in get_all_template_status_list
+    self.update()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\status_matcher.py", line 50, in update
+    template_datas = self._matcher.get_matching_templates()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 45, in get_matching_templates
+    screenshot = pyautogui.screenshot()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\pyscreeze\__init__.py", line 512, in _screenshot_win32
+    im = ImageGrab.grab()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\PIL\ImageGrab.py", line 47, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+OSError: screen grab failed
+[00:00:03]: INFO:HSR_Macro:session_catch: Terminated
+
+[Date: 2024-02-08 : Time: 11:11:07 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': 1, 'log in (default server)': 1, 'navigate to domain': False, 'farm domain (all stamina)': False, '    get support (from first friend)': False, 'claim dailies': False, 'sleep when done': 0, 'shut down when done': 0}
+[00:00:00]: INFO:HSR_Macro:launch_game: ok
+[00:00:00]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:04]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:01:17]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862)
+[00:01:59]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (394, 113, 1480, 1036)
+[00:02:01]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (395, 114, 1481, 1037)
+[00:03:06]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
+[00:03:06]: INFO:HSR_Macro:log_in_to_game: completed
+[00:03:12]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-08 : Time: 16:48:18 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': 1, 'log in (default server)': 1, 'navigate to domain': False, 'farm domain (all stamina)': False, '    get support (from first friend)': False, 'claim dailies': False, 'sleep when done': 0, 'shut down when done': 0}
+[00:00:00]: INFO:HSR_Macro:launch_game: ok
+[00:00:00]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:07]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:00:09]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:00:11]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:00:12]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:01:10]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862)
+[00:01:59]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (396, 115, 1482, 1038)
+[00:02:01]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (394, 115, 1480, 1038)
+[00:03:05]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
+[00:03:05]: INFO:HSR_Macro:log_in_to_game: completed
+[00:03:23]: INFO:HSR_Macro:option_menu: Closed

@@ -12,8 +12,8 @@ class Template:
         self.path = template_path
         self.file_name = utils.get_file_name(template_path)
         self.image = image
-        self.template = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        self.template_h, self.template_w = self.template.shape
+        self.array = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        self.template_h, self.template_w = self.array.shape
         self.threshold = threshold
         if roi is not None:
             self.roi = roi
@@ -30,7 +30,7 @@ class Template:
         img_grey = img_grey[self.roi[1]:self.roi[3], self.roi[0]:self.roi[2]]
         
         # if there's an error here check if img img_grey is really in greyscale
-        result = cv2.matchTemplate(img_grey, self.template, cv2.TM_CCOEFF_NORMED)
+        result = cv2.matchTemplate(img_grey, self.array, cv2.TM_CCOEFF_NORMED)
         return cv2.minMaxLoc(result)
 
     def exists_in(self, img_grey) -> bool:

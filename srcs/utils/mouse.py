@@ -48,8 +48,8 @@ def move_to_center(cords: tuple[int, int, int, int]):
 
 
 def move_away_from(cords):
-    x = cords[2] + 1
-    y = cords[3] + 1
+    x = cords[2] + 10
+    y = cords[3] + 10
     screen_width, screen_height = pyautogui.size()
     if x > screen_width:
         x = screen_width - 1

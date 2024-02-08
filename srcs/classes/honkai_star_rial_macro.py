@@ -33,7 +33,7 @@ class Update:
         self.launcher_play = Template(assets["launcher_play"], self.game_update.roi, self.unclickable_play.threshold)
 
     def update_launcher(self):
-        status_matcher = StatusMatcher(selfl.launcher_update, self.open_launcher,
+        status_matcher = StatusMatcher(self.launcher_update, self.open_launcher,
                                        self.launcher_play, self.downloading_resources)
         start_time = time.time()
         timeout = 1800
@@ -410,18 +410,17 @@ class Dailies:
                         logger.debug("click menu bar")
                         break
                 else:
-                    continue
-                for idx, claim_t in enumerate(all_daily_primo):
-                    if status_matcher[claim_t].time > THRESHOLD:
-                        self.claimed_primo_slot = len(all_daily_primo) - idx
-                        logger.debug(f"Claim primo at {self.claimed_primo_slot}th slot")
-                        mouse.click_and_move_away(status_matcher[claim_t].loc)
-                        for i in range(2):  # cancel/exit claim animation
-                            time.sleep(0.5)
-                            mouse.click()
-                        break
-                else:
-                    continue
+                    for idx, claim_t in enumerate(all_daily_primo):
+                        if status_matcher[claim_t].time > THRESHOLD:
+                            self.claimed_primo_slot = len(all_daily_primo) - idx
+                            logger.debug(f"Claim primo at {self.claimed_primo_slot}th slot")
+                            mouse.click_and_move_away(status_matcher[claim_t].loc)
+                            for i in range(2):  # cancel/exit claim animation
+                                time.sleep(0.5)
+                                mouse.click()
+                            break
+                    else:
+                        continue
             if self.claimed_primo_slot == len(all_daily_primo):
                 break
             last_seen = time.time()
@@ -864,7 +863,8 @@ def main():
     # while not Matcher(s.navigate.survival_guide).exists():
     #     print("no")
     # print("yes")
-    s.session_catch()
+    # s.session_catch()
+    s.dailies.claim_dailies()
     # s.navigate.navigate_to_domain("relics_domain", "img_3")
     # s.domain_farm.select_prioritised_support()
     # for category in list(s.navigate.domains)[::-1]:

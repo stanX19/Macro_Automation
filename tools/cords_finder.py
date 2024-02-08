@@ -69,10 +69,14 @@ def main():
             wait_for_key_release("space")
             break
 
-    if top_left[0] < bot_right[0]:
+    top_left = list(top_left)
+    bot_right = list(bot_right)
+    if top_left[0] > bot_right[0]:
         top_left[0], bot_right[0] = bot_right[0], top_left[0]
-    if top_left[1] < bot_right[1]:
+    if top_left[1] > bot_right[1]:
         top_left[1], bot_right[1] = bot_right[1], top_left[1]
+    top_left = tuple(top_left)
+    bot_right = tuple(bot_right)
     pyperclip.copy(str(top_left + bot_right))
     print("Combined:", top_left + bot_right)
 
