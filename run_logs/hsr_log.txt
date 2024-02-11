@@ -848,3 +848,501 @@ OSError: screen grab failed
 [00:03:05]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
 [00:03:05]: INFO:HSR_Macro:log_in_to_game: completed
 [00:03:23]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-09 : Time: 13:45:59 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-09 : Time: 13:47:10 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:03]: INFO:HSR_Macro:ui_choose_domain: category=None, domain=None
+[00:00:04]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-09 : Time: 14:12:48 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'navigate to domain': False, 'farm domain (all stamina)': False, '    get support (from first friend)': False, 'claim dailies': False, 'sleep when done': 0, 'shut down when done': 0}
+[00:00:00]: INFO:HSR_Macro:launch_game: ok
+[00:00:00]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:07]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:01:09]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862)
+[00:02:06]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (395, 113, 1481, 1036)
+[00:02:08]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (394, 115, 1480, 1038)
+[00:03:16]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
+[00:03:16]: INFO:HSR_Macro:log_in_to_game: completed
+[00:04:06]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-09 : Time: 18:50:55 : Program Name: HSR_Macro]
+
+[Date: 2024-02-09 : Time: 18:51:02 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:59]: INFO:HSR_Macro:ui_choose_domain: category=None, domain=None
+[00:01:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:01:14]: INFO:HSR_Macro:ui_choose_domain: category=None, domain=None
+[00:01:16]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-09 : Time: 18:55:50 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:04]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:04]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': False, 'log in (default server)': False, 'navigate to domain': 1, 'farm domain (all stamina)': False, '    get support (from first friend)': False, 'claim dailies': False, 'sleep when done': 0, 'shut down when done': 0}
+[00:00:04]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:07]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:00:09]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:10]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:00:10]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:00:11]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:00:15]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:00:49]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-09 : Time: 18:57:12 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:10]: INFO:HSR_Macro:ui_choose_domain: category=open_world_boss, domain=open_world_boss_15
+[00:00:10]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': False, 'log in (default server)': False, 'navigate to domain': 1, 'farm domain (all stamina)': 1, '    get support (from first friend)': 1, 'claim dailies': 1, 'sleep when done': 0, 'shut down when done': True}
+[00:00:10]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:11]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:00:12]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:16]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:18]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:19]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:22]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:24]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:26]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:27]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:29]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:30]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:32]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:33]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:35]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:00:36]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:00:36]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:00:37]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:00:38]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:00:38]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:00:39]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:00:40]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:00:40]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:00:40]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:01:30]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:01:30]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:01:30]: INFO:HSR_Macro:domain_farm_bulk: started, max_count=inf
+[00:01:30]: DEBUG:HSR_Macro:domain_farm_bulk: clicking start_challenge when exist
+[00:01:32]: DEBUG:HSR_Macro:domain_farm_bulk: Waiting for start_challenge or not_enough_stamina to match
+[00:01:34]: INFO:HSR_Macro:get_support: started
+[00:01:34]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:01:35]: INFO:HSR_Macro:select_prioritised_support: started
+[00:01:35]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:01:36]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:01:36]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:01:38]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye JL matched at (80, 489, 329, 538)
+[00:01:38]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538)
+[00:01:38]: INFO:HSR_Macro:select_prioritised_support: found most prioritized support
+[00:01:38]: DEBUG:HSR_Macro:select_prioritised_support: waiting for (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538) to unmatch (turn white)
+[00:02:12]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: SengKhye JL (0)
+[00:02:12]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:02:14]: INFO:HSR_Macro:get_support: completed
+[00:02:14]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:02:16]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:02:16]: INFO:HSR_Macro:activate_open_world_boss: started
+[00:02:19]: INFO:HSR_Macro:activate_open_world_boss: completed
+[00:02:19]: INFO:HSR_Macro:select_auto_battle: started
+[00:02:19]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:02:36]: INFO:HSR_Macro:select_auto_battle: completed
+[00:02:36]: INFO:HSR_Macro:start_battle_and_repeat: started
+[00:03:48]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:03:48]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:04:59]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:04:59]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:06:11]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:06:11]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:07:22]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:07:22]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:08:20]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:08:21]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:09:31]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:09:32]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:10:36]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:10:37]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:11:52]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:11:52]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:11:53]: DEBUG:HSR_Macro:start_battle_and_repeat: not enough stamina
+[00:11:56]: INFO:HSR_Macro:start_battle_and_repeat: completed
+[00:11:56]: INFO:HSR_Macro:domain_start_farm: completed
+[00:11:56]: INFO:HSR_Macro:claim_dailies: started
+[00:12:03]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:12:03]: DEBUG:HSR_Macro:claim_dailies: click menu bar
+[00:12:06]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:12:06]: DEBUG:HSR_Macro:claim_dailies: found assignment, entering
+[00:12:07]: INFO:HSR_Macro:do_assignments: started
+[00:12:09]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:10]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:10]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:12:10]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:12:11]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:12:12]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:12:12]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:12:13]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:14]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:12:14]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:12:15]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:16]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:16]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:18]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:12:18]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:12:18]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:19]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:20]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:12:21]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:12:21]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:12:21]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed MAX_ASSIGNMENTS, break
+[00:12:21]: INFO:HSR_Macro:do_assignments: claimed and redeployed 4 assignments
+[00:12:21]: INFO:HSR_Macro:do_assignments: ended
+[00:12:21]: DEBUG:HSR_Macro:claim_dailies: exiting assignment (esc)
+[00:12:25]: DEBUG:HSR_Macro:claim_dailies: exited assignment
+[00:12:26]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:12:28]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:12:30]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:12:30]: DEBUG:HSR_Macro:claim_dailies: Claim primo at 5th slot
+[00:12:34]: DEBUG:HSR_Macro:claim_dailies: exiting dailies (esc)
+[00:12:35]: DEBUG:HSR_Macro:claim_dailies: exited dailies
+[00:12:35]: INFO:HSR_Macro:claim_dailies: completed, claimed 5 slots of primo
+[00:12:35]: INFO:HSR_Macro:shut_down: execute shut down command
+
+[Date: 2024-02-09 : Time: 22:45:36 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:07]: INFO:HSR_Macro:ui_choose_domain: category=open_world_boss, domain=open_world_boss_15
+[00:00:07]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': 1, 'log in (default server)': 1, 'navigate to domain': 1, 'farm domain (all stamina)': 1, '    get support (from first friend)': 1, 'claim dailies': 1, 'sleep when done': 0, 'shut down when done': False}
+[00:00:07]: INFO:HSR_Macro:launch_game: ok
+[00:00:07]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:15]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:01:31]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862)
+[00:02:21]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (396, 113, 1482, 1036)
+[00:02:23]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (395, 114, 1481, 1037)
+[00:03:49]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
+[00:03:49]: INFO:HSR_Macro:log_in_to_game: completed
+[00:03:49]: INFO:HSR_Macro:navigate_to_domain: started
+[00:03:53]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:03:54]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:04:33]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:04:34]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1589, 20, 1882, 73)
+[00:04:35]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:04:36]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:04:38]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:40]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:41]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:43]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:44]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:46]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:47]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:49]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:51]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:52]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:54]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:56]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:57]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:59]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:05:00]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:05:02]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:05:04]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:05:04]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:05:04]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:05:07]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:05:07]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:05:07]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:05:13]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:05:13]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:05:13]: INFO:HSR_Macro:domain_farm_bulk: started, max_count=inf
+[00:05:13]: DEBUG:HSR_Macro:domain_farm_bulk: clicking start_challenge when exist
+[00:05:15]: DEBUG:HSR_Macro:domain_farm_bulk: Waiting for start_challenge or not_enough_stamina to match
+[00:05:17]: INFO:HSR_Macro:get_support: started
+[00:05:17]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:05:19]: INFO:HSR_Macro:select_prioritised_support: started
+[00:05:19]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:05:20]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:05:20]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:05:21]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:05:22]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye JL matched at (80, 489, 329, 538)
+[00:05:22]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538)
+[00:05:22]: INFO:HSR_Macro:select_prioritised_support: found most prioritized support
+[00:05:22]: DEBUG:HSR_Macro:select_prioritised_support: waiting for (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538) to unmatch (turn white)
+[00:05:22]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: SengKhye JL (0)
+[00:05:22]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:05:24]: INFO:HSR_Macro:get_support: completed
+[00:05:24]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:05:26]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:05:26]: INFO:HSR_Macro:activate_open_world_boss: started
+[00:05:30]: INFO:HSR_Macro:activate_open_world_boss: completed
+[00:05:30]: INFO:HSR_Macro:select_auto_battle: started
+[00:05:30]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:05:43]: INFO:HSR_Macro:select_auto_battle: completed
+[00:05:43]: INFO:HSR_Macro:start_battle_and_repeat: started
+[00:06:56]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:06:57]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:06:57]: DEBUG:HSR_Macro:start_battle_and_repeat: not enough stamina
+[00:07:01]: INFO:HSR_Macro:start_battle_and_repeat: completed
+[00:07:01]: INFO:HSR_Macro:domain_start_farm: completed
+[00:07:01]: INFO:HSR_Macro:claim_dailies: started
+[00:07:08]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:07:08]: DEBUG:HSR_Macro:claim_dailies: click menu bar
+[00:07:09]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1590, 20, 1883, 73)
+[00:07:09]: DEBUG:HSR_Macro:claim_dailies: click menu bar
+[00:07:24]: DEBUG:HSR_Macro:claim_dailies: last_seen > 15s, break
+[00:07:24]: DEBUG:HSR_Macro:claim_dailies: exiting dailies (esc)
+[00:07:26]: DEBUG:HSR_Macro:claim_dailies: exited dailies
+[00:07:26]: INFO:HSR_Macro:claim_dailies: completed, claimed 0 slots of primo
+[00:11:24]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-10 : Time: 12:44:06 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:09]: INFO:HSR_Macro:ui_choose_domain: category=open_world_boss, domain=open_world_boss_15
+[00:00:09]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': 1, 'log in (default server)': 1, 'navigate to domain': 1, 'farm domain (all stamina)': 1, '    get support (from first friend)': 1, 'claim dailies': 1, 'sleep when done': True, 'shut down when done': 0}
+[00:00:09]: INFO:HSR_Macro:launch_game: ok
+[00:00:09]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:15]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:01:13]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862)
+[00:01:56]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (395, 115, 1481, 1038)
+[00:01:58]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (395, 114, 1481, 1037)
+[00:03:22]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
+[00:03:22]: INFO:HSR_Macro:log_in_to_game: completed
+[00:03:22]: INFO:HSR_Macro:navigate_to_domain: started
+[00:03:25]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:03:27]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:04:03]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:04:08]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:04:09]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:11]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:12]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:14]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:15]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:17]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:18]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:19]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:21]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:22]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:24]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:25]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:27]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:29]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:30]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:32]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:04:34]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:04:34]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:04:35]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:04:37]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:04:37]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:04:37]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:04:43]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:04:43]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:04:43]: INFO:HSR_Macro:domain_farm_bulk: started, max_count=inf
+[00:04:43]: DEBUG:HSR_Macro:domain_farm_bulk: clicking start_challenge when exist
+[00:04:45]: DEBUG:HSR_Macro:domain_farm_bulk: Waiting for start_challenge or not_enough_stamina to match
+[00:04:46]: INFO:HSR_Macro:get_support: started
+[00:04:46]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:04:48]: INFO:HSR_Macro:select_prioritised_support: started
+[00:04:48]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:04:49]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:04:49]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:04:50]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:04:51]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye JL matched at (80, 489, 329, 538)
+[00:04:52]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538)
+[00:04:52]: INFO:HSR_Macro:select_prioritised_support: found most prioritized support
+[00:04:52]: DEBUG:HSR_Macro:select_prioritised_support: waiting for (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538) to unmatch (turn white)
+[00:04:53]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: SengKhye JL (0)
+[00:04:53]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:04:55]: INFO:HSR_Macro:get_support: completed
+[00:04:55]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:04:57]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:04:57]: INFO:HSR_Macro:activate_open_world_boss: started
+[00:05:00]: INFO:HSR_Macro:activate_open_world_boss: completed
+[00:05:00]: INFO:HSR_Macro:select_auto_battle: started
+[00:05:00]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:05:12]: INFO:HSR_Macro:select_auto_battle: completed
+[00:05:12]: INFO:HSR_Macro:start_battle_and_repeat: started
+[00:06:34]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:06:35]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:07:46]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:07:47]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:08:58]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:08:59]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:10:06]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:10:07]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:10:07]: DEBUG:HSR_Macro:start_battle_and_repeat: not enough stamina
+[00:10:11]: INFO:HSR_Macro:start_battle_and_repeat: completed
+[00:10:11]: INFO:HSR_Macro:domain_start_farm: completed
+[00:10:11]: INFO:HSR_Macro:claim_dailies: started
+[00:10:17]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:10:17]: DEBUG:HSR_Macro:claim_dailies: click menu bar
+[00:10:19]: DEBUG:HSR_Macro:claim_dailies: found assignment, entering
+[00:10:20]: INFO:HSR_Macro:do_assignments: started
+[00:10:25]: DEBUG:HSR_Macro:do_assignments: last_seen > 10s, break
+[00:10:25]: INFO:HSR_Macro:do_assignments: claimed and redeployed 0 assignments
+[00:10:25]: INFO:HSR_Macro:do_assignments: ended
+[00:10:25]: DEBUG:HSR_Macro:claim_dailies: exiting assignment (esc)
+[00:10:26]: DEBUG:HSR_Macro:claim_dailies: exited assignment
+[00:10:28]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:10:29]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:10:31]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:10:31]: DEBUG:HSR_Macro:claim_dailies: Claim primo at 5th slot
+[00:10:35]: DEBUG:HSR_Macro:claim_dailies: exiting dailies (esc)
+[00:10:36]: DEBUG:HSR_Macro:claim_dailies: exited dailies
+[00:10:36]: INFO:HSR_Macro:claim_dailies: completed, claimed 5 slots of primo
+[00:10:36]: INFO:HSR_Macro:sleep: execute sleep command
+
+[Date: 2024-02-11 : Time: 11:24:05 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:02]: INFO:HSR_Macro:ui_choose_domain: category=None, domain=None
+[00:00:04]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2024-02-11 : Time: 11:27:01 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:39]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_9
+[00:00:39]: DEBUG:HSR_Macro:option_menu: checklist: {'launch game': 1, 'log in (default server)': 1, 'navigate to domain': 1, 'farm domain (all stamina)': 1, '    get support (from first friend)': 1, 'claim dailies': 1, 'sleep when done': True, 'shut down when done': 0}
+[00:00:39]: INFO:HSR_Macro:launch_game: ok
+[00:00:39]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:47]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:00:48]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1295, 784, 1586, 860)
+[00:01:47]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862)
+[00:02:35]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (398, 116, 1484, 1039)
+[00:02:37]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (395, 114, 1481, 1037)
+[00:03:26]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73)
+[00:03:26]: INFO:HSR_Macro:log_in_to_game: completed
+[00:03:26]: INFO:HSR_Macro:navigate_to_domain: started
+[00:03:29]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:03:30]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1591, 20, 1884, 73)
+[00:03:33]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:03:35]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:03:36]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:37]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:39]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:40]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:41]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:43]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:44]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:45]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:46]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:03:48]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:03:48]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:03:49]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:03:50]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:03:50]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:03:51]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:04:38]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:04:38]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:04:38]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_9
+[00:04:38]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for add_count to match
+[00:04:41]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or not_enough_stamina to match
+[00:04:42]: INFO:HSR_Macro:get_support: started
+[00:04:42]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:04:44]: INFO:HSR_Macro:select_prioritised_support: started
+[00:04:44]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:04:45]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:04:45]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:04:46]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:04:47]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye JL matched at (80, 489, 329, 538)
+[00:04:47]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538)
+[00:04:47]: INFO:HSR_Macro:select_prioritised_support: found most prioritized support
+[00:04:47]: DEBUG:HSR_Macro:select_prioritised_support: waiting for (SengKhye JL, (71, 187, 528, 957), 0.7) (80, 489, 329, 538) to unmatch (turn white)
+[00:04:47]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: SengKhye JL (0)
+[00:04:47]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:04:49]: INFO:HSR_Macro:get_support: completed
+[00:04:49]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:04:51]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:05:03]: INFO:HSR_Macro:select_auto_battle: started
+[00:05:03]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:05:04]: INFO:HSR_Macro:select_auto_battle: completed
+[00:05:04]: INFO:HSR_Macro:start_battle_and_repeat: started
+[00:07:57]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:07:58]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:10:36]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:10:37]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:13:09]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:13:10]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:16:09]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for challenge again to match
+[00:16:09]: DEBUG:HSR_Macro:start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:16:09]: DEBUG:HSR_Macro:start_battle_and_repeat: not enough stamina
+[00:16:13]: INFO:HSR_Macro:start_battle_and_repeat: completed
+[00:16:13]: INFO:HSR_Macro:domain_start_farm: completed
+[00:16:13]: INFO:HSR_Macro:navigate_to_domain: started
+[00:16:19]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:16:23]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:16:24]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:16:25]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:26]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:28]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:29]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:30]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:31]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:33]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:34]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:35]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling domain
+[00:16:37]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:16:37]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:16:37]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:16:39]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:16:39]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:16:39]: DEBUG:HSR_Macro:navigate_to_domain: Scrolling category
+[00:16:43]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:16:43]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for add_count to match
+[00:16:44]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:16:44]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:16:46]: DEBUG:HSR_Macro:calyx_farm_all: exiting not_enough_stamina (esc)
+[00:16:48]: DEBUG:HSR_Macro:calyx_farm_all: exited not_enough_stamina
+[00:16:48]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:16:48]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:16:50]: DEBUG:HSR_Macro:calyx_farm_all: exiting not_enough_stamina (esc)
+[00:16:52]: DEBUG:HSR_Macro:calyx_farm_all: exited not_enough_stamina
+[00:16:52]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:16:52]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:16:54]: DEBUG:HSR_Macro:calyx_farm_all: exiting not_enough_stamina (esc)
+[00:16:55]: DEBUG:HSR_Macro:calyx_farm_all: exited not_enough_stamina
+[00:16:55]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:16:56]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:16:58]: DEBUG:HSR_Macro:calyx_farm_all: exiting not_enough_stamina (esc)
+[00:16:59]: DEBUG:HSR_Macro:calyx_farm_all: exited not_enough_stamina
+[00:16:59]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:17:00]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:17:02]: DEBUG:HSR_Macro:calyx_farm_all: exiting not_enough_stamina (esc)
+[00:17:03]: DEBUG:HSR_Macro:calyx_farm_all: exited not_enough_stamina
+[00:17:03]: DEBUG:HSR_Macro:calyx_farm_all: exiting farming_rewards (esc)
+[00:17:04]: DEBUG:HSR_Macro:calyx_farm_all: exited farming_rewards
+[00:17:04]: INFO:HSR_Macro:claim_dailies: started
+[00:17:06]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7) (1576, 20, 1869, 73)
+[00:17:06]: DEBUG:HSR_Macro:claim_dailies: click menu bar
+[00:17:10]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:17:10]: DEBUG:HSR_Macro:claim_dailies: found assignment, entering
+[00:17:10]: INFO:HSR_Macro:do_assignments: started
+[00:17:15]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:15]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:16]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:17:16]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:17:17]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:17:17]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:17:18]: DEBUG:HSR_Macro:do_assignments: clicked on red dot
+[00:17:18]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:20]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:17:20]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:17:20]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:21]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:22]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:23]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:17:23]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:17:24]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:24]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:25]: DEBUG:HSR_Macro:do_assignments: clicked claim assignment
+[00:17:27]: DEBUG:HSR_Macro:do_assignments: clicked redeploy assignment
+[00:17:27]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed assignment +1
+[00:17:27]: DEBUG:HSR_Macro:do_assignments: claimed and redeployed MAX_ASSIGNMENTS, break
+[00:17:27]: INFO:HSR_Macro:do_assignments: claimed and redeployed 4 assignments
+[00:17:27]: INFO:HSR_Macro:do_assignments: ended
+[00:17:27]: DEBUG:HSR_Macro:claim_dailies: exiting assignment (esc)
+[00:17:30]: DEBUG:HSR_Macro:claim_dailies: exited assignment
+[00:17:32]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:17:34]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:17:35]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:17:36]: DEBUG:HSR_Macro:claim_dailies: Claim primo at 5th slot
+[00:17:39]: DEBUG:HSR_Macro:claim_dailies: exiting dailies (esc)
+[00:17:40]: DEBUG:HSR_Macro:claim_dailies: exited dailies
+[00:17:40]: INFO:HSR_Macro:claim_dailies: completed, claimed 5 slots of primo
+[00:17:40]: INFO:HSR_Macro:sleep: execute sleep command
+
+[Date: 2024-02-11 : Time: 12:59:07 : Program Name: HSR_Macro]
+[00:00:00]: INFO:HSR_Macro:option_menu: Closed
