@@ -1,7 +1,12 @@
 import os
 
 
-def sorted_dir_tree_by_time(tree_dict):
+def sorted_dir_tree_by_time(tree_dict: dict):
+    """
+    sort dir tree by time modified, old first new last
+    :param tree_dict: tree dict of paths, e.g. {"dir1": {"dir2": {}, "filename": "path/to/file"}}
+    :return:
+    """
     unsorted_files = {}
     ret = {}
 

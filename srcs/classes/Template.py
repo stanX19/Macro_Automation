@@ -1,6 +1,7 @@
 import cv2
 import win32api
 import utils
+import numpy as np
 
 
 class Template:
@@ -52,6 +53,13 @@ class Template:
         bot_right_screen = (top_left_screen[0] + self.template_w, top_left_screen[1] + self.template_h)
 
         return top_left_screen + bot_right_screen
+
+    def get_max_matching_threshold(self, img_grey: np.ndarray) -> float:
+        _, max_val, _, _ = self._match_with_img(img_grey)
+        return max_val
+
+    def as_threshold(self, threshold: float):
+        return Template(self.path, self.roi, threshold)
 
     def __str__(self):
         return f"({self.file_name}, {self.roi}, {self.threshold})"

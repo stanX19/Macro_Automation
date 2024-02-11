@@ -1,7 +1,5 @@
 import time
 from typing import Union
-import mouse
-import pyautogui
 from matcher import Matcher, TemplateData
 from template import Template
 
@@ -81,9 +79,13 @@ class StatusMatcher:
         self.update()
         return list(self.__iter__())
 
-    def get_all_template_status_dict(self) -> dict[Template, tuple[float, Union[tuple[int, int, int, int], None]]]:
+    def get_all_template_status_dict(self) -> dict[Template, TemplateData]:
         self.update()
-        return {t: TemplateData(t, l, s) for t, s, l in self}  # {t: template, s: second, l: location}
+        return {t: TemplateData(t, l, s) for t, l, s in self}  # {t: template, s: second, l: location}
+
+    def get_all_template_data(self) -> list[TemplateData]:
+        self.update()
+        return [TemplateData(t, l, s) for t, l, s in self.__iter__()]
 
     def counter(self, template: Template) -> float:
         return self._counter[template]

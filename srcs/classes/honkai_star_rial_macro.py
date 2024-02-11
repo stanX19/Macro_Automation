@@ -1,18 +1,18 @@
-import os
-import traceback
-import keyboard
-import time
-import Paths
 import logging
-import macro_settings
-import mouse
-import utils
+import os
+import time
+import traceback
+
+import Paths
 import UI
 import hsr_helper
-from template import Template
+import keyboard
+import macro_settings
+import mouse
+from logger import logger
 from matcher import TemplateData, Matcher
 from status_matcher import StatusMatcher
-from logger import logger
+from template import Template
 
 
 class Update:
@@ -113,8 +113,6 @@ class LogIn:
         self.accept = Template(assets["accept"], (963, 737, 1359, 840), 0.7)
         self.confirm = Template(assets["confirm"], (740, 603, 1194, 743), 0.9)
 
-        assets = Paths.assets_path_dict["hsr"]["templates"]["navigation"]
-
         self.updater = Update()
 
     def launch_game(self):
@@ -123,11 +121,11 @@ class LogIn:
 
     def log_in_to_game(self):
         status_matcher = StatusMatcher(  # self.updater.launcher_update, self.updater.pre_install,
-                                         # self.updater.accept, self.updater.game_update,
-                                       self.checkbox, self.accept, self.confirm,
-                                       self.launcher_play,
-                                       self.start_game, self.click_to_start,
-                                       *self.menu_bar.templates)
+            # self.updater.accept, self.updater.game_update,
+            self.checkbox, self.accept, self.confirm,
+            self.launcher_play,
+            self.start_game, self.click_to_start,
+            *self.menu_bar.templates)
 
         start_time = time.time()
         logger.info("started")
@@ -179,12 +177,18 @@ class MenuBar:
             (30, 30),
             # (30, 30),
         ])}
+        self.monthly_pass_displacement = {template: (x - 178, y) for template, (x, y) in
+                                          self.nav_btn_displacement.items()}
 
     def exists(self):
         return Matcher(*self.templates).exists()
 
     def click_nav(self, data: TemplateData):
         mouse.alt_and_click(data.loc, self.nav_btn_displacement[data.template])
+        logger.info(f"clicked {data}")
+
+    def click_monthly_pass(self, data: TemplateData):
+        mouse.alt_and_click(data.loc, self.monthly_pass_displacement[data.template])
         logger.info(f"clicked {data}")
 
     def wait_and_click_nav(self):
@@ -210,9 +214,10 @@ class Navigation:
         self.menu_bar = MenuBar()
         self.survival_guide = Template(assets["survival_guide"], (543, 170, 670, 256), 0.95)
         self.teleport = Template(assets["teleport"], threshold=0.95)
+        self.enter_domain = Template(assets["enter_domain"], threshold=0.95)
 
-        self.category_templates = {}
-        self.domains = {}
+        self.category_templates: dict[str, Template] = {}
+        self.domains: dict[str, dict[str, Template]] = {}
         self.domain_dir = macro_settings.hsr["domain_dir"]
 
         for key, path in assets["domain_types"].items():
@@ -257,7 +262,63 @@ class Navigation:
         logger.info(f"category={category}, domain={domain}")
         return category, domain
 
-    def navigate_to_domain(self, category_key, domain_key):
+    def navigate_to_category(self, category_key: str):
+        category_templates = list(self.category_templates.values())
+        target_cat = self.category_templates[category_key]
+        target_cat_idx = category_templates.index(target_cat)
+
+        status_matcher = StatusMatcher(*self.menu_bar.templates, self.survival_guide,
+                                       *self.category_templates.values())
+
+        start_time = time.time()
+        THRESHOLD_1 = 1  # seconds
+        THRESHOLD_2 = 0
+
+        logger.info("started")
+        while start_time + 1800 > time.time():
+
+            cat_pos_relative = 0
+            cat_loc = ()
+
+            clicked_menu = False
+            for template, loc, exist_time in status_matcher.get_all_template_status_list():
+                # logger.debug(f"{template.file_name} matched [{exist_time}, {loc}]")
+                if template in self.menu_bar.templates and exist_time > THRESHOLD_1 and not clicked_menu:
+                    self.menu_bar.click_nav(TemplateData(template, loc))
+                    clicked_menu = True
+                elif template is self.survival_guide and exist_time > THRESHOLD_2:
+                    mouse.click_center(loc)
+                elif template is self.start_challenge and exist_time > THRESHOLD_1:
+                    logger.info("completed")
+                    return
+                elif template is target_cat and exist_time > THRESHOLD_2:
+                    logger.debug("target category found")
+                    mouse.click_center(loc)
+                    Matcher(target_cat).wait_for_unmatch()
+                    return
+                elif template in category_templates:
+                    if exist_time <= THRESHOLD_2:
+                        continue
+                    cat_pos_relative = target_cat_idx - category_templates.index(template)
+                    cat_loc = loc
+                    continue
+                else:
+                    continue
+
+                status_matcher.reset_template(template)
+
+            # print(cat_pos_relative, dom_pos_relative, cat_positive, dom_positive)
+            # print()
+            if cat_pos_relative == 0:
+                continue
+            logger.debug("Scrolling category")
+            mouse.move_to_center(cat_loc)
+            if cat_pos_relative > 0:
+                mouse.scroll_down(5)
+            else:
+                mouse.scroll_up(5)
+
+    def navigate_to_domain(self, category_key: str, domain_key: str):
         category_templates = list(self.category_templates.values())
         target_cat = self.category_templates[category_key]
         target_cat_idx = category_templates.index(target_cat)
@@ -302,8 +363,11 @@ class Navigation:
                 elif template is target_domain and exist_time > THRESHOLD_2:
                     logger.debug("target domain found")
                     self.teleport.set_search_area(loc)
+                    self.enter_domain.set_search_area(loc)
                     logger.debug("clicking teleport")
-                    Matcher(self.teleport).click_center_when_exist()
+                    matched = Matcher(self.teleport, self.enter_domain).get_matching_templates()
+                    if matched:
+                        mouse.click_center(matched[0].loc)
                     dom_positive = 1
                 elif template in category_templates:
                     if exist_time <= THRESHOLD_2:
@@ -339,7 +403,6 @@ class Navigation:
                     mouse.scroll_down(5)
                 else:
                     mouse.scroll_up(5)
-                mouse.click()
 
 
 class Dailies:
@@ -351,7 +414,7 @@ class Dailies:
         self.daily_logo = Template(assets["daily_logo"], (9, 9, 257, 123), 0.9)
         self.daily_tab = Template(assets["daily_tab_button"], (423, 169, 543, 258), 0.9)
         self.daily_claim = Template(assets["daily_claim"], (298, 783, 549, 873), 0.9)
-        
+
         self.daily_primo1 = Template(assets["daily_primo"], (596, 272, 681, 351), 0.9)
         self.daily_primo2 = Template(assets["daily_primo"], (839, 274, 922, 352), 0.9)
         self.daily_primo3 = Template(assets["daily_primo"], (1078, 274, 1169, 351), 0.9)
@@ -366,7 +429,11 @@ class Dailies:
         self.goto_assignment_displace = (139, 422)
         self.assignment_claim = Template(assets["assignment_claim"], (1261, 863, 1670, 944), 0.7)
         self.assignment_re = Template(assets["assignment_re"], (1006, 905, 1403, 987), 0.7)
-        self.assignment_red_dot = Template(assets["assignment_red_dot"], (307, 175, 1208, 298), 0.9)
+        self.assignment_red_dot = Template(assets["red_dot"], (307, 175, 1208, 298), 0.9)
+
+        self.monthly_pass_claim_all = Template(assets["monthly_pass_claim_all"], (1487, 878, 1842, 959), 0.9)
+        self.monthly_pass_red_dot = Template(assets["red_dot"], (806, 16, 1099, 67), 0.7)
+        self.monthly_pass_claim_all_2 = Template(assets["monthly_pass_claim_all_2"], (1315, 875, 1543, 948), 0.9)
 
     def claim_dailies(self):
         all_daily_primo = [self.daily_primo5, self.daily_primo4, self.daily_primo3,
@@ -431,6 +498,8 @@ class Dailies:
         )
         logger.debug("exited dailies")
         logger.info(f"completed, claimed {self.claimed_primo_slot} slots of primo")
+        self.claim_monthly_pass()
+        logger.debug("done")
 
     def do_assignments(self):
         status_matcher = StatusMatcher(self.assignment_claim, self.assignment_re, self.assignment_red_dot)
@@ -476,6 +545,36 @@ class Dailies:
         logger.info(f"claimed and redeployed {self.claimed_assignments} assignments")
         logger.info("ended")
 
+    def claim_monthly_pass(self):
+        status_matcher = StatusMatcher(*self.navigator.menu_bar.templates,
+                                       self.monthly_pass_claim_all,
+                                       self.monthly_pass_claim_all_2,
+                                       self.monthly_pass_red_dot)
+        threshold = 0.5
+
+        logger.debug("started")
+        start_time = time.time()
+        last_seen = start_time + 5
+        while start_time + 15 > time.time():
+            if last_seen + 5 < time.time():
+                logger.debug("last seen > 5s, break")
+                break
+            for data in status_matcher.get_all_template_data():
+                if not data.time > threshold:
+                    continue
+                if data.template in self.navigator.menu_bar.templates:
+                    self.navigator.menu_bar.click_monthly_pass(data)
+                    break
+                logger.debug(f"Template matched: {data}; click and move away")
+                mouse.click_and_move_away(data.loc)
+                last_seen = time.time()
+
+        logger.debug("exiting monthly pass interface")
+        Matcher(*self.navigator.menu_bar.templates).while_not_exist_do(
+            hsr_helper.press_and_release, ["esc"]
+        )
+        logger.debug("completed")
+
 
 class DomainFarm:
     def __init__(self):
@@ -501,13 +600,14 @@ class DomainFarm:
         self.get_support_button = Template(assets["support"]["get_support"], (1675, 704, 1833, 769), 0.9)
         self.support_end_of_list = Template(assets["support"]["end_of_list"], (520, 810, 560, 940), 0.90)
         self.support_list_title = Template(assets["support"]["list_title"], (236, 80, 364, 133), 0.85)
-        self.support_priority_list = [
-            Template(path, (71, 187, 528, 957), 0.7) for path in assets["support"]["priority"].values()
-        ][::-1]  # new first, old last
+        self.support_priority_list: list[Template] = [
+                                                         Template(path, (71, 187, 528, 957), 0.7) for path in
+                                                         assets["support"]["priority"].values()
+                                                     ][::-1]  # new first, old last
 
         self._get_support = True
 
-    def select_prioritised_support(self, timeout=15):
+    def select_prioritised_support(self, timeout=10):
         if not self.support_priority_list:
             return None
         logger.info("started")
@@ -522,8 +622,8 @@ class DomainFarm:
 
         logger.debug("click second tab in list")
         mouse.click_relative(title_loc, (90, 300))
-        if not support_matcher.get_matching_templates():  # if the first characters is not desired
-            logger.debug("first tab is not desired, click first tab")
+        if not self.support_priority_list[0] in support_matcher.get_matching_templates():
+            logger.debug("first tab is not the most desired, click first tab")
             mouse.click_relative(title_loc, (90, 150))
 
         while start_time + timeout >= time.time():
@@ -537,13 +637,14 @@ class DomainFarm:
                 if chosen_index == 0:
                     logger.info("found most prioritized support")
                     logger.debug(f"waiting for {data} to unmatch (turn white)")
-                    Matcher(data.template).wait_for_unmatch()
+                    Matcher(data.template.as_threshold(data.threshold)).wait_for_unmatch()
                     break
             if chosen_index == 0:
                 break
             mouse.move_relative(title_loc, (90, 150))
-            mouse.scroll_down(5)
             logger.debug("scrolling down [5]")
+            mouse.scroll_down(5)
+
         if chosen_index < len(self.support_priority_list):
             name = self.support_priority_list[chosen_index].file_name
             logger.info(f"completed, selected support: {name} ({chosen_index})")
@@ -740,7 +841,7 @@ class DomainFarm:
             self.calyx_farm_all(category, domain)
         else:
             self.domain_farm_bulk(float('inf'))
-    
+
 
 class HSRMacro:
     def __init__(self):
@@ -789,7 +890,7 @@ class HSRMacro:
             self.options = {text: result[idx] for idx, text in enumerate(self.options)}
 
             if (self.options["farm domain (all stamina)"]
-                    and (self.options["launch game"] or self.options["log in (default server)"]))\
+                and (self.options["launch game"] or self.options["log in (default server)"])) \
                     or self.options["navigate to domain"]:
                 self.cfg["category"], self.cfg["domain"] = self.navigate.ui_choose_domain()
                 if self.cfg["domain"] is None or self.cfg["category"] is None:
@@ -863,8 +964,9 @@ def main():
     # while not Matcher(s.navigate.survival_guide).exists():
     #     print("no")
     # print("yes")
-    # s.session_catch()
-    s.dailies.claim_dailies()
+    s.session_catch()
+    # s.dailies.claim_dailies()
+    # s.dailies.claim_monthly_pass()
     # s.navigate.navigate_to_domain("relics_domain", "img_3")
     # s.domain_farm.select_prioritised_support()
     # for category in list(s.navigate.domains)[::-1]:

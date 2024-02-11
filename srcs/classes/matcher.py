@@ -7,10 +7,11 @@ from template import Template
 
 
 class TemplateData:
-    def __init__(self, template=None, location=None, time=None):
+    def __init__(self, template=None, location=None, time=None, threshold=None):
         self.template = template
         self.loc = location
         self.time = time
+        self.threshold = threshold
 
     def __getitem__(self, index):
         return [self.template, self.loc, self.time][index]
@@ -21,8 +22,9 @@ class TemplateData:
     def __str__(self):
         return f"{self.template} {self.loc}"
 
+
 class Matcher:
-    def __init__(self, *templates: Template, timeout=3600):
+    def __init__(self, *templates: Template, timeout=600):
         self.templates = templates
         self.timeout = timeout
 
@@ -49,7 +51,8 @@ class Matcher:
         for template in self.templates:
             if template.exists_in(screenshot):
                 location = template.get_location_in(screenshot)
-                matching_templates.append(TemplateData(template, location))
+                threshold = template.get_max_matching_threshold(screenshot)
+                matching_templates.append(TemplateData(template, location, threshold=threshold))
 
         return matching_templates
 
@@ -84,16 +87,19 @@ class Matcher:
 
         raise TimeoutError
 
-    def wait_for_unmatch(self, delay=1):
-        while self.exists():
+    def wait_for_unmatch(self, delay=1.0):
+        start_time = time.time()
+        while self.exists() and start_time + self.timeout > time.time():
             time.sleep(delay)
 
-    def while_exist_do(self, function, args=None, kwargs=None, delay=1):
+    def while_exist_do(self, function, args=None, kwargs=None, delay=1.0):
         if kwargs is None:
             kwargs = {}
         if args is None:
             args = []
-        while self.exists():
+
+        start_time = time.time()
+        while self.exists() and start_time + self.timeout > time.time():
             function(*args, **kwargs)
             time.sleep(delay)
 
@@ -102,14 +108,18 @@ class Matcher:
             kwargs = {}
         if args is None:
             args = []
-        while not self.exists():
+
+        start_time = time.time()
+        while not self.exists() and start_time + self.timeout > time.time():
             function(*args, **kwargs)
             time.sleep(delay)
 
     def click_center_when_exist(self, delay=1):
         button = self.wait_and_match()
         exists = 1
-        while exists:
+
+        start_time = time.time()
+        while exists and start_time + self.timeout > time.time():
             mouse.click_center(button.loc)
             time.sleep(delay)
             mouse.move_away_from(button.template.roi)
@@ -118,7 +128,9 @@ class Matcher:
     def click_relative_when_exist(self, displacement, delay=1):
         button = self.wait_and_match()
         exists = 1
-        while exists:
+
+        start_time = time.time()
+        while exists and start_time + self.timeout > time.time():
             mouse.click_relative(button.loc, displacement)
             time.sleep(delay)
             mouse.move_away_from(button.template.roi)
