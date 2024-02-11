@@ -18,29 +18,34 @@ def locate_teleport(domains_img: PngImageFile, teleport_img: PngImageFile, thres
 def segment_domains(domains_img: PngImageFile, teleport_paths=None, rel_block_displace=None):
     if teleport_paths is None:
         teleport_paths = [
-            Paths.assets_path_dict["hsr"]["templates"]["navigation"]["teleport"]
+            Paths.assets_path_dict["hsr"]["templates"]["navigation"]["teleport"],
+            Paths.assets_path_dict["hsr"]["templates"]["navigation"]["enter_domain"]
         ]
     if rel_block_displace is None:
         rel_block_displace = [
-            (-10000, -110, 10000, 80)
+            (-10000, -108, 10000, 82),
+            (-10000, -106, 10000, 84)
         ]
     # preprocess
     domains_arr = np.array(domains_img)
 
-    locations = []  # list[ (x, y) ]
+    all_seps = []  # list[ (x, y) ]
     domains = []
     for idx, teleport_path in enumerate(teleport_paths):
         cur_locs = locate_teleport(domains_img, Image.open(teleport_path), 0.9)
-        cur_locs.sort(key=lambda pair: pair[1])  # sort by y cord
-
         pt = rel_block_displace[idx]
+
         for loc in cur_locs:
-            top_x = max(0, loc[0] + pt[0])
-            top_y = max(0, loc[1] + pt[1])
-            bot_x = min(domains_arr.shape[1] - 1, loc[0] + pt[2])
-            bot_y = min(domains_arr.shape[0] - 1, loc[1] + pt[3])
-            img = Image.fromarray(domains_arr[top_y:bot_y, top_x:bot_x])
-            domains.append(img)
+            all_seps.append(min(domains_arr.shape[0] - 1, loc[1] + pt[3]))
+
+    all_seps.sort()
+    all_seps.insert(0, max(0, all_seps[0] - 200))
+    all_seps[-1] = min(all_seps[-1], domains_arr.shape[0])
+    for idx in range(len(all_seps) - 1):
+        top_y = all_seps[idx] + 1
+        bot_y = all_seps[idx + 1]
+        img = Image.fromarray(domains_arr[top_y:bot_y])
+        domains.append(img)
 
     return domains
 

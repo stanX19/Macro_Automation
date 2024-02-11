@@ -16,6 +16,10 @@ def find_overlap_y(top_arr: np.ndarray, bot_arr: np.ndarray, min_overlap_height:
     top_n = len(top_arr)
     bot_n = len(bot_arr)
 
+    # preprocess
+    top_arr = top_arr.astype(int)
+    bot_arr = bot_arr.astype(int)
+
     max_match = 0.0
     ret_y = -1
     top_min_y = max(0, top_n - bot_n)
@@ -23,17 +27,18 @@ def find_overlap_y(top_arr: np.ndarray, bot_arr: np.ndarray, min_overlap_height:
 
     # iter through height
     for top_y in range(top_min_y, top_max_y):
-        height = min(top_n - top_y, bot_n)
-        top_slice = top_arr[top_y: top_y + height]
+        height = top_n - top_y
+        top_slice = top_arr[top_y: top_n]
         bot_slice = bot_arr[:height]
-        cur_match = np.sum(top_slice - bot_slice == 0) / top_slice.size
+        cur_match = 1 - np.sum(np.abs(top_slice - bot_slice)) / top_slice.size / 255
         if cur_match > max_match:
             max_match = cur_match
             ret_y = top_y
-        print("\r{:4}: {:.2f}%        max={:.2f}%".format(
+        print("\r{:4}: {:.2f}%        max={:.2f}% idx: {}".format(
             top_y,
             cur_match * 100,
-            max_match * 100
+            max_match * 100,
+            ret_y
         ), end='')
 
     print()

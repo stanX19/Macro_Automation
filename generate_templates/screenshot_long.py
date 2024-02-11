@@ -7,7 +7,7 @@ from PIL import Image
 from PIL.PngImagePlugin import PngImageFile
 
 
-def screenshot_long(roi: tuple[int, int, int, int], scroll_magnitude=5) -> PngImageFile:
+def screenshot_long(roi: tuple[int, int, int, int], scroll_magnitude=5, scroll_loc_rel=None) -> PngImageFile:
     # Capture the initial screenshot
     prev_img = pyautogui.screenshot()
     prev_img = numpy.array(prev_img)[roi[1]:roi[3], roi[0]:roi[2]]
@@ -16,9 +16,10 @@ def screenshot_long(roi: tuple[int, int, int, int], scroll_magnitude=5) -> PngIm
     # Scroll and capture until the last captured image matches the previous one
     while True:
         # Scroll down
-        mouse.move_to_center(roi)
-        # print("scroll down pls")
-        # keyboard.wait(" ")
+        if scroll_loc_rel is not None:
+            mouse.move_relative(roi, scroll_loc_rel)
+        else:
+            mouse.move_to_center(roi)
         mouse.scroll_down(scroll_magnitude)
         mouse.move_away_from(roi)
 
@@ -27,12 +28,13 @@ def screenshot_long(roi: tuple[int, int, int, int], scroll_magnitude=5) -> PngIm
         current_img = numpy.array(current_img)[roi[1]:roi[3], roi[0]:roi[2]]
 
         # If the current screenshot matches the previous one, break the loop
-        print(" ", np.sum(current_img == prev_img) / current_img.size)
-        if np.sum(current_img == prev_img) / current_img.size > 0.75:
+        match_rate = 1 - np.sum(np.abs(current_img.astype(int) - prev_img.astype(int))) / current_img.size / 255
+        print(" ", match_rate)
+        if match_rate > 0.95:
             break
 
         # Concatenate the current image to the full image
-        full_img = image_catv.array_catv(full_img, current_img, 300, 0.7)
+        full_img = image_catv.array_catv(full_img, current_img, 300, 0.975)
         # Update the previous image for comparison in the next iteration
         prev_img = current_img
 
