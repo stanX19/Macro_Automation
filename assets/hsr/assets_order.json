@@ -26,50 +26,56 @@
     "navigation": {
       "domains": {
         "calyx_crimson": [
-          "img",
-          "img_1",
-          "img_2",
-          "img_3",
-          "img_4",
-          "img_5",
-          "img_6"
+          "calyx_crimson",
+          "calyx_crimson_1",
+          "calyx_crimson_2",
+          "calyx_crimson_3",
+          "calyx_crimson_4",
+          "calyx_crimson_5",
+          "calyx_crimson_6",
+          "calyx_crimson_7",
+          "calyx_crimson_8",
+          "calyx_crimson_9"
         ],
         "calyx_gold": [
-          "img",
-          "img_1",
-          "img_2"
+          "calyx_gold",
+          "calyx_gold_1",
+          "calyx_gold_2"
         ],
         "open_world_boss": [
-          "img",
-          "img_1",
-          "img_2",
-          "img_3",
-          "img_4",
-          "img_5",
-          "img_6",
-          "img_7",
-          "img_8",
-          "img_9",
-          "img_10",
-          "img_13",
-          "img_11",
-          "img_12"
+          "open_world_boss",
+          "open_world_boss_1",
+          "open_world_boss_2",
+          "open_world_boss_3",
+          "open_world_boss_4",
+          "open_world_boss_5",
+          "open_world_boss_6",
+          "open_world_boss_7",
+          "open_world_boss_8",
+          "open_world_boss_9",
+          "open_world_boss_10",
+          "open_world_boss_11",
+          "open_world_boss_12",
+          "open_world_boss_13",
+          "open_world_boss_14",
+          "open_world_boss_15"
         ],
         "relics_domain": [
-          "img",
-          "img_1",
-          "img_2",
-          "img_3",
-          "img_4",
-          "img_5",
-          "img_6",
-          "img_7"
+          "relics_domain",
+          "relics_domain_1",
+          "relics_domain_2",
+          "relics_domain_3",
+          "relics_domain_4",
+          "relics_domain_5",
+          "relics_domain_6",
+          "relics_domain_7",
+          "relics_domain_8"
         ],
         "weekly_boss_domain": [
-          "img",
-          "img_1",
-          "img_2",
-          "img_3"
+          "weekly_boss_domain",
+          "weekly_boss_domain_1",
+          "weekly_boss_domain_2",
+          "weekly_boss_domain_3"
         ]
       },
       "domain_types": [
@@ -96,11 +102,13 @@
       "daily_primo",
       "assignment_claim",
       "assignment_re",
-      "assignment_red_dot",
       "goto_assignment",
       "assignment_logo",
       "daily_logo",
-      "daily_tab_button"
+      "daily_tab_button",
+      "monthly_pass_claim_all",
+      "red_dot",
+      "monthly_pass_claim_all_2"
     ]
   }
 }
