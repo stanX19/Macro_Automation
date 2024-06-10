@@ -31,19 +31,29 @@ class Matcher:
         if not templates:
             raise AssertionError("Matcher must be tied to at least a template")
 
+    def __str__(self):
+        return "[{}]".format(", ".join(t.name for t in self.templates))
+
     def exists(self) -> bool:
-        return bool(self.get_matching_templates())
+        return bool(self.get_matching_templates_data())
 
     def all_exists(self) -> bool:
-        return len(self.get_matching_templates()) == len(self.templates)
+        return len(self.get_matching_templates_data()) == len(self.templates)
 
     def get_location_if_match(self) -> [tuple[int, int, int, int], None]:
-        match = self.get_matching_templates()
-        if match:
+        if match := self.get_matching_templates_data():
             return match[0].loc
         return None
 
-    def get_matching_templates(self) -> list[TemplateData]:
+    def get_data_if_match(self) -> [TemplateData, None]:
+        if match := self.get_matching_templates_data():
+            return match[0]
+        return None
+
+    def get_matching_template_list(self) -> list[Template]:
+        return [i.template for i in self.get_matching_templates_data()]
+
+    def get_matching_templates_data(self) -> list[TemplateData]:
         screenshot = pyautogui.screenshot()
         screenshot = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2GRAY)  # Convert to grayscale
         matching_templates = []
@@ -60,15 +70,24 @@ class Matcher:
         return self.wait_for_matches(timeout=timeout)[0].loc
 
     def wait_and_match(self, timeout=None) -> TemplateData:
+        """
+        Returns the FIRST matching template
+        :param timeout: seconds
+        """
         return self.wait_for_matches(timeout=timeout)[0]
 
     def wait_for_matches(self, timeout=None) -> list[TemplateData]:
+        """
+        Returns (any) first matching templates
+        :param timeout: seconds
+        :return: any matching templates in a frame
+        """
         if timeout is None:
             timeout = self.timeout
 
         start_time = time.time()
         while time.time() - start_time < timeout:
-            matching_template = self.get_matching_templates()
+            matching_template = self.get_matching_templates_data()
             if matching_template:
                 return matching_template
 
@@ -80,7 +99,7 @@ class Matcher:
 
         start_time = time.time()
         while time.time() - start_time < timeout:
-            matching_templates = self.get_matching_templates()
+            matching_templates = self.get_matching_templates_data()
 
             if len(matching_templates) == len(self.templates):
                 return matching_templates
@@ -92,7 +111,7 @@ class Matcher:
         while self.exists() and start_time + self.timeout > time.time():
             time.sleep(delay)
 
-    def while_exist_do(self, function, args=None, kwargs=None, delay=1.0):
+    def while_exist_do(self, function, args=None, kwargs=None, interval=1.0):
         if kwargs is None:
             kwargs = {}
         if args is None:
@@ -101,9 +120,9 @@ class Matcher:
         start_time = time.time()
         while self.exists() and start_time + self.timeout > time.time():
             function(*args, **kwargs)
-            time.sleep(delay)
+            time.sleep(interval)
 
-    def while_not_exist_do(self, function, args=None, kwargs=None, delay=1):
+    def while_not_exist_do(self, function, args=None, kwargs=None, interval=1.0):
         if kwargs is None:
             kwargs = {}
         if args is None:
@@ -112,28 +131,30 @@ class Matcher:
         start_time = time.time()
         while not self.exists() and start_time + self.timeout > time.time():
             function(*args, **kwargs)
-            time.sleep(delay)
+            time.sleep(interval)
 
-    def click_center_when_exist(self, delay=1):
-        button = self.wait_and_match()
+    def click_center_when_exist(self, interval=1.0):
+        self.wait_and_match()
         exists = 1
 
         start_time = time.time()
         while exists and start_time + self.timeout > time.time():
-            mouse.click_center(button.loc)
-            time.sleep(delay)
-            mouse.move_away_from(button.template.roi)
+            for button in self.get_matching_templates_data():
+                mouse.click_center(button.loc)
+                mouse.move_away_from(button.template.roi)
+            time.sleep(interval)
             exists = self.exists()
 
-    def click_relative_when_exist(self, displacement, delay=1):
-        button = self.wait_and_match()
+    def click_relative_when_exist(self, displacement, interval=1.0):
+        self.wait_and_match()
         exists = 1
 
         start_time = time.time()
         while exists and start_time + self.timeout > time.time():
-            mouse.click_relative(button.loc, displacement)
-            time.sleep(delay)
-            mouse.move_away_from(button.template.roi)
+            for button in self.get_matching_templates_data():
+                mouse.click_relative(button.loc, displacement)
+                mouse.move_away_from(button.template.roi)
+            time.sleep(interval)
             exists = self.exists()
 
 

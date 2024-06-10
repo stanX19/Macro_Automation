@@ -78,7 +78,9 @@ def main():
     top_left = tuple(top_left)
     bot_right = tuple(bot_right)
     pyperclip.copy(str(top_left + bot_right))
-    print("Combined:", top_left + bot_right)
+    width = bot_right[0] - top_left[0]
+    height = bot_right[1] - top_left[1]
+    print("Combined:", top_left + bot_right, "Width:", width, "Height:", height)
 
     cv2.destroyAllWindows()
 

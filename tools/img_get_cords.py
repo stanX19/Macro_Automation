@@ -1,8 +1,11 @@
 import cv2
 import numpy as np
+import os
+from easygui import fileopenbox
 
 # Load the image
-path = r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\dailies\goto_assignment.png'
+# path = r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\dailies\goto_assignment.png'
+path = fileopenbox("select image file", default=os.path.join(os.path.dirname(__file__), "..", "assets\\"))
 
 image = cv2.imread(path, cv2.IMREAD_UNCHANGED)
 # Create a copy of the image for visualization

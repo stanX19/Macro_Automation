@@ -8,7 +8,7 @@ def click():
     pyautogui.mouseDown(button="left")
     time.sleep(0.1)
     pyautogui.mouseUp(button="left")
-    time.sleep(0.1)
+    time.sleep(0.4)
 
 
 def delayed_click_center(cords: tuple[int, int, int, int], delay=0.5):
@@ -66,6 +66,13 @@ def scroll_up(y: int):
 def scroll_down(y: int):
     for i in range(y):
         pyautogui.scroll(-1)
+
+
+def scroll_down_general(y: int):
+    if y > 0:
+        scroll_down(y)
+    else:
+        scroll_up(-y)
 
 
 def alt_and_click(loc: tuple, displacement: tuple):

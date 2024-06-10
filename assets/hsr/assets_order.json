@@ -1,4 +1,11 @@
 {
+  "images": [
+    "calyx_gold.domain_screenshot",
+    "calyx_crimson.domain_screenshot",
+    "open_world_boss.domain_screenshot",
+    "relics_domain.domain_screenshot",
+    "weekly_boss_domain.domain_screenshot"
+  ],
   "templates": {
     "domain_farm": {
       "calyx": [
@@ -9,8 +16,8 @@
         "priority": [
           "BangWoSu69 IL",
           "BangWoSu69 JingLiu",
-          "SengKhye IL",
-          "SengKhye JL"
+          "SengKhye Acheron",
+          "BangWoSu69 Acheron"
         ]
       }
     },
@@ -21,7 +28,8 @@
       "start_game",
       "checkbox",
       "accept",
-      "confirm"
+      "confirm",
+      "my_popup_close"
     ],
     "navigation": {
       "domains": {
@@ -35,7 +43,10 @@
           "calyx_crimson_6",
           "calyx_crimson_7",
           "calyx_crimson_8",
-          "calyx_crimson_9"
+          "calyx_crimson_9",
+          "calyx_crimson_10",
+          "calyx_crimson_11",
+          "calyx_crimson_12"
         ],
         "calyx_gold": [
           "calyx_gold",
@@ -58,7 +69,9 @@
           "open_world_boss_12",
           "open_world_boss_13",
           "open_world_boss_14",
-          "open_world_boss_15"
+          "open_world_boss_15",
+          "open_world_boss_16",
+          "open_world_boss_17"
         ],
         "relics_domain": [
           "relics_domain",
@@ -75,7 +88,8 @@
           "weekly_boss_domain",
           "weekly_boss_domain_1",
           "weekly_boss_domain_2",
-          "weekly_boss_domain_3"
+          "weekly_boss_domain_3",
+          "weekly_boss_domain_4"
         ]
       },
       "domain_types": [
@@ -84,6 +98,10 @@
         "open_world_boss",
         "relics_domain",
         "weekly_boss_domain"
+      ],
+      "update_template": [
+        "domain_sep",
+        "double_drop"
       ]
     },
     "update": [
@@ -108,7 +126,8 @@
       "daily_tab_button",
       "monthly_pass_claim_all",
       "red_dot",
-      "monthly_pass_claim_all_2"
+      "monthly_pass_claim_all_2",
+      "assignment_claim_all"
     ]
   }
 }

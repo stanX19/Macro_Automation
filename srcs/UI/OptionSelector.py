@@ -142,7 +142,7 @@ class OptionSelector:
             # Ensure scroll_y stays within valid bounds
             self._scroll_y = max(0, min(self._scroll_y, self._canvas_height - self._displayed_height))
 
-    def select_option(self) -> [list[int], None]:
+    def select_option(self) -> [dict[str, bool], None]:
         window_name = self.message
         cv2.namedWindow(window_name)
         cv2.setMouseCallback(window_name, self.on_mouse)
@@ -151,7 +151,7 @@ class OptionSelector:
         self._scroll_y = 0
         while cv2.getWindowProperty(window_name, cv2.WND_PROP_VISIBLE) > 0:
             # Crop canvas copy
-            displayed = self._canvas.copy()[self._scroll_y:self._scroll_y + self._displayed_height, :]
+            displayed = self._canvas[self._scroll_y:self._scroll_y + self._displayed_height, :]
             cv2.imshow(window_name, displayed)
             cv2.waitKey(1)
             if self._confirmed:
@@ -160,9 +160,9 @@ class OptionSelector:
             return None
 
         cv2.destroyAllWindows()
-        ret = self._selected_options
+        boolean_list = self._selected_options
         self._selected_options = self._default_selected_options
-        return ret
+        return {key: bool(boolean_list[idx]) for idx, key in enumerate(self.options)}
 
 
 # Example usage:

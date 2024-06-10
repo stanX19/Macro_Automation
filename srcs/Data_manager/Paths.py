@@ -2,12 +2,12 @@ import json
 import os
 import utils
 
-settings_json = r"configs/settings.json"
-exc_log_dir = r"run_logs"
-assets_dir = r"assets"
 _parent = os.path.dirname
+_join = os.path.join
 cwd = _parent(_parent(_parent(os.path.realpath(__file__))))
-os.chdir(cwd)
+settings_json = _join(cwd, r"configs/settings.json")
+exc_log_dir = _join(cwd, r"run_logs")
+assets_dir = _join(cwd, r"assets")
 
 assets_path_dict = utils.directory_tree_dict(assets_dir)
 # print(json.dumps(assets_path_dict, indent=2))

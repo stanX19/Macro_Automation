@@ -3,11 +3,11 @@ import numpy as np
 from template import Template
 
 # Load the image and the template
-image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\test\screenshot\img_13.png')
-path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\navigation\teleport.png"
-path2 = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\navigation\domains\relics_domain\img.png"
+image = cv2.imread(r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\test\screenshot\img_29.png')
+path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\navigation\update_template\double_drop.png"
+path2 = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\navigation\domain_types\calyx_crimson.png"
 
-template = Template(path2, (678, 280, 1680, 950), 1)
+template = Template(path2, (244, 271, 686, 918), 0.7, crop=(20, 10, 200, 90))
 print(template.array.shape)
 # Extract the ROI from the image
 x1, y1, x2, y2 = template.roi
@@ -34,11 +34,13 @@ while not len(locations[0]) > 0 and template.threshold >= 0:
     locations = np.where(result >= template.threshold)
 
 
-print(template.threshold)
+
 # Draw rectangles around the matched areas in the ROI
 for pt in zip(*locations[::-1]):
     print(pt)
     cv2.rectangle(roi, pt, (pt[0] + template.array.shape[1], pt[1] + template.array.shape[0]), (0, 255, 0), 2)
+
+print(template.threshold)
 
 # Display the result image with rectangles in the ROI
 cv2.imshow('Matching Result', cv2.resize(image, (960, 540)))

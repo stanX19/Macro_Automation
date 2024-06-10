@@ -1,0 +1,352 @@
+
+[Date: 2024-02-12 : Time: 18:54:34 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-02-12 : Time: 18:55:05 : Program Name: Genshin Macro]
+[00:00:00]: ERROR:Genshin Macro:session_catch: 'shut down when done'
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\genshin_impact_macro.py", line 91, in session_catch
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\genshin_impact_macro.py", line 87, in session
+    return self.execute_session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\genshin_impact_macro.py", line 69, in execute_session
+    CLOSE = self.options["shut down when done"] or self.options["sleep when done"]
+KeyError: 'shut down when done'
+[00:00:00]: INFO:Genshin Macro:session_catch: Terminated
+
+[Date: 2024-02-12 : Time: 19:01:07 : Program Name: Genshin Macro]
+[00:00:00]: ERROR:Genshin Macro:session_catch: 'shut down when done'
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\genshin_impact_macro.py", line 91, in session_catch
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\genshin_impact_macro.py", line 87, in session
+    return self.execute_session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\genshin_impact_macro.py", line 69, in execute_session
+    CLOSE = self.options["shut down when done"] or self.options["sleep when done"]
+KeyError: 'shut down when done'
+[00:00:00]: INFO:Genshin Macro:session_catch: Terminated
+
+[Date: 2024-02-12 : Time: 19:02:24 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-02-13 : Time: 18:02:39 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-02-15 : Time: 23:26:35 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-02-16 : Time: 18:51:57 : Program Name: Genshin Macro]
+
+[Date: 2024-02-16 : Time: 18:52:27 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: [1, 1, True]
+
+[Date: 2024-02-16 : Time: 19:10:29 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+
+[Date: 2024-02-16 : Time: 19:11:20 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-02-16 : Time: 20:16:26 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+
+[Date: 2024-02-17 : Time: 20:50:40 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:58]: INFO:Genshin Macro:log_in_to_game: completed
+[00:06:58]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-02-19 : Time: 19:16:34 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:04]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:04]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-02-21 : Time: 21:09:27 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:56]: INFO:Genshin Macro:log_in_to_game: completed
+[00:06:56]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-02-22 : Time: 22:15:14 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': False, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:18]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:20]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-02-23 : Time: 23:02:43 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:55]: INFO:Genshin Macro:log_in_to_game: completed
+[00:06:55]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-02-24 : Time: 23:10:11 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-02-25 : Time: 22:45:58 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:53]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-02-27 : Time: 23:08:45 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:58]: INFO:Genshin Macro:log_in_to_game: completed
+[00:08:52]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-03-02 : Time: 11:10:24 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-03-02 : Time: 18:57:10 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:11]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:11]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-03-11 : Time: 17:19:28 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-03-11 : Time: 17:23:18 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:58]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:01]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-03-12 : Time: 23:04:18 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-03-30 : Time: 22:00:11 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-03-31 : Time: 12:40:27 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': False, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-04-01 : Time: 14:28:52 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:03]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:03]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-04-02 : Time: 19:49:02 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:00]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:00]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-04-04 : Time: 23:46:18 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:59]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:02]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-04-05 : Time: 23:50:24 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:02]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:08]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-04-19 : Time: 20:15:18 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-05-12 : Time: 12:38:06 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:24]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:26]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-14 : Time: 14:33:23 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:52]: INFO:Genshin Macro:log_in_to_game: completed
+[00:06:52]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-05-15 : Time: 13:49:14 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:28]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:53]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-15 : Time: 20:28:55 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:12]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:12]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-05-16 : Time: 22:02:53 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:36]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:45]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-17 : Time: 21:57:58 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:01]: INFO:Genshin Macro:launch_game: ok
+[00:00:01]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:25]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:31]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-18 : Time: 22:40:16 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:11]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:13]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-19 : Time: 23:27:50 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-05-20 : Time: 22:23:32 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:08]: INFO:Genshin Macro:log_in_to_game: completed
+[00:10:49]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-21 : Time: 20:18:42 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-05-22 : Time: 22:38:00 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:15:26]: INFO:Genshin Macro:log_in_to_game: completed
+[00:15:28]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-23 : Time: 23:45:30 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-05-25 : Time: 23:28:54 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:15]: INFO:Genshin Macro:log_in_to_game: completed
+[00:07:16]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2024-05-26 : Time: 16:39:45 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-05-27 : Time: 23:21:30 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:30]: INFO:Genshin Macro:log_in_to_game: completed
+
+[Date: 2024-05-28 : Time: 22:45:50 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:11]: INFO:Genshin Macro:log_in_to_game: completed
+
+[Date: 2024-06-02 : Time: 20:08:12 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:20:10]: ERROR:Genshin Macro:session_catch: TimeoutError
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 98, in session_catch
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 94, in session
+    return self.execute_session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 81, in execute_session
+    self.login.log_in_to_game()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 34, in log_in_to_game
+    Matcher(self.choose_server).click_center_when_exist()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 134, in click_center_when_exist
+    self.wait_and_match()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 74, in wait_and_match
+    return self.wait_for_matches(timeout=timeout)[0]
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 91, in wait_for_matches
+    raise TimeoutError
+TimeoutError
+[00:20:10]: INFO:Genshin Macro:session_catch: Terminated
+[00:20:10]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-06-02 : Time: 22:40:14 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-06-03 : Time: 20:06:47 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:00:22]: ERROR:Genshin Macro:session_catch: screen grab failed
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 98, in session_catch
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 94, in session
+    return self.execute_session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 81, in execute_session
+    self.login.log_in_to_game()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 33, in log_in_to_game
+    Matcher(self.launcher_play).click_center_when_exist()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 134, in click_center_when_exist
+    self.wait_and_match()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 74, in wait_and_match
+    return self.wait_for_matches(timeout=timeout)[0]
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 87, in wait_for_matches
+    matching_template = self.get_matching_templates_data()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 54, in get_matching_templates_data
+    screenshot = pyautogui.screenshot()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\pyscreeze\__init__.py", line 512, in _screenshot_win32
+    im = ImageGrab.grab()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\PIL\ImageGrab.py", line 47, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+OSError: screen grab failed
+[00:00:22]: INFO:Genshin Macro:session_catch: Terminated
+
+[Date: 2024-06-03 : Time: 20:07:13 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:07:35]: INFO:Genshin Macro:log_in_to_game: completed
+
+[Date: 2024-06-05 : Time: 17:45:23 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+
+[Date: 2024-06-05 : Time: 20:10:25 : Program Name: Genshin Macro]
+
+[Date: 2024-06-08 : Time: 19:00:33 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:06:51]: INFO:Genshin Macro:log_in_to_game: completed
+[00:06:51]: INFO:Genshin Macro:sleep: execute sleep command

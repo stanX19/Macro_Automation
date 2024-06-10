@@ -45,7 +45,7 @@ class StatusMatcher:
         return self._delta_time
 
     def update(self):
-        template_datas = self._matcher.get_matching_templates()
+        template_datas = self._matcher.get_matching_templates_data()
         self.refresh_delta_time()
 
         matching_templates = [t.template for t in template_datas]
