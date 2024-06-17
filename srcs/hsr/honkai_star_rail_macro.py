@@ -32,6 +32,7 @@ class Update:
         self.unclickable_play = Template(assets["unclickable_play"], self.game_update.roi, 0.975)
 
         assets = Paths.assets_path_dict["hsr"]["templates"]["login"]
+        self.launcher_play_old = Template(assets["launcher_play_old"], self.game_update.roi, self.unclickable_play.threshold)
         self.launcher_play = Template(assets["launcher_play"], self.game_update.roi, self.unclickable_play.threshold)
 
     def update_launcher(self):
@@ -107,7 +108,10 @@ class LogIn:
         self.assets = assets
         self.menu_bar = MenuBar()
         self.launcher_exe = macro_settings.hsr["launcher_exe"]
-        self.launcher_play = Template(assets["launcher_play"], (1277, 768, 1606, 875))
+        self.launcher_play_old = Template(assets["launcher_play_old"], (1277, 768, 1606, 875))
+        self.launcher_play = Template(assets["launcher_play"], threshold=0.9)
+        self.hsr_logo = Template(assets["hsr_logo"], threshold=0.95, binary=True)
+        self.hsr_icon = Template(assets["hsr_icon"], threshold=0.9)
         self.choose_server = Template(assets["choose_server"], (708, 782, 1225, 967))
         self.start_game = Template(assets["start_game"], (861, 805, 1076, 872))
         self.click_to_start = Template(assets["click_to_start"], (0, 0, 1920, 1080))
@@ -123,13 +127,13 @@ class LogIn:
         logger.info("ok")
 
     def log_in_to_game(self):
-        status_matcher = StatusMatcher(  # self.updater.launcher_update, self.updater.pre_install,
-            # self.updater.accept, self.updater.game_update,
+        status_matcher = StatusMatcher(
             self.checkbox, self.accept, self.confirm,
-            self.launcher_play,
+            self.launcher_play, self.hsr_icon, self.hsr_logo,
             self.start_game, self.click_to_start,
             self.my_popup_close,
-            *self.menu_bar.templates)
+            *self.menu_bar.templates
+        )
 
         start_time = time.time()
         logger.info("started")
@@ -137,24 +141,15 @@ class LogIn:
             for template, loc, exist_time in status_matcher.get_all_template_status_list():
                 if exist_time < 1:
                     continue
-                logger.debug(f"{template.file_name} matched {loc}")
+                logger.debug(f"{template.file_name} matched {loc} {exist_time}")
                 if template in self.menu_bar.templates:
                     logger.info("completed")
                     return
-                # if template is self.updater.launcher_update:
-                #     self.updater.update_launcher()
-                #     start_time = time.time()
-                #     continue
-                # if template is self.updater.pre_install:
-                #     self.updater.run_pre_install()
-                #     continue
-                # if template is self.updater.game_update:
-                #     self.updater.update_game()
-                #     start_time = time.time()
-                #     continue
-
-                mouse.click_and_move_away(loc, 1)
-                status_matcher.reset_template(template)
+                if template is self.launcher_play and status_matcher[self.hsr_logo].time > 2:
+                    continue
+                if template is self.hsr_logo:
+                    continue
+                mouse.click_and_move_away(loc)
 
         raise TimeoutError("failed to log in")
 
@@ -238,7 +233,7 @@ class Navigation:
             self.domains[category] = {}
 
             for key, path in domains.items():
-                self.domains[category][key] = Template(path, self.DOMAIN_ROI, 0.975, binary=True)
+                self.domains[category][key] = Template(path, self.DOMAIN_ROI, 0.975)
 
         assets = Paths.assets_path_dict["hsr"]["templates"]["domain_farm"]
         self.start_challenge = Template(assets["start_challenge"], (1343, 947, 1893, 1022), 0.9)
@@ -308,13 +303,11 @@ class Navigation:
                     clicked_menu = True
                 elif template is self.survival_guide and exist_time > THRESHOLD_2:
                     mouse.click_center(loc)
-                elif template is self.start_challenge and exist_time > THRESHOLD_1:
-                    logger.info("completed")
-                    return
                 elif template is target_cat and exist_time > THRESHOLD_2:
                     logger.debug("target category found")
-                    mouse.click_center(loc)
-                    Matcher(target_cat).wait_for_unmatch()
+                    for _ in range(3):
+                        mouse.click_and_move_away(loc)
+                        time.sleep(0.5)
                     return
                 elif template in category_templates:
                     if exist_time <= THRESHOLD_2:
@@ -388,6 +381,7 @@ class Navigation:
                     logger.debug("target category found")
                     mouse.click_center(loc)
                     cat_found = True
+                    continue
                 elif template is target_domain and exist_time > THRESHOLD_2:
                     dom_found = True
                     logger.debug("target domain found")
@@ -452,13 +446,14 @@ class Navigation:
                     scroll_loc = cat_negative_idx_loc
                     scroll_vector = cat_relative_negative_idx * SCROLL_MAGNITUDE
 
-            elif cat_found and not dom_found:
+            elif cat_found and not dom_found and status_matcher[target_cat].time > 5:
                 scroll_loc = self.DOMAIN_ROI
                 scroll_vector = SCROLL_MAGNITUDE
 
             if scroll_vector:
                 mouse.move_to_center(scroll_loc)
                 mouse.scroll_down_general(scroll_vector)
+                mouse.move_away_from(scroll_loc)
 
 
 class Dailies:
@@ -667,7 +662,7 @@ class DomainFarm:
         self.support_end_of_list = Template(assets["support"]["end_of_list"], (520, 810, 560, 940), 0.90)
         self.support_list_title = Template(assets["support"]["list_title"], (172, 42, 423, 136), 0.85)
         self.support_priority_list: list[Template] = [
-                                                         Template(path, (0, 100, 600, 1000), 0.7) for path in
+                                                         Template(path, (0, 100, 600, 1000), 0.85) for path in
                                                          assets["support"]["priority"].values()
                                                      ][::-1]  # new first, old last
         self._domain = None
@@ -707,8 +702,10 @@ class DomainFarm:
                     logger.debug(f"clicked on: {data}")
                 if chosen_index == 0:
                     logger.info("found most prioritized support")
-                    logger.debug(f"waiting for {data} to unmatch (turn white)")
-                    Matcher(data.template.as_threshold(data.threshold * 0.975)).wait_for_unmatch()
+                    logger.debug(f"waiting for {data.template.file_name} to unmatch (turn white)")
+                    Matcher(data.template.as_threshold(data.threshold * 0.975)).while_exist_do(
+                        mouse.click_and_move_away, data.loc
+                    )
                     break
             if chosen_index == 0:
                 break
@@ -984,7 +981,7 @@ class HSRMacro:
         }
 
         self.sleep_command = "rundll32.exe powrprof.dll,SetSuspendState 0,1,0"
-        self.shut_down_command = "shutdown /s /t 0"
+        self.shut_down_command = "shutdown /s /t 5"
 
     def sleep(self):
         logger.info("execute sleep command")
@@ -1083,6 +1080,7 @@ def main():
     #     print("no")
     # print("yes")
     s.session_catch()
+    # s.login.log_in_to_game()
     # s.dailies.claim_dailies()
     # s.dailies.claim_monthly_pass()
     # s.navigate.navigate_to_domain("relics_domain", "relics_domain_3")

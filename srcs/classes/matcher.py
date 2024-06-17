@@ -7,20 +7,22 @@ from template import Template
 
 
 class TemplateData:
-    def __init__(self, template=None, location=None, time=None, threshold=None):
+    def __init__(self, template=None, location=None, time=0.0, threshold=0.0):
         self.template = template
         self.loc = location
         self.time = time
         self.threshold = threshold
 
     def __getitem__(self, index):
-        return [self.template, self.loc, self.time][index]
-
-    def pair(self):
-        return self.template, self.loc
+        return [self.template, self.loc, self.time, self.threshold][index]
 
     def __str__(self):
-        return f"{self.template} {self.loc}"
+        if self.threshold:
+            return f"{self.template}, {self.loc}, {self.threshold:.2f}"
+        return f"{self.template}, {self.loc}, None"
+
+    def __iter__(self):
+        return iter((self.template, self.loc, self.time, self.threshold))
 
 
 class Matcher:

@@ -350,3 +350,119 @@ OSError: screen grab failed
 [00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
 [00:06:51]: INFO:Genshin Macro:log_in_to_game: completed
 [00:06:51]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-06-15 : Time: 20:24:52 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': True}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:08:09]: INFO:Genshin Macro:log_in_to_game: completed
+[00:08:09]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-06-17 : Time: 22:19:03 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: DEBUG:Genshin Macro:log_in_to_game: started
+[00:00:36]: ERROR:Genshin Macro:session_catch: screen grab failed
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 98, in session_catch
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 94, in session
+    return self.execute_session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 81, in execute_session
+    self.login.log_in_to_game()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 33, in log_in_to_game
+    Matcher(self.launcher_play).click_center_when_exist()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 148, in click_center_when_exist
+    exists = self.exists()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 40, in exists
+    return bool(self.get_matching_templates_data())
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 59, in get_matching_templates_data
+    screenshot = pyautogui.screenshot()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\pyscreeze\__init__.py", line 512, in _screenshot_win32
+    im = ImageGrab.grab()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\PIL\ImageGrab.py", line 47, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+OSError: screen grab failed
+[00:00:36]: INFO:Genshin Macro:session_catch: Terminated
+
+[Date: 2024-06-17 : Time: 22:31:52 : Program Name: Genshin Macro]
+
+[Date: 2024-06-17 : Time: 22:32:34 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': False, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:04]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (299, 115, 497, 202) 2.3240039348602295
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (163, 720, 227, 783) 2.3240039348602295
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (1313, 816, 1569, 867) 2.3240039348602295
+[00:00:59]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (847, 482, 1073, 536) 1.67976975440979
+[00:01:01]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (786, 568, 1121, 609) 1.67976975440979
+[00:01:05]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1015, 504, 1079, 567) 5.2004029750823975
+[00:01:08]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1615, 844, 1679, 907) 8.34998345375061
+[00:01:11]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1314, 250, 1378, 313) 11.910859823226929
+[00:01:16]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1561, 167, 1625, 230) 1.4060983657836914
+[00:01:19]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1561, 167, 1625, 230) 4.345096588134766
+[00:01:22]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1561, 167, 1625, 230) 7.275827884674072
+[00:01:25]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1561, 167, 1625, 230) 10.17027497291565
+[00:01:28]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1561, 167, 1625, 230) 13.405597448348999
+[00:01:31]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (490, 461, 554, 524) 16.599084615707397
+[00:01:34]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (1314, 252, 1378, 315) 19.82138752937317
+
+[Date: 2024-06-17 : Time: 23:17:09 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:04]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (163, 720, 227, 783) 1.7789638042449951
+[00:00:07]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (1313, 816, 1569, 867) 1.7789638042449951
+[00:00:47]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (847, 482, 1073, 536) 1.0259480476379395
+[00:00:49]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (786, 568, 1121, 609) 1.0259480476379395
+[00:01:21]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (786, 999, 1121, 1040) 1.0079314708709717
+
+[Date: 2024-06-17 : Time: 23:39:59 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:02]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (163, 720, 227, 783) 1.6219902038574219
+[00:00:04]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (1313, 816, 1569, 867) 1.6219902038574219
+[00:00:46]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (847, 482, 1073, 536) 1.0306015014648438
+[00:00:47]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (786, 568, 1121, 609) 1.0306015014648438
+[00:01:31]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (786, 999, 1121, 1040) 1.9227631092071533
+[00:03:13]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 1.3210372924804688
+[00:03:16]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 4.525329351425171
+[00:03:19]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 7.638871192932129
+[00:03:23]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 10.771937608718872
+[00:03:26]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 13.869291067123413
+[00:03:29]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 16.909640550613403
+[00:03:32]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 20.13531255722046
+[00:03:35]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 23.22408151626587
+[00:03:38]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 26.358726263046265
+[00:03:42]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 29.76777458190918
+[00:03:45]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 32.879165172576904
+[00:03:48]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 36.37507390975952
+[00:03:51]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 39.45830702781677
+[00:03:55]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (1361, 12, 1879, 77) 43.027546405792236
+[00:03:57]: ERROR:Genshin Macro:session_catch: screen grab failed
+Traceback (most recent call last):
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 109, in session_catch
+    return self.session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 105, in session
+    return self.execute_session()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 92, in execute_session
+    self.login.log_in_to_game()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 40, in log_in_to_game
+    for template, loc, exist_time in status_matcher.get_all_template_status_list():
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\status_matcher.py", line 77, in get_all_template_status_list
+    self.update()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\status_matcher.py", line 46, in update
+    template_datas = self._matcher.get_matching_templates_data()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\classes\matcher.py", line 59, in get_matching_templates_data
+    screenshot = pyautogui.screenshot()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\pyscreeze\__init__.py", line 512, in _screenshot_win32
+    im = ImageGrab.grab()
+  File "C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\lib\site-packages\PIL\ImageGrab.py", line 47, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+OSError: screen grab failed
+[00:03:57]: INFO:Genshin Macro:session_catch: Terminated
+
+[Date: 2024-06-17 : Time: 23:45:47 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': False, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:03]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.95), (1361, 12, 1879, 77), 0.97

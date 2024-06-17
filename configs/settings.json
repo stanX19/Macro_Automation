@@ -1,11 +1,11 @@
 {
   "hsr": {
-    "launcher_exe": "C:\\Program Files\\Star Rail\\launcher.exe",
+    "launcher_exe": "D:\\Program Files\\HoYoPlay\\launcher.exe",
     "domain_dir": "domains",
     "log": "hsr_log.txt"
   },
   "genshin": {
-    "launcher_exe": "C:\\Program Files\\Genshin Impact\\launcher.exe",
+    "launcher_exe": "D:\\Program Files\\HoYoPlay\\launcher.exe",
     "log": "genshin_log.txt"
   }
 }

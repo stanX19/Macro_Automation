@@ -1,9 +1,9 @@
 import traceback
-import honkai_star_rial_macro
+import honkai_star_rail_macro
 
 def main():
     while True:
-        hsr_macro = honkai_star_rial_macro.HSRMacro()
+        hsr_macro = honkai_star_rail_macro.HSRMacro()
         if hsr_macro.session_catch():
             break
 

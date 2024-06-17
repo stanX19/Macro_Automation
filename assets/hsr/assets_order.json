@@ -29,7 +29,10 @@
       "checkbox",
       "accept",
       "confirm",
-      "my_popup_close"
+      "my_popup_close",
+      "launcher_play_old",
+      "hsr_icon",
+      "hsr_logo"
     ],
     "navigation": {
       "domains": {

@@ -1,18 +1,15 @@
 import os
-import cv2
-import mouse
-import keyboard
 import time
-import pyautogui
 import traceback
-import utils
+
 import Paths
-import macro_settings
-from template import Template
-from matcher import TemplateData, Matcher
 import UI
+import macro_settings
+import mouse
 from logger import logger
-import hsr_helper
+import logging
+from status_matcher import StatusMatcher
+from template import Template
 
 
 class LogIn:
@@ -20,21 +17,37 @@ class LogIn:
         assets = Paths.assets_path_dict["genshin"]["templates"]["login"]
         self.templates = assets
         self.launcher_exe = macro_settings.genshin["launcher_exe"]
-        self.launcher_play = Template(assets["launcher_play"], (1290, 780, 1592, 865))
+        self.launcher_play_old = Template(assets["launcher_play_old"], (1290, 780, 1592, 865))
+        self.launcher_play = Template(assets["launcher_play"], threshold=0.9)
+        self.genshin_logo = Template(assets["genshin_logo"], threshold=0.95, binary=True)
+        self.genshin_icon = Template(assets["genshin_icon"], threshold=0.9)
         self.choose_server = Template(assets["start_game"], (831, 468, 1087, 549))
         self.click_to_start = Template(assets["click_to_start"], (0, 0, 1920, 1080))
+        self.menu_bar = Template(assets["menu_bar"], (1300, 0, 1920, 100), 0.95, binary=True)
 
     def launch_game(self):
         os.startfile(self.launcher_exe)
         logger.info("ok")
 
     def log_in_to_game(self):
-        logger.debug("started")
-        Matcher(self.launcher_play).click_center_when_exist()
-        Matcher(self.choose_server).click_center_when_exist()
-        Matcher(self.click_to_start).click_center_when_exist()
-        time.sleep(300)
-        logger.info("completed")
+        status_matcher = StatusMatcher(
+            self.genshin_logo, self.genshin_icon, self.launcher_play,
+            self.choose_server, self.click_to_start, self.menu_bar
+        )
+        start_time = time.time()
+        logger.info("started")
+        while start_time + 1800 >= time.time():
+            for template, loc, exist_time in status_matcher.get_all_template_status_list():
+                if exist_time < 1:
+                    continue
+                logger.debug(f"{template.file_name} matched {status_matcher[template]}")
+                if template is self.launcher_play_old and status_matcher[self.genshin_logo].time > 1.0:
+                    continue
+                if template is self.menu_bar:
+                    return
+                mouse.click_and_move_away(loc)
+
+        raise TimeoutError("failed to log in")
 
     def start_and_log_in(self):
         self.launch_game()
@@ -113,3 +126,11 @@ class GenshinMacro:
         return -1
 
 
+def main():
+    s = GenshinMacro()
+    logger.edit_stream_logger(log_level=logging.DEBUG)
+    s.session_catch()
+
+
+if __name__ == '__main__':
+    main()

@@ -10,14 +10,13 @@ class StatusMatcher:
         self._templates = list(templates)
         self._matcher = Matcher(*templates)
         self._previous_time = float("inf")
-        self._counter: dict[Template: float] = {t: 0 for t in self._templates}
-        self._locations: dict[Template: tuple[int, int, int, int]] = {}
+        self._data: dict[Template: TemplateData] = {t: TemplateData(t) for t in self._templates}
 
     def add_template(self, *templates: Template, raise_error=True):
         for template in templates:
             if template not in self._templates:
                 self._templates.append(template)
-                self._counter[template] = 0
+                self._data[template] = TemplateData()
             elif raise_error:
                 raise ValueError("template already exists")
 
@@ -27,8 +26,7 @@ class StatusMatcher:
         for template in templates:
             if template in self._templates:
                 self._templates.remove(template)
-                del self._counter[template]
-                del self._locations[template]
+                del self._data[template]
             elif raise_error:
                 raise ValueError("template not found")
 
@@ -50,52 +48,57 @@ class StatusMatcher:
 
         matching_templates = [t.template for t in template_datas]
 
-        for template_data in template_datas:
-            template, loc = template_data.pair()
-            self._locations[template] = loc
+        for template, loc, _, threshold in template_datas:
+            self._data[template].loc = loc
+            self._data[template].threshold = threshold
 
-        for template in self._counter:
+        for template, data in self._data.items():
             if template in matching_templates:
-                self._counter[template] += self._delta_time
+                data.time += self._delta_time
             else:
-                self._counter[template] = 0
-                self._locations[template] = None
+                data.time = 0
+                data.location = None
 
     def templates_filtered(self, threshold_secs=1):
-        return [t for t in self._counter if self._counter[t] > threshold_secs]
+        return [t for t in self._data if self._data[t].time > threshold_secs]
 
     def reset_template(self, template):
-        self._counter[template] = 0
-        self._locations[template] = None
+        self._data[template].time = 0
+        self._data[template].location = None
 
     def reset_all_template(self):
         for template in self._templates:
             self.reset_template(template)
 
     def ignore_template_for(self, template: Template, secs: float):
-        self._counter[template] = -secs
+        self._data[template].time = -secs
 
     def get_all_template_status_list(self) -> list[tuple[Template, Union[tuple[int, int, int, int], None], float]]:
         self.update()
-        return list(self.__iter__())
+        return [(t, l, m) for t, l, m, h in self._data.values()]
 
     def get_all_template_status_dict(self) -> dict[Template, TemplateData]:
         self.update()
-        return {t: TemplateData(t, l, s) for t, l, s in self}  # {t: template, s: second, l: location}
+        return self._data.copy()
 
     def get_all_template_data(self) -> list[TemplateData]:
         self.update()
-        return [TemplateData(t, l, s) for t, l, s in self.__iter__()]
+        return list(self._data.copy().values())
 
     def counter(self, template: Template) -> float:
-        return self._counter[template]
+        return self._data[template].time
 
     def location(self, template: Template) -> Union[tuple[int, int, int, int], None]:
-        return self._locations.get(template, None)
+        try:
+            return self._data[template].loc
+        except KeyError:
+            return None
 
     def __getitem__(self, template: Template) -> TemplateData:
-        return TemplateData(template, self._locations.get(template, None), max(0, self._counter[template]))
+        try:
+            return self._data[template]
+        except KeyError:
+            return TemplateData(template)
 
-    def __iter__(self) -> list[tuple[Template, Union[tuple[int, int, int, int], None], float]]:
-        return [(template, self._locations.get(template, None), max(0, self._counter[template])) for template in
-                self._counter]
+    def __iter__(self) -> list[TemplateData]:
+        return list(self._data.values())

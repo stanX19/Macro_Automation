@@ -4,9 +4,9 @@ from template import Template, cvt_to_binary
 
 def test(template_path, img_path):
     # Load the image and the template
-    image = cv2.imread(img_path)[540:,:]
+    image = cv2.imread(img_path)
 
-    template = Template(template_path, crop=(20, 60, 200, 90), threshold=1.0, binary=True)
+    template = Template(template_path, threshold=1.0, binary=True)
 
     image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -41,22 +41,22 @@ def main():
     temps = [
         r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\navigation\domain_types\calyx_gold.png",
     ]
-    # imgs = [
-    #     r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\test\screenshot\img_31.png',
-    # ]
-    # temps = [
-    #     r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\navigation\teleport.png"
-    # ]
+    imgs = [
+        r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\test\screenshot\img_36.png',
+    ]
+    temps = [
+        r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\genshin\templates\login\menu_bar.png",
+    ]
     results = []
     print("started")
     for tmp in temps:
         for img in imgs:
             results.append(test(tmp, img))
 
-    if results[0] < results[1] and results[0] < results[2]:
-        print("OK!")
-    else:
-        print("KO!")
+    # if results[0] < results[1] and results[0] < results[2]:
+    #     print("OK!")
+    # else:
+    #     print("KO!")
 
 
 if __name__ == '__main__':

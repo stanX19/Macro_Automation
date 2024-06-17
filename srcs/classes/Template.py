@@ -79,7 +79,7 @@ class Template:
             return False
         return True
 
-    def get_location_in(self, img_gray) -> [tuple, None]:
+    def get_location_in(self, img_gray) -> [tuple[int, int, int, int], None]:
         max_val, max_loc = self._match_with_img(img_gray)
 
         if max_val < self.threshold:

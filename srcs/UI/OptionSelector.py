@@ -53,7 +53,8 @@ class OptionSelector:
         canvas[0:options_height, -self.outline:-1, :] = self.outline_color
 
         cum_y = self.outline
-        box_padding = int(self.padding * 1.1)
+        # change tick box size here
+        box_padding = int(self.padding * 0.25)
         self._box_size = sorted(text_heights)[0] + 2 * (self.padding - box_padding)
         for idx, option in enumerate(self.options):
             text_position_x = self.padding + self.outline
