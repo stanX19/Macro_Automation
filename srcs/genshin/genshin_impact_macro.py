@@ -19,11 +19,11 @@ class LogIn:
         self.launcher_exe = macro_settings.genshin["launcher_exe"]
         self.launcher_play_old = Template(assets["launcher_play_old"], (1290, 780, 1592, 865))
         self.launcher_play = Template(assets["launcher_play"], threshold=0.9)
-        self.genshin_logo = Template(assets["genshin_logo"], threshold=0.95, binary=True)
+        self.genshin_logo = Template(assets["genshin_logo"], threshold=0.75, binary=True)
         self.genshin_icon = Template(assets["genshin_icon"], threshold=0.9)
         self.choose_server = Template(assets["start_game"], (831, 468, 1087, 549))
         self.click_to_start = Template(assets["click_to_start"], (0, 0, 1920, 1080))
-        self.menu_bar = Template(assets["menu_bar"], (1300, 0, 1920, 100), 0.95, binary=True)
+        self.menu_bar = Template(assets["menu_bar"], (1300, 0, 1920, 100), 0.75, binary=True)
 
     def launch_game(self):
         os.startfile(self.launcher_exe)
@@ -41,7 +41,9 @@ class LogIn:
                 if exist_time < 1:
                     continue
                 logger.debug(f"{template.file_name} matched {status_matcher[template]}")
-                if template is self.launcher_play_old and status_matcher[self.genshin_logo].time > 1.0:
+                if template is self.genshin_logo:
+                    continue
+                if template is self.launcher_play and status_matcher[self.genshin_logo].time < 1.0:
                     continue
                 if template is self.menu_bar:
                     return

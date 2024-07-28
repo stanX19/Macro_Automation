@@ -145,7 +145,7 @@ class LogIn:
                 if template in self.menu_bar.templates:
                     logger.info("completed")
                     return
-                if template is self.launcher_play and status_matcher[self.hsr_logo].time > 2:
+                if template is self.launcher_play and status_matcher[self.hsr_logo].time < 2.0:
                     continue
                 if template is self.hsr_logo:
                     continue
@@ -211,7 +211,7 @@ class Navigation:
         assets = Paths.assets_path_dict["hsr"]["templates"]["navigation"]
         self.assets = assets
         self.menu_bar = MenuBar()
-        self.survival_guide = Template(assets["survival_guide"], (543, 170, 670, 256), 0.95)
+        self.survival_guide = Template(assets["survival_guide"], (284, 161, 1039, 268), 0.95)
         self.teleport = Template(assets["teleport"], threshold=0.85)
         self.enter_domain = Template(assets["enter_domain"], threshold=0.85)
         self.track_domain = Template(assets["track_domain"], threshold=0.85)
@@ -463,7 +463,7 @@ class Dailies:
         self.navigator = Navigation()
 
         self.daily_logo = Template(assets["daily_logo"], (9, 9, 257, 123), 0.9)
-        self.daily_tab = Template(assets["daily_tab_button"], (423, 169, 543, 258), 0.9)
+        self.daily_tab = Template(assets["daily_tab_button"], (284, 161, 1039, 268), 0.9)
         self.daily_claim = Template(assets["daily_claim"], (298, 783, 549, 873), 0.9)
 
         self.daily_primo1 = Template(assets["daily_primo"], (596, 272, 681, 351), 0.9)

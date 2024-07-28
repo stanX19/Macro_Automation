@@ -10,7 +10,7 @@ class StatusMatcher:
         self._templates = list(templates)
         self._matcher = Matcher(*templates)
         self._previous_time = float("inf")
-        self._data: dict[Template: TemplateData] = {t: TemplateData(t) for t in self._templates}
+        self._data: dict[Template, TemplateData] = {t: TemplateData(t) for t in self._templates}
 
     def add_template(self, *templates: Template, raise_error=True):
         for template in templates:
@@ -54,9 +54,12 @@ class StatusMatcher:
 
         for template, data in self._data.items():
             if template in matching_templates:
-                data.time += self._delta_time
+                if data.time == 0.0:
+                    data.time += min(0.001, self._delta_time)
+                else:
+                    data.time += self._delta_time
             else:
-                data.time = 0
+                data.time = 0.0
                 data.location = None
 
     def templates_filtered(self, threshold_secs=1):
@@ -64,7 +67,7 @@ class StatusMatcher:
 
     def reset_template(self, template):
         self._data[template].time = 0
-        self._data[template].location = None
+        self._data[template].loc = None
 
     def reset_all_template(self):
         for template in self._templates:
