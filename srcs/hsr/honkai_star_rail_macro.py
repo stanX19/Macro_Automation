@@ -1,4 +1,6 @@
 import os
+from enum import Enum
+
 import keyboard
 import time
 import traceback
@@ -17,91 +19,6 @@ from exceptions import ConnectionError, BattleLostError, DomainNotSpecifiedError
 from generate_templates import update_domain_templates
 
 
-class Update:
-    def __init__(self):
-        assets = Paths.assets_path_dict["hsr"]["templates"]["update"]
-        self.assets = assets
-        self.launcher_update = Template(assets["launcher_update"], (952, 589, 1196, 654))
-        self.downloading_resources = Template(assets["downloading_resources"], (532, 686, 792, 723))
-        self.open_launcher = Template(assets["open_launcher"], (779, 676, 1116, 746))
-        self.pre_install = Template(assets["pre_install"], (1027, 784, 1094, 852))
-        self.confirm = Template(assets["confirm"], (953, 582, 1201, 664))
-        self.game_update = Template(assets["game_update"], (1277, 768, 1606, 875), 0.975)
-        self.preinstall_pause = Template(assets["preinstall_pause"], self.pre_install.roi)
-        self.accept = Template(assets["accept"], self.confirm.roi)
-        self.unclickable_play = Template(assets["unclickable_play"], self.game_update.roi, 0.975)
-
-        assets = Paths.assets_path_dict["hsr"]["templates"]["login"]
-        self.launcher_play_old = Template(assets["launcher_play_old"], self.game_update.roi, self.unclickable_play.threshold)
-        self.launcher_play = Template(assets["launcher_play"], self.game_update.roi, self.unclickable_play.threshold)
-
-    def update_launcher(self):
-        status_matcher = StatusMatcher(self.launcher_update, self.open_launcher,
-                                       self.launcher_play, self.downloading_resources)
-        start_time = time.time()
-        timeout = 1800
-        logger.info("started")
-        while start_time + timeout >= time.time():
-            for template, loc, exist_time in status_matcher.get_all_template_status_list():
-                if exist_time < 1:
-                    continue
-                if template is self.launcher_play:
-                    logger.info("completed")
-                    return
-                elif template is self.downloading_resources:
-                    start_time += exist_time
-                else:
-                    mouse.click_center(loc)
-                    time.sleep(1)
-                    mouse.move_away_from(loc)
-                status_matcher.reset_template(template)
-
-        raise TimeoutError(f"Took too long to update >{timeout}s")
-
-    def update_game(self):
-        logger.info("started")
-        matcher = Matcher(self.game_update, self.launcher_play, self.unclickable_play)
-
-        start_time = time.time()
-        while start_time + 3600 < time.time():
-            matched = matcher.get_matching_templates_data()
-
-            update_done = True
-            for data in matched:
-                logger.debug(f"{data.template.file_name} matched {data.loc}")
-                if data.template is self.game_update:
-                    mouse.click_and_move_away(data.loc, 1)
-                elif data.template is self.unclickable_play:
-                    update_done = False
-                elif data.template is self.launcher_play and update_done:
-                    logger.info("completed")
-                    return
-
-            time.sleep(1)
-
-    def accept_terms(self):
-        logger.info("started")
-        Matcher(self.accept).click_center_when_exist()
-        logger.info("completed")
-
-    def run_pre_install(self):
-        logger.info("started")
-        status_matcher = StatusMatcher(self.confirm, self.pre_install)
-        start_time = time.time()
-        timeout = 300
-        while start_time + timeout >= time.time():
-            for template, loc, exist_time in status_matcher.get_all_template_status_list():
-                if exist_time < 1:
-                    continue
-                logger.debug(f"{template.file_name} matched {loc}")
-                if template is self.confirm:
-                    Matcher(self.confirm).click_center_when_exist()
-                    logger.info("completed")
-                    return
-                elif template is self.pre_install:
-                    mouse.click_and_move_away(loc, 1)
-
-
 class LogIn:
     def __init__(self):
         assets = Paths.assets_path_dict["hsr"]["templates"]["login"]
@@ -110,17 +27,15 @@ class LogIn:
         self.launcher_exe = macro_settings.hsr["launcher_exe"]
         self.launcher_play_old = Template(assets["launcher_play_old"], (1277, 768, 1606, 875))
         self.launcher_play = Template(assets["launcher_play"], threshold=0.9)
-        self.hsr_logo = Template(assets["hsr_logo"], threshold=0.95, binary=True)
+        self.hsr_logo = Template(assets["hsr_logo"], threshold=0.7, binary=True, variable_size=True)
         self.hsr_icon = Template(assets["hsr_icon"], threshold=0.9)
         self.choose_server = Template(assets["choose_server"], (708, 782, 1225, 967))
         self.start_game = Template(assets["start_game"], (861, 805, 1076, 872))
-        self.click_to_start = Template(assets["click_to_start"], (0, 0, 1920, 1080))
+        self.click_to_start = Template(assets["click_to_start"])
         self.checkbox = Template(assets["checkbox"], (553, 466, 607, 517), 0.975)
         self.accept = Template(assets["accept"], (963, 737, 1359, 840), 0.7)
         self.confirm = Template(assets["confirm"], (740, 603, 1194, 743), 0.9)
         self.my_popup_close = Template(assets["my_popup_close"], (1411, 105, 1459, 154), 0.9)
-
-        self.updater = Update()
 
     def launch_game(self):
         os.startfile(self.launcher_exe)
@@ -654,8 +569,10 @@ class DomainFarm:
         self.add_to_team = Template(assets["add_to_team"], (1526, 962, 1850, 1021), 0.95)
 
         # calyx specific
-        self.add_count = Template(assets["calyx"]["add_count"], (1742, 882, 1888, 917), 0.8)
         self.reduce_count = Template(assets["calyx"]["reduce_count"], (1206, 881, 1279, 917), 0.9)
+        self.add_count = Template(assets["calyx"]["add_count"], (1742, 882, 1888, 917), 0.8)
+
+        self.add_count_loc = (9, 17)
 
         # support
         self.get_support_button = Template(assets["support"]["get_support"], (1675, 704, 1833, 769), 0.9)
@@ -704,7 +621,7 @@ class DomainFarm:
                     logger.info("found most prioritized support")
                     logger.debug(f"waiting for {data.template.file_name} to unmatch (turn white)")
                     Matcher(data.template.as_threshold(data.threshold * 0.975)).while_exist_do(
-                        mouse.click_and_move_away, data.loc
+                        mouse.click_and_move_away, (data.loc, )
                     )
                     break
             if chosen_index == 0:
@@ -757,7 +674,18 @@ class DomainFarm:
         )
         logger.debug("ended")
 
-    def start_battle_and_repeat(self, max_count):
+    def start_battle_and_repeat_safe(self, max_count=float('inf')):
+        """
+            start: in domain battle
+
+            end: open world
+        """
+        try:
+            self._start_battle_and_repeat(max_count)
+        except (ConnectionError, BattleLostError) as exc:
+            logger.debug(f"Error: {exc}")
+
+    def _start_battle_and_repeat(self, max_count):
         """
             start: in domain battle
 
@@ -837,7 +765,7 @@ class DomainFarm:
             Matcher(self.auto_battle_off).wait_and_match(60.00)
         if domain_type.template in self.navigator.menu_bar.templates:
             self.activate_open_world_boss()
-        self.start_battle_and_repeat(max_count)
+        self._start_battle_and_repeat(max_count)
         logger.info("completed")
 
     def domain_farm_bulk(self, max_count):
@@ -880,7 +808,7 @@ class DomainFarm:
         """
         logger.info(f"started, category={self._category}, domain={self._domain}")
         logger.debug("Waiting for add_count to match")
-        mouse.click_relative(Matcher(self.add_count).wait_and_get_location(), (9, 17))
+        mouse.click_relative(Matcher(self.add_count).wait_and_get_location(), self.add_count_loc)
         Matcher(self.start_challenge).click_center_when_exist()
 
         status_matcher = Matcher(self.start_challenge_2, self.cancel)
@@ -898,11 +826,21 @@ class DomainFarm:
             Matcher(self.cancel).click_center_when_exist(interval=0.5)
             logger.debug("exited")
 
-        reduce_button_matcher = Matcher(self.reduce_count)
+        button_matcher = Matcher(self.reduce_count, self.add_count, *self.navigator.menu_bar.templates)
+
+        # increase count
+        data = button_matcher.wait_and_match()
+        if data.template is self.add_count:
+            logger.debug(f"add button matched, clicking; {data}")
+            mouse.click_relative(data.loc, self.add_count_loc)
+
+        # reduce count
         for i in range(5):
-            # change count
             logger.debug("waiting for reduce_button to match")
-            mouse.click_center(reduce_button_matcher.wait_and_get_location())
+            data = button_matcher.wait_and_match()
+            if data.template in self.navigator.menu_bar.templates:
+                raise ConnectionError()
+            mouse.click_center(data.loc)
 
             # test for stamina
             logger.debug("waiting for start_challenge to match")
@@ -957,6 +895,20 @@ class DomainFarm:
             logger.error("Failed to farm domain")
 
 
+class OptionKeys(Enum):
+    LAUNCH_GAME = "launch game"
+    LOG_IN_DEFAULT = "log in (default server)"
+    UPDATE_DOMAIN_TEMPLATES = "update domain templates"
+    USE_PREVIOUS_SCREENSHOT = "use previous screenshot"
+    NAVIGATE_TO_DOMAIN = "navigate to domain"
+    START_DOMAIN_FARM = "start domain farm (all stamina)"
+    GET_SUPPORT = "get support (from first friend)"
+    START_BATTLE_REPEAT = "start battle and repeat"
+    CLAIM_DAILIES = "claim dailies"
+    SLEEP_WHEN_DONE = "sleep when done"
+    SHUT_DOWN_WHEN_DONE = "shut down when done"
+
+
 class HSRMacro:
     def __init__(self):
         self.login = LogIn()
@@ -969,8 +921,9 @@ class HSRMacro:
             "update domain templates": 0,
             "    use previous screenshot": 0,
             "navigate to domain": 1,
-            "farm domain (all stamina)": 1,
+            "start domain farm (all stamina)": 1,
             "    get support (from first friend)": 1,
+            "start battle and repeat": 1,
             "claim dailies": 1,
             "sleep when done": 0,
             "shut down when done": 0
@@ -981,7 +934,7 @@ class HSRMacro:
         }
 
         self.sleep_command = "rundll32.exe powrprof.dll,SetSuspendState 0,1,0"
-        self.shut_down_command = "shutdown /s /t 5"
+        self.shut_down_command = "shutdown /s /t 60"
 
     def sleep(self):
         logger.info("execute sleep command")
@@ -1005,7 +958,7 @@ class HSRMacro:
 
             self.options = {text: result[text] for text in self.options}
 
-            if (self.options["farm domain (all stamina)"]
+            if (self.options["start domain farm (all stamina)"]
                 and (self.options["launch game"] or self.options["log in (default server)"])) \
                     or self.options["navigate to domain"]:
                 self.cfg["category"], self.cfg["domain"] = self.navigate.ui_choose_domain()
@@ -1019,10 +972,23 @@ class HSRMacro:
         logger.debug(f"checklist: {self.options}")
         return 0
 
-    def execute_session(self):
+    def preprocess_options(self):
         LOGIN = self.options["launch game"] or self.options["log in (default server)"]
         UPDATE = self.options["update domain templates"]
-        FARM = self.options["farm domain (all stamina)"] and not UPDATE
+
+        if UPDATE:
+            self.options["start domain farm (all stamina)"] = False
+            self.options["start battle and repeat"] = False
+
+        FARM = self.options["start domain farm (all stamina)"]
+
+        if LOGIN and FARM:
+            self.options["navigate to domain"] = True
+        if FARM:
+            self.options["start battle and repeat"] = False
+
+    def execute_session(self):
+        self.preprocess_options()
         CLOSE = self.options["shut down when done"] or self.options["sleep when done"]
 
         if self.options["launch game"]:
@@ -1031,10 +997,12 @@ class HSRMacro:
             self.login.log_in_to_game()
         if self.options["update domain templates"]:
             self.navigate.update_domain_templates(skip_screenshot=self.options["    use previous screenshot"])
-        if self.options["navigate to domain"] or (LOGIN and FARM):
+        if self.options["navigate to domain"]:
             self.navigate.navigate_to_domain(self.cfg["category"], self.cfg["domain"])
-        if self.options["farm domain (all stamina)"] and FARM:
+        if self.options["start domain farm (all stamina)"]:
             self.domain_farm.retrying_domain_farm(self.cfg["category"], self.cfg["domain"])
+        if self.options["start battle and repeat"]:
+            self.domain_farm.start_battle_and_repeat_safe()
         if self.options["claim dailies"]:
             self.dailies.claim_dailies()
         if self.options["shut down when done"]:

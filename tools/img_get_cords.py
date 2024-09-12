@@ -5,7 +5,8 @@ from easygui import fileopenbox
 
 # Load the image
 # path = r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\assets\hsr\templates\dailies\goto_assignment.png'
-path = fileopenbox("select image file", default=os.path.join(os.path.dirname(__file__), "..", "assets\\"))
+path = r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\images\calyx_gold.domain_screenshot.png"
+#fileopenbox("select image file", default=os.path.join(os.path.dirname(__file__), "..", "assets\\"))
 
 image = cv2.imread(path, cv2.IMREAD_UNCHANGED)
 # Create a copy of the image for visualization

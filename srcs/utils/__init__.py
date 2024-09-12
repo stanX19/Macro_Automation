@@ -7,4 +7,5 @@ from dict_to_order import dict_to_order
 from get_file_name import get_file_name
 from unique_name import unique_name
 from find_files import find_files
+from decorators import *
 import mouse

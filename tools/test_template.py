@@ -42,13 +42,12 @@ def main():
         r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\navigation\domain_types\calyx_gold.png",
     ]
     imgs = [
-        r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\test\screenshot\img_36.png',
+        r'C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\test\screenshot\img_39.png',
     ]
     temps = [
-        r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\genshin\templates\login\menu_bar.png",
+        r"C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\assets\hsr\templates\login\hsr_logo.png",
     ]
     results = []
-    print("started")
     for tmp in temps:
         for img in imgs:
             results.append(test(tmp, img))
@@ -60,4 +59,6 @@ def main():
 
 
 if __name__ == '__main__':
+    print("started")
     main()
+    print("ended")

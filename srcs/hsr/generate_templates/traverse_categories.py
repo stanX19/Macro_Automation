@@ -1,5 +1,6 @@
 import os
 import time
+
 try:
     from .screenshot_long import screenshot_long, DOMAINS_ROI
 except ImportError:
@@ -12,12 +13,12 @@ def traverse_categories_and_screenshot(dst_dir: str, extension: str, navigator):
         navigator.navigate_to_category(name)
         time.sleep(3)
 
-        if name == "calyx_gold":
-            roi = (693, 371, 1655, 926)
-        elif name == "weekly_boss_domain":
-            roi = (692, 451, 1658, 926)
-        else:
-            roi = DOMAINS_ROI
+        ROI_DICT = {
+            # "calyx_gold":(693, 371, 1655, 926),
+            "weekly_boss_domain": (692, 450, 1656, 884),
+            "ornament_domain": (692, 450, 1656, 884)
+        }
+        roi = ROI_DICT.get(name, DOMAINS_ROI)
 
         screenshot = screenshot_long(roi, scroll_magnitude=5, scroll_loc_rel=(100, 300))
         save_loc = f"{os.path.join(dst_dir, name)}.{extension}"

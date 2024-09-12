@@ -19,7 +19,7 @@ class LogIn:
         self.launcher_exe = macro_settings.genshin["launcher_exe"]
         self.launcher_play_old = Template(assets["launcher_play_old"], (1290, 780, 1592, 865))
         self.launcher_play = Template(assets["launcher_play"], threshold=0.9)
-        self.genshin_logo = Template(assets["genshin_logo"], threshold=0.75, binary=True)
+        self.genshin_logo = Template(assets["genshin_logo"], threshold=0.75, binary=True, variable_size=True)
         self.genshin_icon = Template(assets["genshin_icon"], threshold=0.9)
         self.choose_server = Template(assets["start_game"], (831, 468, 1087, 549))
         self.click_to_start = Template(assets["click_to_start"], (0, 0, 1920, 1080))

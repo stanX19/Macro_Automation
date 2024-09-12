@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 import pyautogui
 import numpy
@@ -5,10 +7,26 @@ import mouse
 from PIL import Image
 from PIL.PngImagePlugin import PngImageFile
 from logger import logger
+import utils
 try:
     from . import image_catv
 except ImportError:
     import image_catv
+
+@utils.retry_on_exception(RuntimeError, max_retries=3)
+def capture_and_compare(roi, prev_img: np.ndarray, full_img: np.ndarray):
+    current_img = pyautogui.screenshot()
+    current_img = np.array(current_img)[roi[1]:roi[3], roi[0]:roi[2]]
+
+    match_rate = 1 - np.sum(np.abs(current_img.astype(int) - prev_img.astype(int))) / current_img.size / 255
+    logger.debug(f"{match_rate=}")
+
+    if match_rate > 0.98:
+        return current_img, full_img, False
+
+    full_img = image_catv.array_catv(full_img, current_img, 150, 0.975)
+
+    return current_img, full_img, True
 
 
 def screenshot_long(roi: tuple[int, int, int, int], scroll_magnitude=5, scroll_loc_rel=None) -> PngImageFile:
@@ -17,9 +35,8 @@ def screenshot_long(roi: tuple[int, int, int, int], scroll_magnitude=5, scroll_l
     prev_img = numpy.array(prev_img)[roi[1]:roi[3], roi[0]:roi[2]]
     full_img = prev_img
 
-    # Scroll and capture until the last captured image matches the previous one
-    while True:
-        # Scroll down
+    running = True
+    while running:
         if scroll_loc_rel is not None:
             mouse.move_relative(roi, scroll_loc_rel)
         else:
@@ -27,32 +44,18 @@ def screenshot_long(roi: tuple[int, int, int, int], scroll_magnitude=5, scroll_l
         mouse.scroll_down(scroll_magnitude)
         mouse.move_away_from(roi)
 
-        # Capture the current screenshot
-        current_img = pyautogui.screenshot()
-        current_img = numpy.array(current_img)[roi[1]:roi[3], roi[0]:roi[2]]
+        prev_img, full_img, running = capture_and_compare(roi, prev_img, full_img)
 
-        # If the current screenshot matches the previous one, break the loop
-        match_rate = 1 - np.sum(np.abs(current_img.astype(int) - prev_img.astype(int))) / current_img.size / 255
-        logger.debug(f"{match_rate=}")
-        if match_rate > 0.95:
-            break
-
-        # Concatenate the current image to the full image
-        full_img = image_catv.array_catv(full_img, current_img, 300, 0.975)
-        # Update the previous image for comparison in the next iteration
-        prev_img = current_img
-
-    # Return the full captured long screenshot
     return Image.fromarray(full_img)
 
 
-DOMAINS_ROI = (694, 293, 1656, 925)
+DOMAINS_ROI = (693, 290, 1656, 884)
 
 
 def main():
     import keyboard
     keyboard.wait(" ")
-    long_screenshot = screenshot_long(DOMAINS_ROI)
+    long_screenshot = screenshot_long((692, 450, 1656, 884), scroll_loc_rel=(100, 300))
     long_screenshot.save("long_screnshot.png")  # Save the long screenshot
     long_screenshot.show()
 

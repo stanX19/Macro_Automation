@@ -56,8 +56,8 @@ class Matcher:
         return [i.template for i in self.get_matching_templates_data()]
 
     def get_matching_templates_data(self) -> list[TemplateData]:
-        screenshot = pyautogui.screenshot()
-        screenshot = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2GRAY)  # Convert to grayscale
+        screenshot = pyautogui.screenshot()  # pyautogui screenshot is BGR
+        screenshot = cv2.cvtColor(np.array(screenshot), cv2.COLOR_BGR2GRAY)  # Convert to grayscale
         matching_templates = []
 
         for template in self.templates:
