@@ -1,10 +1,12 @@
+from typing import Union
+
 import cv2
 import numpy as np
 import win32api
 
 
 class OptionSelector:
-    def __init__(self, options, message="Select Option", font_color=(255, 255, 255),
+    def __init__(self, options: Union[list[str], dict[str, bool]], message="Select Option", font_color=(255, 255, 255),
                  background_color=(0, 0, 0), outline_color=(255, 255, 255)):
         self.message = message
         self.options = options

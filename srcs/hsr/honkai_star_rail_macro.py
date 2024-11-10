@@ -1,11 +1,9 @@
 import os
-from enum import Enum
-
 import keyboard
 import time
 import traceback
 import logging
-from typing import Union
+from typing import Union, Optional
 import Paths
 import UI
 import hsr_helper
@@ -27,6 +25,9 @@ class LogIn:
         self.launcher_exe = macro_settings.hsr["launcher_exe"]
         self.launcher_play_old = Template(assets["launcher_play_old"], (1277, 768, 1606, 875))
         self.launcher_play = Template(assets["launcher_play"], threshold=0.9)
+        self.launcher_checkbox = Template(assets["launcher_checkbox"], threshold=0.9)
+        self.launcher_accept = Template(assets["launcher_accept"], threshold=0.9)
+        self.update_game = Template(assets["update_game"], threshold=0.9)
         self.hsr_logo = Template(assets["hsr_logo"], threshold=0.7, binary=True, variable_size=True)
         self.hsr_icon = Template(assets["hsr_icon"], threshold=0.9)
         self.choose_server = Template(assets["choose_server"], (708, 782, 1225, 967))
@@ -44,7 +45,8 @@ class LogIn:
     def log_in_to_game(self):
         status_matcher = StatusMatcher(
             self.checkbox, self.accept, self.confirm,
-            self.launcher_play, self.hsr_icon, self.hsr_logo,
+            self.launcher_play, self.update_game, self.launcher_checkbox, self.launcher_accept,
+            self.hsr_icon, self.hsr_logo,
             self.start_game, self.click_to_start,
             self.my_popup_close,
             *self.menu_bar.templates
@@ -52,7 +54,9 @@ class LogIn:
 
         start_time = time.time()
         logger.info("started")
-        while start_time + 1800 >= time.time():
+        TIMEOUT = 1800
+        is_update = False
+        while start_time + TIMEOUT >= time.time():
             for template, loc, exist_time in status_matcher.get_all_template_status_list():
                 if exist_time < 1:
                     continue
@@ -64,6 +68,9 @@ class LogIn:
                     continue
                 if template is self.hsr_logo:
                     continue
+                if template is self.update_game and not is_update:
+                    is_update = True
+                    TIMEOUT += 3600
                 mouse.click_and_move_away(loc)
 
         raise TimeoutError("failed to log in")
@@ -161,7 +168,7 @@ class Navigation:
         dst_dir = os.path.join(Paths.assets_dir, r"hsr\templates\navigation\domains")
         update_domain_templates(dst_dir, self, take_screenshot=not skip_screenshot, convert_screenshot=True)
 
-    def ui_choose_domain(self):
+    def ui_choose_domain(self) -> tuple[Optional[str], Optional[str]]:
         """
 
         :return: category, domain
@@ -895,19 +902,88 @@ class DomainFarm:
             logger.error("Failed to farm domain")
 
 
-class OptionKeys(Enum):
-    LAUNCH_GAME = "launch game"
-    LOG_IN_DEFAULT = "log in (default server)"
-    UPDATE_DOMAIN_TEMPLATES = "update domain templates"
-    USE_PREVIOUS_SCREENSHOT = "use previous screenshot"
-    NAVIGATE_TO_DOMAIN = "navigate to domain"
-    START_DOMAIN_FARM = "start domain farm (all stamina)"
-    GET_SUPPORT = "get support (from first friend)"
-    START_BATTLE_REPEAT = "start battle and repeat"
-    CLAIM_DAILIES = "claim dailies"
-    SLEEP_WHEN_DONE = "sleep when done"
-    SHUT_DOWN_WHEN_DONE = "shut down when done"
+class RunOptions:
+    def ui_select_options(self) -> int:
+        ui_options = self.get_option_dict()
 
+        result = UI.OptionSelector(
+            ui_options,
+            font_color=(200, 200, 200),
+            outline_color=(200, 200, 200)
+        ).select_option()
+
+        if result is None:
+            return -1
+
+        for key in ui_options:
+            if key in result:
+                setattr(self, self.get_varname_from_desc(key), result[key])
+
+        return 0
+
+    def get_option_dict(self) -> dict[str, bool]:
+        option_dict = {}
+
+        for varname, description in self._descriptions.items():
+            if hasattr(self, varname):
+                option_dict[description] = getattr(self, varname)
+            else:
+                logger.warning(f"Description '{description}' references a missing variable '{varname}'")
+
+        for varname in self.get_all_bool_varnames():
+            if varname not in self._descriptions:
+                option_dict[varname] = getattr(self, varname)
+                logger.warning(f"Description for variable '{varname}' not found; Using variable name as description")
+
+        return option_dict
+
+    def get_varname_from_desc(self, description: str) -> str:
+        for varname, desc in self._descriptions.items():
+            if desc == description:
+                return varname
+        raise ValueError(f"No such variable that matches description \"{description}\"")
+
+    def get_all_bool_varnames(self) -> list[str]:
+        return [attr for attr in dir(self) if isinstance(getattr(self, attr), bool) and not attr.startswith('_')]
+
+    def __str__(self):
+        ret = "<RunOptions, dict={\n"
+        desc_len = max(len(self._descriptions.get(attr, attr)) + 2 for attr in self.get_all_bool_varnames())
+        for key, val in self.get_option_dict().items():
+            ret += f"  \"{key}\"{' ' * (desc_len - len(key))}: {val},\n"
+        ret += "}>"
+        return ret
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __init__(self):
+        self._descriptions = {
+            "LAUNCH_GAME": "launch game",
+            "LOG_IN": "log in (default server)",
+            "UPDATE_DOMAIN_TEMPLATES": "update domain templates",
+            "USE_PREVIOUS_SCREENSHOT": "    use previous screenshot",
+            "NAVIGATE_TO_DOMAIN": "navigate to domain",
+            "BATTLE_REPEAT_EXPLICIT": "start battle and repeat (explicit)",
+            "START_DOMAIN_FARM": "start domain farm (all stamina)",
+            "GET_SUPPORT": "    get support (from first friend)",
+            "CLAIM_DAILIES": "claim dailies",
+            "SLEEP_WHEN_DONE": "sleep when done",
+            "SHUT_DOWN_WHEN_DONE": "shut down when done",
+        }
+
+        # Boolean options
+        self.LAUNCH_GAME = True
+        self.LOG_IN = True
+        self.UPDATE_DOMAIN_TEMPLATES = False
+        self.USE_PREVIOUS_SCREENSHOT = False
+        self.NAVIGATE_TO_DOMAIN = True
+        self.START_DOMAIN_FARM = True
+        self.GET_SUPPORT = True
+        self.BATTLE_REPEAT_EXPLICIT = False
+        self.CLAIM_DAILIES = True
+        self.SLEEP_WHEN_DONE = False
+        self.SHUT_DOWN_WHEN_DONE = False
 
 class HSRMacro:
     def __init__(self):
@@ -915,19 +991,7 @@ class HSRMacro:
         self.navigate = Navigation()
         self.domain_farm = DomainFarm()
         self.dailies = Dailies()
-        self.options = {
-            "launch game": 1,
-            "log in (default server)": 1,
-            "update domain templates": 0,
-            "    use previous screenshot": 0,
-            "navigate to domain": 1,
-            "start domain farm (all stamina)": 1,
-            "    get support (from first friend)": 1,
-            "start battle and repeat": 1,
-            "claim dailies": 1,
-            "sleep when done": 0,
-            "shut down when done": 0
-        }
+        self.options = RunOptions()
         self.cfg: dict[str, Union[str, None]] = {
             "category": None,
             "domain": None
@@ -944,70 +1008,64 @@ class HSRMacro:
         logger.info("execute shut down command")
         os.system(self.shut_down_command)
 
+    def preprocess_options(self):
+        LOGIN = self.options.LOG_IN
+        UPDATE = self.options.UPDATE_DOMAIN_TEMPLATES
+
+        if UPDATE:
+            self.options.START_DOMAIN_FARM = False
+            self.options.BATTLE_REPEAT_EXPLICIT = False
+            logger.debug("detected UPDATE; FARM disabled")
+
+        FARM = self.options.START_DOMAIN_FARM
+
+        if LOGIN and FARM and not self.options.NAVIGATE_TO_DOMAIN:
+            self.options.NAVIGATE_TO_DOMAIN = True
+            logger.debug("detected LOGIN and FARM; NAVIGATE enabled")
+        if FARM:
+            self.options.BATTLE_REPEAT_EXPLICIT = False
+            logger.debug("detected FARM; BATTLE_REPEAT_EXPLICIT=False")
+
     def option_menu(self):
+        logger.debug("Started")
         self.cfg["category"] = self.cfg["domain"] = None
         while True:
-            result = UI.OptionSelector(
-                self.options,
-                font_color=(200, 200, 200),
-                outline_color=(200, 200, 200)
-            ).select_option()
-            if result is None:
+            if self.options.ui_select_options() != 0:
                 logger.info("Closed")
                 return -1
-
-            self.options = {text: result[text] for text in self.options}
-
-            if (self.options["start domain farm (all stamina)"]
-                and (self.options["launch game"] or self.options["log in (default server)"])) \
-                    or self.options["navigate to domain"]:
+            self.preprocess_options()
+            if self.options.NAVIGATE_TO_DOMAIN:
                 self.cfg["category"], self.cfg["domain"] = self.navigate.ui_choose_domain()
-                if self.cfg["domain"] is None or self.cfg["category"] is None:
+                if not self.cfg["category"] or not self.cfg["domain"]:
                     continue
             break
 
-        self.domain_farm.set_settings(
-            get_support=self.options["    get support (from first friend)"]
-        )
-        logger.debug(f"checklist: {self.options}")
+        logger.debug(f"options: {self.options}")
         return 0
 
-    def preprocess_options(self):
-        LOGIN = self.options["launch game"] or self.options["log in (default server)"]
-        UPDATE = self.options["update domain templates"]
-
-        if UPDATE:
-            self.options["start domain farm (all stamina)"] = False
-            self.options["start battle and repeat"] = False
-
-        FARM = self.options["start domain farm (all stamina)"]
-
-        if LOGIN and FARM:
-            self.options["navigate to domain"] = True
-        if FARM:
-            self.options["start battle and repeat"] = False
-
     def execute_session(self):
-        self.preprocess_options()
-        CLOSE = self.options["shut down when done"] or self.options["sleep when done"]
+        self.domain_farm.set_settings(
+            get_support=self.options.GET_SUPPORT
+        )
+        CLOSE = self.options.SHUT_DOWN_WHEN_DONE or self.options.SLEEP_WHEN_DONE
 
-        if self.options["launch game"]:
+        if self.options.LAUNCH_GAME:
             self.login.launch_game()
-        if self.options["log in (default server)"]:
+        if self.options.LOG_IN:
             self.login.log_in_to_game()
-        if self.options["update domain templates"]:
-            self.navigate.update_domain_templates(skip_screenshot=self.options["    use previous screenshot"])
-        if self.options["navigate to domain"]:
+        if self.options.UPDATE_DOMAIN_TEMPLATES:
+            self.navigate.update_domain_templates(skip_screenshot=self.options.USE_PREVIOUS_SCREENSHOT)
+        if self.options.NAVIGATE_TO_DOMAIN:
             self.navigate.navigate_to_domain(self.cfg["category"], self.cfg["domain"])
-        if self.options["start domain farm (all stamina)"]:
+        if self.options.START_DOMAIN_FARM:
             self.domain_farm.retrying_domain_farm(self.cfg["category"], self.cfg["domain"])
-        if self.options["start battle and repeat"]:
+        if self.options.BATTLE_REPEAT_EXPLICIT:
             self.domain_farm.start_battle_and_repeat_safe()
-        if self.options["claim dailies"]:
+        if self.options.CLAIM_DAILIES:
             self.dailies.claim_dailies()
-        if self.options["shut down when done"]:
+        if self.options.SHUT_DOWN_WHEN_DONE:
             self.shut_down()
-        elif self.options["sleep when done"]:
+        elif self.options.SLEEP_WHEN_DONE:
             self.sleep()
         if CLOSE:
             return -1
@@ -1032,9 +1090,9 @@ class HSRMacro:
             logger.info("Terminated")
 
         # if error (didn't return before this)
-        if self.options["shut down when done"]:
+        if self.options.SHUT_DOWN_WHEN_DONE:
             self.shut_down()
-        elif self.options["sleep when done"]:
+        elif self.options.SLEEP_WHEN_DONE:
             self.sleep()
         return -1
 
