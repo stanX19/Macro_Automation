@@ -8,3 +8,4 @@ trash_can/
 pyvenv.cfg
 srcs/logs/
 *.log
+*.bat
