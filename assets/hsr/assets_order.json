@@ -17,7 +17,8 @@
           "BangWoSu69 IL",
           "BangWoSu69 JingLiu",
           "SengKhye Acheron",
-          "BangWoSu69 Acheron"
+          "BangWoSu69 Acheron",
+          "c6 firefly"
         ]
       }
     },
@@ -35,7 +36,8 @@
       "hsr_logo",
       "update_game",
       "launcher_accept",
-      "launcher_checkbox"
+      "launcher_checkbox",
+      "launcher_update"
     ],
     "navigation": {
       "domains": {

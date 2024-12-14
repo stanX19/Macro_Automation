@@ -1988,3 +1988,50 @@ OSError: screen grab failed
 [00:01:37]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 1.00
 [00:03:16]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.88
 [00:03:16]: INFO:Genshin Macro:sleep: execute sleep command
+
+[Date: 2024-12-13 : Time: 15:12:19 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:00]: ERROR:Genshin Macro:session_catch: screen grab failed
+Traceback (most recent call last):
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 113, in session_catch
+    return self.session()
+           ^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 109, in session
+    return self.execute_session()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 96, in execute_session
+    self.login.log_in_to_game()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\genshin\genshin_impact_macro.py", line 40, in log_in_to_game
+    for template, loc, exist_time in status_matcher.get_all_template_status_list():
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\status_matcher.py", line 80, in get_all_template_status_list
+    self.update()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\status_matcher.py", line 46, in update
+    template_datas = self._matcher.get_matching_templates_data()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 59, in get_matching_templates_data
+    screenshot = pyautogui.screenshot()  # pyautogui screenshot is BGR
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\.venv\Lib\site-packages\pyscreeze\__init__.py", line 512, in _screenshot_win32
+    im = ImageGrab.grab()
+         ^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\.venv\Lib\site-packages\PIL\ImageGrab.py", line 47, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: screen grab failed
+[00:00:00]: INFO:Genshin Macro:session_catch: Terminated
+
+[Date: 2024-12-13 : Time: 15:14:08 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': False, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:02]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (380, 128, 561, 208), 0.92
+[00:00:02]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (245, 650, 309, 713), 0.97
+[00:00:04]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1400, 831, 1656, 882), 1.00
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (380, 128, 561, 208), 0.92
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (245, 650, 309, 713), 0.97
+[00:00:40]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.89
+[00:00:42]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.91
+[00:00:59]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 1.00
+[00:01:40]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.80

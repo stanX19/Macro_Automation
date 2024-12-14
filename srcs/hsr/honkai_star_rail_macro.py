@@ -25,6 +25,7 @@ class LogIn:
         self.launcher_exe = macro_settings.hsr["launcher_exe"]
         self.launcher_play_old = Template(assets["launcher_play_old"], (1277, 768, 1606, 875))
         self.launcher_play = Template(assets["launcher_play"], threshold=0.9)
+        self.launcher_update = Template(assets["launcher_update"], threshold=0.9)
         self.launcher_checkbox = Template(assets["launcher_checkbox"], threshold=0.9)
         self.launcher_accept = Template(assets["launcher_accept"], threshold=0.9)
         self.update_game = Template(assets["update_game"], threshold=0.9)
@@ -45,7 +46,8 @@ class LogIn:
     def log_in_to_game(self):
         status_matcher = StatusMatcher(
             self.checkbox, self.accept, self.confirm,
-            self.launcher_play, self.update_game, self.launcher_checkbox, self.launcher_accept,
+            self.launcher_play, self.update_game, self.launcher_checkbox,
+            self.launcher_accept, self.launcher_update,
             self.hsr_icon, self.hsr_logo,
             self.start_game, self.click_to_start,
             self.my_popup_close,
@@ -384,7 +386,7 @@ class Dailies:
         self.assets = assets
         self.navigator = Navigation()
 
-        self.daily_logo = Template(assets["daily_logo"], (9, 9, 257, 123), 0.9)
+        self.daily_logo = Template(assets["daily_logo"], (9, 9, 257, 123), 0.9, binary=True)
         self.daily_tab = Template(assets["daily_tab_button"], (284, 161, 1039, 268), 0.9)
         self.daily_claim = Template(assets["daily_claim"], (298, 783, 549, 873), 0.9)
 
@@ -397,8 +399,8 @@ class Dailies:
         self.claimed_primo_slot = -1
         self.claimed_assignments = -1
 
-        self.assignment_logo = Template(assets["assignment_logo"], (0, 0, 193, 95), 0.9)
-        self.goto_assignment = Template(assets["goto_assignment"], (259, 397, 1666, 893), 0.99)
+        self.assignment_logo = Template(assets["assignment_logo"], (0, 0, 193, 95), 0.9, binary=True)
+        self.goto_assignment = Template(assets["goto_assignment"], (259, 397, 1666, 893), 0.95)
         self.goto_assignment_displace = (139, 422)
         self.assignment_claim = Template(assets["assignment_claim"], (1261, 863, 1670, 944), 0.9)
         self.assignment_claim_all = Template(assets["assignment_claim_all"], (328, 872, 621, 950), 0.9)
@@ -582,7 +584,7 @@ class DomainFarm:
         self.add_count_loc = (9, 17)
 
         # support
-        self.get_support_button = Template(assets["support"]["get_support"], (1675, 704, 1833, 769), 0.9)
+        self.get_support_button = Template(assets["support"]["get_support"], (1675, 704, 1833, 769), 0.90)
         self.support_end_of_list = Template(assets["support"]["end_of_list"], (520, 810, 560, 940), 0.90)
         self.support_list_title = Template(assets["support"]["list_title"], (172, 42, 423, 136), 0.85)
         self.support_priority_list: list[Template] = [
@@ -892,6 +894,8 @@ class DomainFarm:
                 logger.debug(f"Connection Error: {exc}")
             except BattleLostError as exc:
                 logger.debug(f"Battle Lost Error: {exc}")
+            except DomainNotSpecifiedError:
+                logger.debug(f"Domain not specified; ended")
             logger.info(f"Re-navigating to {domain}")
             try:
                 self.navigator.navigate_to_domain(category, domain)
@@ -1106,6 +1110,7 @@ def main():
     #     print("no")
     # print("yes")
     s.session_catch()
+    # s.domain_farm.get_support()
     # s.login.log_in_to_game()
     # s.dailies.claim_dailies()
     # s.dailies.claim_monthly_pass()

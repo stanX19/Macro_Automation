@@ -1,13 +1,11 @@
 @echo off
 
-set "executed_dir=C:\Users\DELL\PycharmProjects\pythonProject\Macro_Automation\srcs\"
+set "executed_dir=%~dp0\srcs\"
 
 cd /d %executed_dir%
 
-call ..\Scripts\activate.bat
+call ..\.venv\Scripts\activate.bat
 
-set PYTHONPATH=%CD%\..\srcs;%CD%\classes;%CD%\UI;%CD%\Data_manager;%CD%\utils;%CD%\hsr;%CD%\genshin;%PYTHONPATH%
+set PYTHONPATH=%CD%\..\srcs;%CD%\classes;%CD%\UI;%CD%\Data_manager;%CD%\utils;%CD%\hsr;%CD%\hsr\generate_templates;%PYTHONPATH%
 
 py genshin\genshin_main.py
-
-

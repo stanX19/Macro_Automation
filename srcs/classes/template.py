@@ -1,6 +1,6 @@
 import time
 import timeit
-from typing import Sequence, Union
+from typing import Sequence, Union, List, Tuple
 
 import cv2
 import numpy as np
@@ -33,21 +33,36 @@ class _MatchHelper:
         return img_gray
 
     @use_cached_result_for_same_array
-    def match_with(self, img_gray: np.ndarray) -> tuple[float, Sequence[int]]:
-        img_gray = self.preprocess_image_gray(img_gray)
+    def get_best_match(self, img_gray: np.ndarray) -> tuple[float, Sequence[int]]:
         best_val = -1.0
         best_loc = None
 
-        for scale in self.scales:
-            val, loc = self._match_with_scale(img_gray, scale)
+        for val, loc in self.get_all_match(img_gray):
             if val > best_val:
                 best_loc = loc
                 best_val = val
 
         return best_val, best_loc
 
-    def _match_with_scale(self, cropped_img_gray: np.ndarray, scale: float):
+    # TODO:
+    #  currently its not working as intended, _match_with_scale only returns the best of
+    #  the specific scale, not all matches
+    @use_cached_result_for_same_array
+    def get_all_match(self, img_gray: np.ndarray) -> list[tuple[float, Sequence[int]]]:
+        img_gray = self.preprocess_image_gray(img_gray)
+
+        result = []
+        for scale in self.scales:
+            val, loc = self._match_with_scale(img_gray, scale)
+            result.append((val, loc))
+
+        return result
+
+    def _match_with_scale(self, cropped_img_gray: np.ndarray, scale: float) -> tuple[float, tuple[int, int, int, int]]:
         resized_template = cv2.resize(self.template_array, (0, 0), fx=scale, fy=scale)
+        if (resized_template.shape[0] > cropped_img_gray.shape[0]
+                or resized_template.shape[1] > cropped_img_gray.shape[1]):
+            return 0.0, self._matched_loc_to_rect((0, 0), scale)
         result = cv2.matchTemplate(cropped_img_gray, resized_template, self.method)
         min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
 
@@ -60,7 +75,7 @@ class _MatchHelper:
 
         return match_val, self._matched_loc_to_rect(match_loc, scale)
 
-    def _matched_loc_to_rect(self, max_loc: Union[None, tuple[int, int], Sequence[int]], scale: float = 1.0):
+    def _matched_loc_to_rect(self, max_loc: Union[None, tuple[int, int], Sequence[int]], scale: float = 1.0) -> tuple[int, int, int, int]:
         if max_loc is None:
             return None
         template_h, template_w = self.template_array.shape[:2]
@@ -101,7 +116,7 @@ class Template:
         self.threshold = threshold
 
     def _match_with_img(self, img_gray) -> tuple[float, Sequence[int]]:
-        return self._matcher.match_with(img_gray)
+        return self._matcher.get_best_match(img_gray)
 
     def exists_in(self, img_gray) -> bool:
         max_val, max_loc = self._match_with_img(img_gray)
@@ -110,7 +125,7 @@ class Template:
             return False
         return True
 
-    def get_location_in(self, img_gray) -> [tuple[int, int, int, int], None]:
+    def get_location_in(self, img_gray) -> tuple[int, int, int, int] | None:
         max_val, max_loc = self._match_with_img(img_gray)
 
         if max_val < self.threshold:
