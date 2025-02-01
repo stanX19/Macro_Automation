@@ -1,10 +1,11 @@
 import re
 import os
-from os.path import dirname
 try:
     from .unique_name import unique_name
+    from .get_windows_path import get_startup_folder
 except ImportError:
     from unique_name import unique_name
+    from get_windows_path import get_startup_folder
 
 
 def clean_message(text):
@@ -27,9 +28,7 @@ def leave_notif_on_login(message, title="Python"):
     title = clean_message(title)
 
     # Get Windows Startup folder path
-    startup_folder = os.path.expandvars(
-        r"%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
-    )
+    startup_folder = get_startup_folder()
     task_name = re.sub(r'[^a-zA-Z0-9-]', '_', title)
 
     # Create path for the VBScript file

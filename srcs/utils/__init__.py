@@ -9,4 +9,5 @@ from unique_name import unique_name
 from find_files import find_files
 from decorators import *
 from leave_notif_on_login import leave_notif_on_login
+from get_windows_path import get_startup_folder
 import mouse
