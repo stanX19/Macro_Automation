@@ -1,18 +1,18 @@
-import os
+from pathlib import Path
 
-def unique_name(basename: str, extension: str)->str:
+def unique_name(path: str) -> str:
     """
-    finds unique name
-    :param basename: name of file
-    :param extension: dot not included
+    Finds a unique name for the given file path.
+    :param path: name of file
     :return: str representing unique path
     """
+    path = Path(path)
     n = 1
-    if extension:
-        extension = "." + extension
-
-    new_name = f"{basename}{extension}"
-    while os.path.exists(new_name):
-        new_name = f"{basename}_{n}{extension}"
+    new_path = path
+    while new_path.exists():
+        new_path = path.with_stem(f"{path.stem}_{n}")
         n += 1
-    return new_name
+    return str(new_path)
+
+if __name__ == '__main__':
+    print(unique_name(__file__))

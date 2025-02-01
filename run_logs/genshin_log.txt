@@ -2216,3 +2216,132 @@ TimeoutError: failed to log in
 [00:00:44]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.96
 [00:00:58]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 0.89
 [00:01:30]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.88
+
+[Date: 2025-01-15 : Time: 23:43:46 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:03]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:10]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:10]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:12]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:12]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (680, 533, 800, 586), 0.96
+[00:00:12]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:14]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:01:06]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.90
+[00:01:09]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.90
+[00:01:25]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 1.00
+[00:01:56]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.85
+
+[Date: 2025-01-16 : Time: 23:22:24 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:07]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:10]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (306, 113, 487, 193), 0.96
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:13]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:46]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.95
+[00:00:47]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 568, 1121, 609), 0.76
+[00:01:18]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 1.00
+[00:01:53]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.85
+
+[Date: 2025-01-18 : Time: 23:59:06 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:09]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (306, 113, 487, 193), 0.96
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:13]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:16]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (306, 113, 487, 193), 0.96
+[00:00:16]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:50]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.89
+[00:00:52]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 568, 1121, 609), 0.83
+[00:01:06]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 0.92
+[00:01:38]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.85
+
+[Date: 2025-01-24 : Time: 16:31:18 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2025-01-26 : Time: 22:38:47 : Program Name: Genshin Macro]
+[00:00:00]: INFO:Genshin Macro:option_menu: Closed
+
+[Date: 2025-01-28 : Time: 19:47:53 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:05]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:07]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:09]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:09]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (292, 116, 458, 189), 0.95
+[00:00:09]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:13]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (292, 116, 458, 189), 0.95
+[00:00:13]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:47]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.95
+[00:00:49]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 568, 1121, 609), 0.90
+[00:01:07]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 1.00
+[00:01:39]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.90
+
+[Date: 2025-01-30 : Time: 01:49:50 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:10]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (292, 116, 458, 189), 0.95
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:13]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:15]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (292, 116, 458, 189), 0.95
+[00:00:15]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:50]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.95
+[00:00:53]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.95
+[00:01:06]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 0.93
+[00:01:37]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.93
+
+[Date: 2025-01-31 : Time: 00:42:32 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:05]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:07]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:10]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:10]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (292, 116, 458, 189), 0.95
+[00:00:10]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:12]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:41]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.88
+[00:00:43]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 568, 1121, 609), 0.60
+[00:00:56]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 1.00
+[00:01:29]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.94
+
+[Date: 2025-01-31 : Time: 20:48:07 : Program Name: Genshin Macro]
+[00:00:00]: DEBUG:Genshin Macro:option_menu: checklist: {'launch game': True, 'log in (default server)': True, 'sleep when done': False}
+[00:00:00]: INFO:Genshin Macro:launch_game: ok
+[00:00:00]: INFO:Genshin Macro:log_in_to_game: started
+[00:00:04]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 1.00
+[00:00:06]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:07]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:08]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:09]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (292, 116, 458, 189), 0.95
+[00:00:09]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:11]: DEBUG:Genshin Macro:log_in_to_game: launcher_play matched (launcher_play, (0, 0, 10000000, 10000000), 0.9), (1326, 816, 1582, 867), 1.00
+[00:00:13]: DEBUG:Genshin Macro:log_in_to_game: genshin_logo matched (genshin_logo, (0, 0, 10000000, 10000000), 0.75), (292, 116, 458, 189), 0.95
+[00:00:13]: DEBUG:Genshin Macro:log_in_to_game: genshin_icon matched (genshin_icon, (0, 0, 10000000, 10000000), 0.9), (171, 635, 235, 698), 0.97
+[00:00:44]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.95
+[00:00:46]: DEBUG:Genshin Macro:log_in_to_game: start_game matched (start_game, (831, 468, 1087, 549), 0.6), (847, 482, 1073, 536), 0.95
+[00:00:48]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 568, 1121, 609), 0.65
+[00:01:00]: DEBUG:Genshin Macro:log_in_to_game: click_to_start matched (click_to_start, (0, 0, 1920, 1080), 0.6), (786, 999, 1121, 1040), 0.95
+[00:01:38]: DEBUG:Genshin Macro:log_in_to_game: menu_bar matched (menu_bar, (1300, 0, 1920, 100), 0.75), (1361, 12, 1879, 77), 0.84

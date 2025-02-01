@@ -1,4 +1,6 @@
+from datetime import datetime
 import os
+import utils
 import keyboard
 import time
 import traceback
@@ -13,7 +15,7 @@ from logger import logger
 from matcher import TemplateData, Matcher
 from status_matcher import StatusMatcher
 from template import Template
-from exceptions import ConnectionError, BattleLostError, DomainNotSpecifiedError
+from exceptions import GameConnectionError, BattleLostError, DomainNotSpecifiedError, ScreenCaptureFailedError
 from generate_templates import update_domain_templates
 
 
@@ -594,6 +596,7 @@ class DomainFarm:
         self._domain = None
         self._category = None
         self._get_support = True
+        self.farm_count = 0
 
     def select_prioritised_support(self, timeout=20):
         if not self.support_priority_list:
@@ -691,7 +694,7 @@ class DomainFarm:
         """
         try:
             self._start_battle_and_repeat(max_count)
-        except (ConnectionError, BattleLostError) as exc:
+        except (GameConnectionError, BattleLostError) as exc:
             logger.debug(f"Error: {exc}")
 
     def _start_battle_and_repeat(self, max_count):
@@ -711,7 +714,7 @@ class DomainFarm:
                                *self.navigator.menu_bar.templates, self.battle_lost).wait_and_match()
 
             if matching.template in self.navigator.menu_bar.templates:
-                raise ConnectionError("start_battle_and_repeat")
+                raise GameConnectionError("start_battle_and_repeat")
             if matching.template is self.battle_lost:
                 mouse.click_center(matching.loc)
                 raise BattleLostError()
@@ -726,7 +729,7 @@ class DomainFarm:
             ).wait_and_match()
 
             if matching.template in self.navigator.menu_bar.templates:
-                raise ConnectionError()
+                raise GameConnectionError()
             if matching.template is self.cancel:
                 logger.debug("not enough stamina / all chances used")
                 self.exit_challenge_reward()
@@ -741,6 +744,7 @@ class DomainFarm:
             logger.debug("clicking exit challenge")
             if matched.template is self.exit_challenge:
                 self.exit_challenge_reward()
+        self.farm_count += i
         logger.info(f"completed, farmed {i} times")
 
     def activate_open_world_boss(self):
@@ -848,7 +852,7 @@ class DomainFarm:
             logger.debug("waiting for reduce_button to match")
             data = button_matcher.wait_and_match()
             if data.template in self.navigator.menu_bar.templates:
-                raise ConnectionError()
+                raise GameConnectionError()
             mouse.click_center(data.loc)
 
             # test for stamina
@@ -890,7 +894,7 @@ class DomainFarm:
             try:
                 self.general_domain_farm(category, domain)
                 return
-            except ConnectionError as exc:
+            except GameConnectionError as exc:
                 logger.debug(f"Connection Error: {exc}")
             except BattleLostError as exc:
                 logger.debug(f"Battle Lost Error: {exc}")
@@ -1002,15 +1006,25 @@ class HSRMacro:
         }
 
         self.sleep_command = "rundll32.exe powrprof.dll,SetSuspendState 0,1,0"
-        self.shut_down_command = "shutdown /s /t 60"
+        self.shut_down_command = "shutdown /s /hybrid /t 60"
+
+        self.run_summary = []
+
+    def get_summary_message(self):
+        return '\n'.join(self.run_summary)
+
+    def leave_summary_notif(self):
+        utils.leave_notif_on_login(self.get_summary_message(), title=f"HSR Automation")  #  {datetime.now().strftime('%d-%m-%y')}
+        logger.debug(f"Created message: {self.get_summary_message()}")
 
     def sleep(self):
-        logger.info("execute sleep command")
+        logger.info("Execute sleep command")
         os.system(self.sleep_command)
 
     def shut_down(self):
-        logger.info("execute shut down command")
+        logger.info("Execute shut down command")
         os.system(self.shut_down_command)
+        self.leave_summary_notif()
 
     def preprocess_options(self):
         LOGIN = self.options.LOG_IN
@@ -1059,14 +1073,18 @@ class HSRMacro:
             self.login.log_in_to_game()
         if self.options.UPDATE_DOMAIN_TEMPLATES:
             self.navigate.update_domain_templates(skip_screenshot=self.options.USE_PREVIOUS_SCREENSHOT)
+            self.run_summary.append("Updated domain templates")
         if self.options.NAVIGATE_TO_DOMAIN:
             self.navigate.navigate_to_domain(self.cfg["category"], self.cfg["domain"])
         if self.options.START_DOMAIN_FARM:
             self.domain_farm.retrying_domain_farm(self.cfg["category"], self.cfg["domain"])
+            self.run_summary.append(f"Farmed {self.domain_farm.farm_count} times")
         if self.options.BATTLE_REPEAT_EXPLICIT:
             self.domain_farm.start_battle_and_repeat_safe()
+            self.run_summary.append(f"Farmed {self.domain_farm.farm_count} times")
         if self.options.CLAIM_DAILIES:
             self.dailies.claim_dailies()
+            self.run_summary.append(f"Claimed {self.dailies.claimed_primo_slot} slots")
         if self.options.SHUT_DOWN_WHEN_DONE:
             self.shut_down()
         elif self.options.SLEEP_WHEN_DONE:
@@ -1083,15 +1101,28 @@ class HSRMacro:
             return -1
         return self.execute_session()
 
+    def handle_terminating_error(self, exc):
+        self.run_summary.append(f"Terminated [{exc.__class__.__name__}]")
+        logger.error(exc)
+        logger.debug_no_fmt(traceback.format_exc()[:-1])
+        logger.info("Terminated")
+
     def session_catch(self):
         try:
             return self.session()
         except KeyboardInterrupt:
             return 0
+        except ScreenCaptureFailedError as exc:
+            if not self.options.SLEEP_WHEN_DONE and not self.options.SHUT_DOWN_WHEN_DONE:
+                return self.handle_terminating_error(exc)
+            try:
+                print("\nProgram will end in 120 seconds, press ctrl+c to cancel shutdown/sleep")
+                time.sleep(120)
+            except KeyboardInterrupt:
+                return 0
+            self.handle_terminating_error(exc)
         except BaseException as exc:
-            logger.error(exc)
-            logger.debug_no_fmt(traceback.format_exc()[:-1])
-            logger.info("Terminated")
+            self.handle_terminating_error(exc)
 
         # if error (didn't return before this)
         if self.options.SHUT_DOWN_WHEN_DONE:
