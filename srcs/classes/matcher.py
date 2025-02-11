@@ -26,7 +26,15 @@ class TemplateData:
 
 
 class Matcher:
+    """
+    Matching helper for Templates
+    """
     def __init__(self, *templates: Template, timeout=600):
+        """
+
+        :param templates: Template objects; Put prioritised templates on the left
+        :param timeout: seconds; Time limit when matching templates using `wait` functions
+        """
         self.templates = templates
         self.timeout = timeout
 

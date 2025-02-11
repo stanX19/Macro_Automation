@@ -5,7 +5,15 @@ from template import Template
 
 
 class StatusMatcher:
+    """
+    Extension for Matcher
+    Automatically stores existing time for each template data upon update()
+    """
     def __init__(self, *templates: Template):
+        """
+
+        :param templates: Template objects, returned matching list will follow the input order
+        """
         self._delta_time = 0
         self._templates = list(templates)
         self._matcher = Matcher(*templates)

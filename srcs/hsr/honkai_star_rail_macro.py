@@ -13,6 +13,7 @@ import macro_settings
 import mouse
 from logger import logger
 from matcher import TemplateData, Matcher
+from mouse import click_center
 from status_matcher import StatusMatcher
 from template import Template
 from exceptions import GameConnectionError, BattleLostError, DomainNotSpecifiedError, ScreenCaptureFailedError
@@ -675,16 +676,24 @@ class DomainFarm:
 
     def exit_challenge_reward(self):
         logger.debug("started")
-        exit_btn = Matcher(self.exit_challenge)
+        matcher = Matcher(*self.navigator.menu_bar.templates, self.exit_challenge)
+        start_time = time.time()
+        timeout = 120
 
-        exit_btn.while_not_exist_do(
-            hsr_helper.press_and_release, ["esc"]
-        )
-        exit_btn.click_center_when_exist()
-        Matcher(*self.navigator.menu_bar.templates).while_not_exist_do(
-            hsr_helper.press_and_release, ["esc"]
-        )
-        logger.debug("ended")
+        while start_time + timeout >= time.time():
+            for data in matcher.get_matching_templates_data():
+                if data.template is self.exit_challenge:
+                    click_center(data.loc)
+                    break
+                elif data.template in self.navigator.menu_bar.templates:
+                    logger.debug("ended")
+                    return
+            else:
+                hsr_helper.press_and_release("esc")
+                time.sleep(1)
+
+        raise TimeoutError("Failed to exit challenge reward interface")
+
 
     def start_battle_and_repeat_safe(self, max_count=float('inf')):
         """
@@ -1141,6 +1150,7 @@ def main():
     #     print("no")
     # print("yes")
     s.session_catch()
+    # s.domain_farm.exit_challenge_reward()
     # s.domain_farm.get_support()
     # s.login.log_in_to_game()
     # s.dailies.claim_dailies()
