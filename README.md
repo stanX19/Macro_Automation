@@ -1,25 +1,9 @@
 # Macro_Automation
-A simple GUI based macro for automating tasks.
+A simple macro for automating tasks.
 
 Features **template-based automation**, **resilient error handling**, and **interactive GUI**.
 
 Currently focused on automating Honkai: Star Rail (HSR) game.
-
----
-
-## Table of Contents
-- [Installation](#installation)
-- [Running the Project](#running-the-project)
-- [Features](#features)
-  - [HSR Automation](#hsr-automation)
-    - [Interactive GUI](#interactive-gui)
-    - [Precise Logging](#precise-logging)
-- [Template Matching](#template-matching)
-- [Robust Code Design](#robust-code-design)
-- [Modules](#modules)
-- [Technology Stack](#technology-stack)
-- [Architecture Overview](#architecture-overview)
-- [License](#license)
 
 ---
 
@@ -129,14 +113,14 @@ Automated, timestamped logging with elapsed time calculations for performance tr
 
 ```plaintext
 srcs/
-├── classes/            # Core logic: template matching, status tracker, custom exceptions
-├── Data_manager/       # Settings (json), path configurations
-├── genshin/            # Genshin-specific macro flows
-├── hsr/                # HSR-specific macro flows
-│   └── generate_templates/  # Domain image capture & segmentation
-├── UI/                 # Interactive GUI modules
-├── utils/              # Helper functions, decorators, file utilities
-└── temp/               # Temporary files and experiments
+├── classes/                  # Core logic: template matching, status tracker, custom exceptions
+├── Data_manager/             # Settings (json), path configurations
+├── genshin/                  # Genshin-specific macro flows
+├── hsr/                      # HSR-specific macro flows
+│   └── generate_templates/   # Domain image capture & segmentation
+├── UI/                       # Interactive GUI modules
+├── utils/                    # Helper functions, decorators, file utilities
+└── temp/                     # Temporary files and experiments
 ```
 
 Each game module (HSR or Genshin) builds on the **common classes** and **utils**, following **dependency inversion** and **high cohesion** principles.
