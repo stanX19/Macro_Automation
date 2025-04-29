@@ -1,5 +1,7 @@
 # Macro_Automation
-A GUI automation system. Provides precision macro execution through **template-based automation**, **resilient error handling**, and **an interactive GUI**.
+A simple GUI based macro for automating tasks.
+
+Features **template-based automation**, **resilient error handling**, and **interactive GUI**.
 
 Currently focused on automating Honkai: Star Rail (HSR) game.
 
