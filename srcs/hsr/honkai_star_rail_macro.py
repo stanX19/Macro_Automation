@@ -31,6 +31,8 @@ class LogIn:
         self.launcher_update = Template(assets["launcher_update"], threshold=0.9)
         self.launcher_checkbox = Template(assets["launcher_checkbox"], threshold=0.9)
         self.launcher_accept = Template(assets["launcher_accept"], threshold=0.9)
+        self.pre_install = Template(assets["pre_install"], threshold=0.9, binary=True)
+        self.pre_install_download = Template(assets["pre_install_download"], threshold=0.9)
         self.update_game = Template(assets["update_game"], threshold=0.9)
         self.hsr_logo = Template(assets["hsr_logo"], threshold=0.7, binary=True, variable_size=True)
         self.hsr_icon = Template(assets["hsr_icon"], threshold=0.9)
@@ -49,6 +51,7 @@ class LogIn:
     def log_in_to_game(self):
         status_matcher = StatusMatcher(
             self.checkbox, self.accept, self.confirm,
+            self.pre_install, self.pre_install_download,
             self.launcher_play, self.update_game, self.launcher_checkbox,
             self.launcher_accept, self.launcher_update,
             self.hsr_icon, self.hsr_logo,
@@ -160,7 +163,7 @@ class Navigation:
             self.domains[category] = {}
 
             for key, path in domains.items():
-                self.domains[category][key] = Template(path, self.DOMAIN_ROI, 0.975)
+                self.domains[category][key] = Template(path, self.DOMAIN_ROI, 0.95)
 
         assets = Paths.assets_path_dict["hsr"]["templates"]["domain_farm"]
         self.start_challenge = Template(assets["start_challenge"], (1343, 947, 1893, 1022), 0.9)
@@ -588,6 +591,7 @@ class DomainFarm:
 
         # support
         self.get_support_button = Template(assets["support"]["get_support"], (1675, 704, 1833, 769), 0.90)
+        self.cancel_support_button = Template(assets["support"]["cancel_support"], (1675, 704, 1833, 769), 0.90)
         self.support_end_of_list = Template(assets["support"]["end_of_list"], (520, 810, 560, 940), 0.90)
         self.support_list_title = Template(assets["support"]["list_title"], (172, 42, 423, 136), 0.85)
         self.support_priority_list: list[Template] = [
@@ -660,8 +664,7 @@ class DomainFarm:
 
         logger.info("started")
         logger.debug("clicking get_support")
-        Matcher(self.get_support_button).click_center_when_exist()
-        # if self.support_priority_list:
+        Matcher(self.get_support_button, self.cancel_support_button).click_center_when_exist()
         self.select_prioritised_support()
         logger.debug("clicking add_to_team")
         Matcher(self.add_to_team).click_center_when_exist()

@@ -37,7 +37,9 @@
       "update_game",
       "launcher_accept",
       "launcher_checkbox",
-      "launcher_update"
+      "launcher_update",
+      "pre_install",
+      "pre_install_download"
     ],
     "navigation": {
       "domains": {
@@ -56,7 +58,12 @@
           "calyx_crimson_11",
           "calyx_crimson_12",
           "calyx_crimson_13",
-          "calyx_crimson_14"
+          "calyx_crimson_14",
+          "calyx_crimson_15",
+          "calyx_crimson_16",
+          "calyx_crimson_17",
+          "calyx_crimson_18",
+          "calyx_crimson_19"
         ],
         "calyx_gold": [
           "calyx_gold",
@@ -67,7 +74,10 @@
           "calyx_gold_5",
           "calyx_gold_6",
           "calyx_gold_7",
-          "calyx_gold_8"
+          "calyx_gold_8",
+          "calyx_gold_9",
+          "calyx_gold_10",
+          "calyx_gold_11"
         ],
         "open_world_boss": [
           "open_world_boss",
@@ -91,7 +101,11 @@
           "open_world_boss_18",
           "open_world_boss_19",
           "open_world_boss_20",
-          "open_world_boss_21"
+          "open_world_boss_21",
+          "open_world_boss_22",
+          "open_world_boss_23",
+          "open_world_boss_24",
+          "open_world_boss_25"
         ],
         "relics_domain": [
           "relics_domain",
@@ -105,7 +119,10 @@
           "relics_domain_8",
           "relics_domain_9",
           "relics_domain_10",
-          "relics_domain_11"
+          "relics_domain_11",
+          "relics_domain_12",
+          "relics_domain_13",
+          "relics_domain_14"
         ],
         "weekly_boss_domain": [
           "weekly_boss_domain",
