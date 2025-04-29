@@ -17,35 +17,21 @@ Currently focused on automating Honkai: Star Rail (HSR) game.
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/stanX19/Macro_Automation.git Macro_Automation
-   cd Macro_Automation
-   ```
-
-2. Install required Python packages:
-   ```bash
-   py -m pip install -r requirements.txt
-   ```
+```bash
+git clone https://github.com/stanX19/Macro_Automation.git Macro_Automation
+cd Macro_Automation
+py -m pip install -r requirements.txt
+```
 
 ---
 
-### Running the Project
+### Running
 
-1. Navigate to the `srcs/` directory:
-   ```bash
-   cd srcs
-   ```
-
-2. Set the `PYTHONPATH` environment variable (for module resolution):
-   ```bash
-   set PYTHONPATH=%CD%\..\srcs;%CD%\classes;%CD%\UI;%CD%\Data_manager;%CD%\utils;%CD%\hsr;%CD%\hsr\generate_templates;%PYTHONPATH%
-   ```
-
-3. Run the script:
-   ```bash
-   py hsr\star_rail_main.py
-   ```
+```bash
+cd srcs
+set PYTHONPATH=%CD%\..\srcs;%CD%\classes;%CD%\UI;%CD%\Data_manager;%CD%\utils;%CD%\hsr;%CD%\hsr\generate_templates;%PYTHONPATH%
+py hsr\star_rail_main.py
+```
 
 ---
 
