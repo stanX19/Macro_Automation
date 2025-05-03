@@ -1,4 +1,7 @@
 import os
+import pathlib
+import shutil
+
 from PIL import Image
 import utils
 import time
@@ -16,8 +19,8 @@ def domain_png_to_dir(target_dir: str, dst_dir: str, extension="domain_screensho
     :param dst_dir: parent directory for domain types, structure:
         - dst_dir/
             - calyx_crimson/
-                - xxx.png
-                - xxx_1.png
+                - img.png
+                - img_1.png
                 ...
     :param extension: file extension of screenshot for searching
     :return: None
@@ -34,6 +37,7 @@ def domain_png_to_dir(target_dir: str, dst_dir: str, extension="domain_screensho
         all_segmented_png = segment_domains(domain_png)
         logger.debug(f"Segment domain completed: {dir_name}")
 
+        shutil.rmtree(dir_path, ignore_errors=True)
         os.makedirs(dir_path, exist_ok=True)
         name = os.path.join(dir_path, dir_name)
 
