@@ -97,7 +97,10 @@
           "open_world_boss_19",
           "open_world_boss_20",
           "open_world_boss_21",
-          "open_world_boss_22"
+          "open_world_boss_22",
+          "open_world_boss_23",
+          "open_world_boss_24",
+          "open_world_boss_25"
         ],
         "relics_domain": [
           "relics_domain",
@@ -111,7 +114,10 @@
           "relics_domain_8",
           "relics_domain_9",
           "relics_domain_10",
-          "relics_domain_11"
+          "relics_domain_11",
+          "relics_domain_12",
+          "relics_domain_13",
+          "relics_domain_14"
         ],
         "weekly_boss_domain": [
           "weekly_boss_domain",
@@ -119,7 +125,8 @@
           "weekly_boss_domain_2",
           "weekly_boss_domain_3",
           "weekly_boss_domain_4",
-          "weekly_boss_domain_5"
+          "weekly_boss_domain_5",
+          "weekly_boss_domain_6"
         ]
       },
       "domain_types": [

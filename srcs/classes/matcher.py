@@ -45,6 +45,10 @@ class Matcher:
         return "[{}]".format(", ".join(t.name for t in self.templates))
 
     def exists(self) -> bool:
+        """
+
+        :return: True if any templates exist
+        """
         return bool(self.get_matching_templates_data())
 
     def all_exists(self) -> bool:

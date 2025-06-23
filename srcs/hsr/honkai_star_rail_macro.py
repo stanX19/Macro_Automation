@@ -585,7 +585,7 @@ class DomainFarm:
 
         # calyx specific
         self.reduce_count = Template(assets["calyx"]["reduce_count"], (1206, 881, 1279, 917), 0.9)
-        self.add_count = Template(assets["calyx"]["add_count"], (1742, 882, 1888, 917), 0.8)
+        self.add_count = Template(assets["calyx"]["add_count"], (1700, 830, 1920, 910), 0.8)
 
         self.add_count_loc = (9, 17)
 
@@ -823,7 +823,9 @@ class DomainFarm:
     def is_calyx(self):
         logger.debug("Waiting for start_challenge to match")
         Matcher(self.start_challenge).wait_and_match()
-        return Matcher(self.add_count, self.reduce_count).exists()
+        ret = Matcher(self.add_count, self.reduce_count).exists()
+        logger.debug(f"Is calyx: {ret}")
+        return ret
 
     def calyx_farm_all(self):
         """

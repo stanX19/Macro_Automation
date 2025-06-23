@@ -1,14 +1,16 @@
 import cv2
 import numpy as np
+
+import honkai_star_rail_macro
 from template import Template
 from honkai_star_rail_macro import *
 
 # Load the image and the template
-image = cv2.imread(r'D:\Users\user\PycharmProjects\Macro_Automation\assets\test\screenshot\img_42.png')
-path = r"D:\Users\user\PycharmProjects\Macro_Automation\assets\hsr\templates\navigation\domains\calyx_crimson\calyx_crimson.png"
+image = cv2.imread(r'D:\Users\user\PycharmProjects\Macro_Automation\assets\test\screenshot\img_43.png')
+# path = r"D:\Users\user\PycharmProjects\Macro_Automation\assets\hsr\templates\navigation\domains\calyx_crimson\calyx_crimson.png"
 
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-template = Template(path, threshold=0.95)
+template = honkai_star_rail_macro.DomainFarm().add_count
 # template = Dailies().daily_logo
 
 threshold_change = 0.001
