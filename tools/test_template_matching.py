@@ -10,7 +10,7 @@ image = cv2.imread(r'D:\Users\user\PycharmProjects\Macro_Automation\assets\test\
 # path = r"D:\Users\user\PycharmProjects\Macro_Automation\assets\hsr\templates\navigation\domains\calyx_crimson\calyx_crimson.png"
 
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-template = honkai_star_rail_macro.DomainFarm().add_count
+template = honkai_star_rail_macro.DomainFarm().reduce_count
 # template = Dailies().daily_logo
 
 threshold_change = 0.001

@@ -1,5 +1,7 @@
 from datetime import datetime
 import os
+from multiprocessing.util import debug
+
 import utils
 import keyboard
 import time
@@ -584,9 +586,9 @@ class DomainFarm:
         self.add_to_team = Template(assets["add_to_team"], (1526, 962, 1850, 1021), 0.95)
 
         # calyx specific
-        self.reduce_count = Template(assets["calyx"]["reduce_count"], (1206, 881, 1279, 917), 0.9)
+        self.reduce_count = Template(assets["calyx"]["reduce_count"], (1100, 820, 1400, 930), 0.9)
         self.add_count = Template(assets["calyx"]["add_count"], (1700, 830, 1920, 910), 0.8)
-
+        (1114, 822, 1389, 927)
         self.add_count_loc = (9, 17)
 
         # support
@@ -827,6 +829,21 @@ class DomainFarm:
         logger.debug(f"Is calyx: {ret}")
         return ret
 
+    def calyx_add_to_max_count(self):
+        """
+        Blocking. Tries to add calyx farm count to max
+        if already max, do nothing and unblocks
+        :return:
+        """
+        logger.debug("Waiting for add_count or minus_count to match")
+        template = Matcher(self.add_count, self.reduce_count, *self.navigator.menu_bar.templates).wait_and_match()
+        if template.template is self.add_count:
+            mouse.click_relative(template.loc, self.add_count_loc)
+        elif template in self.navigator.menu_bar.templates:
+            raise GameConnectionError()
+        else:
+            logger.debug("Add count not matched; Already at max count, skipping")
+
     def calyx_farm_all(self):
         """
             start: domain start interface
@@ -834,10 +851,9 @@ class DomainFarm:
             end: open world
         """
         logger.info(f"started, category={self._category}, domain={self._domain}")
-        logger.debug("Waiting for add_count to match")
-        mouse.click_relative(Matcher(self.add_count).wait_and_get_location(), self.add_count_loc)
-        Matcher(self.start_challenge).click_center_when_exist()
+        self.calyx_add_to_max_count()
 
+        Matcher(self.start_challenge).click_center_when_exist()
         status_matcher = Matcher(self.start_challenge_2, self.cancel)
         logger.debug("Waiting for start_challenge or cancel to match")
         status = status_matcher.wait_and_match()
@@ -846,21 +862,17 @@ class DomainFarm:
             # first bulk farm
             self.domain_start_farm(float('inf'))
             self.navigator.navigate_to_domain(self._category, self._domain)
-            logger.debug("Waiting for add_count to match")
-            mouse.click_relative(Matcher(self.add_count).wait_and_get_location(), (9, 17))
+            logger.debug("Waiting for add_count to match #2")
+            self.calyx_add_to_max_count()
         else:
             logger.debug("exiting (click cancel)")
             Matcher(self.cancel).click_center_when_exist(interval=0.5)
             logger.debug("exited")
 
-        button_matcher = Matcher(self.reduce_count, self.add_count, *self.navigator.menu_bar.templates)
-
         # increase count
-        data = button_matcher.wait_and_match()
-        if data.template is self.add_count:
-            logger.debug(f"add button matched, clicking; {data}")
-            mouse.click_relative(data.loc, self.add_count_loc)
+        self.calyx_add_to_max_count()
 
+        button_matcher = Matcher(self.reduce_count, *self.navigator.menu_bar.templates)
         # reduce count
         for i in range(5):
             logger.debug("waiting for reduce_button to match")

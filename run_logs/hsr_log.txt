@@ -19489,3 +19489,950 @@ exceptions.ScreenCaptureFailedError
 [00:00:25]: INFO:HSR_Macro:handle_terminating_error: Terminated
 [00:00:26]: DEBUG:HSR_Macro:option_menu: Started
 [00:00:32]: INFO:HSR_Macro:option_menu: Closed
+
+[Date: 2025-06-23 : Time: 12:00:38 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:09]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:09]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:13]: INFO:HSR_Macro:ui_choose_domain: category=weekly_boss_domain, domain=weekly_boss_domain
+[00:00:13]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : False,
+  "log in (default server)"              : False,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : True,
+  "sleep when done"                      : False,
+  "shut down when done"                  : True,
+}>
+[00:00:13]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (294, 299, 474, 329)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (294, 431, 474, 461)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (294, 563, 474, 593)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: relics_domain matched [0.001, (295, 695, 475, 725)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: weekly_boss_domain matched [0.001, (295, 828, 475, 858)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: weekly_boss_domain matched [0.001, (692, 451, 1656, 643)]
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:00:16]: DEBUG:HSR_Macro:navigate_to_domain: weekly_boss_domain_1 matched [0.001, (692, 644, 1656, 841)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1538, 963, 1757, 1005)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.3438769111633301, (1531, 963, 1750, 1005)]
+[00:00:18]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.7591295967102051, (1530, 963, 1749, 1005)]
+[00:00:18]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.1641507873535155, (1530, 963, 1749, 1005)]
+[00:00:18]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:00:18]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:00:18]: DEBUG:HSR_Macro:is_calyx: Is calyx: False
+[00:00:18]: INFO:HSR_Macro:domain_farm_bulk: started, max_count=inf
+[00:00:18]: DEBUG:HSR_Macro:domain_farm_bulk: clicking start_challenge when exist
+[00:00:20]: DEBUG:HSR_Macro:domain_farm_bulk: Waiting for start_challenge or not_enough_stamina to match
+[00:00:20]: INFO:HSR_Macro:get_support: started
+[00:00:20]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:00:23]: INFO:HSR_Macro:select_prioritised_support: started
+[00:00:23]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:00:23]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:00:23]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:00:24]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:00:25]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:26]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye Acheron matched at (47, 346, 293, 396)
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye Acheron, (0, 100, 600, 1000), 0.85), (47, 346, 293, 396), 0.89
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:29]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:29]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:30]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:31]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 Acheron matched at (49, 300, 334, 345)
+[00:00:33]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (BangWoSu69 Acheron, (0, 100, 600, 1000), 0.85), (49, 300, 334, 345), 0.90
+[00:00:33]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:34]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 JingLiu matched at (77, 426, 333, 468)
+[00:00:34]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:35]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:36]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:37]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:37]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:38]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:39]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:40]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:41]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:42]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:43]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:43]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: BangWoSu69 Acheron (1)
+[00:00:43]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:00:45]: INFO:HSR_Macro:get_support: completed
+[00:00:45]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:00:47]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:00:51]: INFO:HSR_Macro:_start_battle_and_repeat: started
+[00:00:51]: INFO:HSR_Macro:select_auto_battle: started
+[00:00:51]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:00:52]: INFO:HSR_Macro:select_auto_battle: completed
+[00:00:52]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+
+[Date: 2025-06-23 : Time: 12:02:38 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:06]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:06]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:08]: INFO:HSR_Macro:ui_choose_domain: category=weekly_boss_domain, domain=weekly_boss_domain
+[00:00:08]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : False,
+  "log in (default server)"              : False,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : True,
+  "sleep when done"                      : False,
+  "shut down when done"                  : True,
+}>
+[00:00:08]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:09]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.001, (1576, 20, 1869, 73)]
+[00:00:09]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.001, (1577, 19, 1873, 76)]
+[00:00:09]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.4624880084991455, (1576, 20, 1869, 73)]
+[00:00:09]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.4624880084991455, (1577, 19, 1873, 76)]
+[00:00:10]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [1.0112186203002929, (1576, 20, 1869, 73)]
+[00:00:11]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), None
+[00:00:11]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [1.0112186203002929, (1577, 19, 1873, 76)]
+[00:00:12]: DEBUG:HSR_Macro:navigate_to_domain: survival_guide matched [0.001, (457, 186, 498, 238)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (296, 481, 476, 511)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (296, 613, 476, 643)]
+[00:00:14]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (296, 745, 476, 775)]
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [1.6599140892028807, (294, 295, 474, 325)]
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [1.6599140892028807, (294, 427, 474, 457)]
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [1.6599140892028807, (294, 559, 474, 589)]
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: relics_domain matched [0.001, (295, 691, 475, 721)]
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: weekly_boss_domain matched [0.001, (295, 824, 475, 854)]
+[00:00:15]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [2.8544936904907225, (294, 299, 474, 329)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [2.8544936904907225, (294, 431, 474, 461)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [2.8544936904907225, (294, 563, 474, 593)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: relics_domain matched [1.1955796012878417, (295, 695, 475, 725)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: weekly_boss_domain matched [1.1955796012878417, (295, 828, 475, 858)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: weekly_boss_domain matched [0.001, (692, 451, 1656, 643)]
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:00:19]: DEBUG:HSR_Macro:navigate_to_domain: weekly_boss_domain_1 matched [0.001, (692, 644, 1656, 841)]
+[00:00:20]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1533, 963, 1752, 1005)]
+[00:00:20]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.4435053596496582, (1530, 963, 1749, 1005)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.9489784965515137, (1530, 963, 1749, 1005)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.4860311279296874, (1530, 963, 1749, 1005)]
+[00:00:21]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:00:21]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:00:21]: DEBUG:HSR_Macro:is_calyx: Is calyx: False
+[00:00:21]: INFO:HSR_Macro:domain_farm_bulk: started, max_count=inf
+[00:00:21]: DEBUG:HSR_Macro:domain_farm_bulk: clicking start_challenge when exist
+[00:00:24]: DEBUG:HSR_Macro:domain_farm_bulk: Waiting for start_challenge or not_enough_stamina to match
+[00:00:24]: INFO:HSR_Macro:get_support: started
+[00:00:24]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:00:26]: INFO:HSR_Macro:select_prioritised_support: started
+[00:00:26]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:00:26]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:00:26]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:00:27]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:00:29]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye Acheron matched at (47, 496, 293, 546)
+[00:00:30]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye Acheron, (0, 100, 600, 1000), 0.85), (47, 496, 293, 546), 0.88
+[00:00:31]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:31]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:32]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:33]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 Acheron matched at (49, 600, 334, 645)
+[00:00:35]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (BangWoSu69 Acheron, (0, 100, 600, 1000), 0.85), (49, 600, 334, 645), 0.85
+[00:00:35]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:36]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:37]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:38]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:39]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:39]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:40]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:41]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:42]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:43]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:44]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:45]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:46]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:47]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:47]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: BangWoSu69 Acheron (1)
+[00:00:47]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:00:49]: INFO:HSR_Macro:get_support: completed
+[00:00:49]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:00:51]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:00:54]: INFO:HSR_Macro:_start_battle_and_repeat: started
+[00:00:54]: INFO:HSR_Macro:select_auto_battle: started
+[00:00:54]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:00:55]: INFO:HSR_Macro:select_auto_battle: completed
+[00:00:55]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:05:41]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:05:43]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:05:44]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:09:57]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:09:59]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:10:00]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:14:56]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:14:58]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:14:58]: DEBUG:HSR_Macro:_start_battle_and_repeat: not enough stamina / all chances used
+[00:14:58]: DEBUG:HSR_Macro:exit_challenge_reward: started
+[00:15:05]: DEBUG:HSR_Macro:exit_challenge_reward: ended
+[00:15:05]: INFO:HSR_Macro:_start_battle_and_repeat: completed, farmed 3 times
+[00:15:05]: INFO:HSR_Macro:domain_start_farm: completed
+[00:15:05]: INFO:HSR_Macro:claim_dailies: started
+[00:15:08]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), 0.93
+[00:15:08]: DEBUG:HSR_Macro:claim_dailies: click menu bar
+[00:15:12]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:15:13]: DEBUG:HSR_Macro:claim_dailies: found assignment, entering
+[00:15:14]: INFO:HSR_Macro:do_assignments: started
+[00:15:24]: DEBUG:HSR_Macro:do_assignments: last_seen > 10s, break
+[00:15:24]: INFO:HSR_Macro:do_assignments: claimed and redeployed 0 assignments
+[00:15:24]: INFO:HSR_Macro:do_assignments: ended
+[00:15:24]: DEBUG:HSR_Macro:claim_dailies: exiting assignment (esc)
+[00:15:25]: DEBUG:HSR_Macro:claim_dailies: exited assignment
+[00:15:28]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:15:31]: DEBUG:HSR_Macro:claim_dailies: Claim daily task +1
+[00:15:32]: DEBUG:HSR_Macro:claim_dailies: Claimed primo at 4th slot
+[00:17:37]: DEBUG:HSR_Macro:claim_dailies: last_seen > 15s, break
+[00:17:37]: DEBUG:HSR_Macro:claim_dailies: exiting dailies (esc)
+[00:17:38]: DEBUG:HSR_Macro:claim_dailies: exited dailies
+[00:17:38]: INFO:HSR_Macro:claim_dailies: completed, claimed 4 slots of primo
+[00:17:38]: DEBUG:HSR_Macro:claim_monthly_pass: started
+[00:17:40]: INFO:HSR_Macro:click_monthly_pass: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), 0.94
+[00:17:41]: DEBUG:HSR_Macro:claim_monthly_pass: Template matched: (red_dot, (806, 16, 1099, 67), 0.7), (972, 29, 996, 53), 0.81; click and move away
+[00:17:43]: DEBUG:HSR_Macro:claim_monthly_pass: Template matched: (red_dot, (806, 16, 1099, 67), 0.7), (972, 29, 996, 53), 0.73; click and move away
+[00:17:45]: DEBUG:HSR_Macro:claim_monthly_pass: Template matched: (monthly_pass_claim_all, (1487, 878, 1842, 959), 0.9), (1559, 899, 1790, 935), 1.00; click and move away
+[00:17:47]: DEBUG:HSR_Macro:claim_monthly_pass: Template matched: (red_dot, (806, 16, 1099, 67), 0.7), (972, 29, 996, 53), 0.72; click and move away
+[00:17:49]: DEBUG:HSR_Macro:claim_monthly_pass: Template matched: (red_dot, (806, 16, 1099, 67), 0.7), (876, 29, 900, 53), 0.85; click and move away
+[00:17:51]: DEBUG:HSR_Macro:claim_monthly_pass: Template matched: (monthly_pass_claim_all_2, (1315, 875, 1543, 948), 0.9), (1361, 897, 1499, 926), 1.00; click and move away
+[00:17:58]: DEBUG:HSR_Macro:claim_monthly_pass: last seen > 5s, break
+[00:17:58]: DEBUG:HSR_Macro:claim_monthly_pass: exiting monthly pass interface
+[00:18:01]: DEBUG:HSR_Macro:claim_monthly_pass: completed
+[00:18:01]: DEBUG:HSR_Macro:claim_dailies: done
+[00:18:01]: INFO:HSR_Macro:shut_down: Execute shut down command
+[00:18:01]: DEBUG:HSR_Macro:leave_summary_notif: Created message: Farmed 3 times
+Claimed 4 slots
+
+[Date: 2025-06-24 : Time: 23:43:55 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:03]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:03]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:29]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:29]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : True,
+  "log in (default server)"              : True,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : True,
+  "sleep when done"                      : False,
+  "shut down when done"                  : True,
+}>
+[00:00:29]: INFO:HSR_Macro:launch_game: ok
+[00:00:29]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:34]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1326, 816, 1582, 867) 1.0225334892272948
+[00:00:34]: DEBUG:HSR_Macro:log_in_to_game: hsr_icon matched (177, 779, 232, 836) 1.0225334892272948
+[00:00:36]: DEBUG:HSR_Macro:log_in_to_game: hsr_logo matched (305, 105, 476, 193) 1.0225334892272948
+[00:00:37]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1326, 816, 1582, 867) 3.947066379547119
+[00:00:39]: DEBUG:HSR_Macro:log_in_to_game: hsr_icon matched (177, 779, 232, 836) 3.947066379547119
+[00:00:41]: DEBUG:HSR_Macro:log_in_to_game: hsr_logo matched (305, 105, 476, 193) 3.947066379547119
+[00:01:03]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862) 1.0911856422424315
+[00:01:15]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (399, 116, 1485, 1039) 1.2107442150115966
+[00:01:18]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (393, 113, 1479, 1036) 4.134877754211425
+[00:01:28]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73) 1.8618365058898925
+[00:01:28]: INFO:HSR_Macro:log_in_to_game: completed
+[00:01:28]: INFO:HSR_Macro:navigate_to_domain: started
+[00:01:30]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.001, (1576, 20, 1869, 73)]
+[00:01:30]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.001, (1577, 19, 1873, 76)]
+[00:01:30]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.6924851665496826, (1576, 20, 1869, 73)]
+[00:01:30]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.6924851665496826, (1577, 19, 1873, 76)]
+[00:01:31]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [1.1697595844268798, (1576, 20, 1869, 73)]
+[00:01:32]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), None
+[00:01:32]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [1.1697595844268798, (1577, 19, 1873, 76)]
+[00:01:33]: DEBUG:HSR_Macro:navigate_to_domain: survival_guide matched [0.001, (457, 186, 498, 238)]
+[00:01:35]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (294, 481, 474, 511)]
+[00:01:35]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (294, 613, 474, 643)]
+[00:01:35]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:01:36]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (294, 745, 474, 775)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [1.421469045639038, (294, 481, 474, 511)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [1.421469045639038, (294, 613, 474, 643)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [1.421469045639038, (294, 745, 474, 775)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (693, 333, 1656, 464)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_1 matched [0.001, (693, 465, 1656, 599)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_2 matched [0.001, (693, 600, 1656, 734)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:01:39]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_3 matched [0.001, (693, 735, 1656, 868)]
+[00:01:40]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1488, 963, 1707, 1005)]
+[00:01:40]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.5749219188690186, (1482, 963, 1701, 1005)]
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.2237406501770018, (1482, 963, 1701, 1005)]
+[00:01:41]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:01:41]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:01:41]: DEBUG:HSR_Macro:is_calyx: Is calyx: True
+[00:01:41]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_2
+[00:01:41]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for add_count to match
+[00:01:44]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or cancel to match
+[00:01:44]: INFO:HSR_Macro:get_support: started
+[00:01:44]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:01:46]: INFO:HSR_Macro:select_prioritised_support: started
+[00:01:46]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:01:47]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:01:47]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:01:48]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:01:49]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye Acheron matched at (47, 496, 293, 546)
+[00:01:51]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye Acheron, (0, 100, 600, 1000), 0.85), (47, 496, 293, 546), 0.87
+[00:01:51]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:52]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:52]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:53]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 Acheron matched at (49, 600, 334, 645)
+[00:01:55]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (BangWoSu69 Acheron, (0, 100, 600, 1000), 0.85), (49, 600, 334, 645), 0.85
+[00:01:55]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:56]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:57]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:58]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 JingLiu matched at (77, 426, 333, 468)
+[00:01:58]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:58]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:59]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:00]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:01]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:02]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:03]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:04]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:05]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:06]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:06]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:07]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: BangWoSu69 Acheron (1)
+[00:02:07]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:02:09]: INFO:HSR_Macro:get_support: completed
+[00:02:09]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:02:11]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:02:14]: INFO:HSR_Macro:_start_battle_and_repeat: started
+[00:02:14]: INFO:HSR_Macro:select_auto_battle: started
+[00:02:14]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:02:15]: INFO:HSR_Macro:select_auto_battle: completed
+[00:02:15]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:03:53]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:03:56]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:03:56]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:05:31]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:05:33]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:05:33]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:07:08]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:07:10]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:07:10]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:08:51]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:08:53]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:08:54]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:10:30]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:10:33]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:10:33]: DEBUG:HSR_Macro:_start_battle_and_repeat: not enough stamina / all chances used
+[00:10:33]: DEBUG:HSR_Macro:exit_challenge_reward: started
+[00:10:39]: DEBUG:HSR_Macro:exit_challenge_reward: ended
+[00:10:39]: INFO:HSR_Macro:_start_battle_and_repeat: completed, farmed 5 times
+[00:10:39]: INFO:HSR_Macro:domain_start_farm: completed
+[00:10:39]: INFO:HSR_Macro:navigate_to_domain: started
+[00:10:40]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.001, (1576, 20, 1869, 73)]
+[00:10:40]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.001, (1577, 19, 1873, 76)]
+[00:10:41]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.7470465431213379, (1576, 20, 1869, 73)]
+[00:10:41]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.7470465431213379, (1577, 19, 1873, 76)]
+[00:10:41]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [1.3240142593383788, (1576, 20, 1869, 73)]
+[00:10:42]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), None
+[00:10:42]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [1.3240142593383788, (1577, 19, 1873, 76)]
+[00:10:44]: DEBUG:HSR_Macro:navigate_to_domain: survival_guide matched [0.001, (457, 186, 498, 238)]
+[00:10:46]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (294, 481, 474, 511)]
+[00:10:46]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (294, 613, 474, 643)]
+[00:10:46]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:10:47]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (294, 745, 474, 775)]
+[00:10:47]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [1.4615674743652343, (294, 481, 474, 511)]
+[00:10:47]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [1.4615674743652343, (294, 613, 474, 643)]
+[00:10:47]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:10:48]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [1.4615674743652343, (294, 745, 474, 775)]
+[00:10:48]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (693, 291, 1656, 422)]
+[00:10:48]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_1 matched [0.001, (693, 423, 1656, 557)]
+[00:10:48]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_2 matched [0.001, (693, 558, 1656, 692)]
+[00:10:48]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:10:48]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:10:49]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_3 matched [0.001, (693, 693, 1656, 826)]
+[00:10:50]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1485, 963, 1704, 1005)]
+[00:10:51]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.5810433158874512, (1482, 963, 1701, 1005)]
+[00:10:51]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.0788827667236327, (1482, 963, 1701, 1005)]
+[00:10:51]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:10:51]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for add_count to match
+[00:20:52]: ERROR:HSR_Macro:handle_terminating_error: 
+Traceback (most recent call last):
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1126, in session_catch
+    return self.session()
+           ^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1116, in session
+    return self.execute_session()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1094, in execute_session
+    self.domain_farm.retrying_domain_farm(self.cfg["category"], self.cfg["domain"])
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 909, in retrying_domain_farm
+    self.general_domain_farm(category, domain)
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 898, in general_domain_farm
+    self.calyx_farm_all()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 859, in calyx_farm_all
+    data = button_matcher.wait_and_match()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 91, in wait_and_match
+    return self.wait_for_matches(timeout=timeout)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 108, in wait_for_matches
+    raise TimeoutError
+TimeoutError
+[00:20:52]: INFO:HSR_Macro:handle_terminating_error: Terminated
+[00:20:52]: INFO:HSR_Macro:shut_down: Execute shut down command
+[00:20:52]: DEBUG:HSR_Macro:leave_summary_notif: Created message: Terminated [TimeoutError]
+
+[Date: 2025-06-25 : Time: 17:58:00 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:31]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:31]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:34]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:34]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : True,
+  "log in (default server)"              : True,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : True,
+  "sleep when done"                      : False,
+  "shut down when done"                  : True,
+}>
+[00:00:34]: INFO:HSR_Macro:launch_game: ok
+[00:00:34]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:40]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1326, 816, 1582, 867) 1.143482280731201
+[00:00:40]: DEBUG:HSR_Macro:log_in_to_game: hsr_icon matched (177, 779, 232, 836) 1.143482280731201
+[00:00:42]: DEBUG:HSR_Macro:log_in_to_game: hsr_logo matched (305, 105, 476, 193) 1.143482280731201
+[00:00:43]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1326, 816, 1582, 867) 4.2740150222778315
+[00:00:45]: DEBUG:HSR_Macro:log_in_to_game: hsr_icon matched (177, 779, 232, 836) 4.2740150222778315
+[00:00:47]: DEBUG:HSR_Macro:log_in_to_game: hsr_logo matched (305, 105, 476, 193) 4.2740150222778315
+[00:01:03]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862) 1.4965747127532958
+[00:01:14]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (399, 116, 1485, 1039) 1.0310629138946532
+[00:01:17]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (393, 113, 1479, 1036) 4.239271474838256
+[00:01:30]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73) 2.2279072532653807
+[00:01:30]: INFO:HSR_Macro:log_in_to_game: completed
+[00:01:30]: INFO:HSR_Macro:navigate_to_domain: started
+[00:01:32]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.001, (1576, 20, 1869, 73)]
+[00:01:32]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.001, (1577, 19, 1873, 76)]
+[00:01:32]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.7790334949493408, (1576, 20, 1869, 73)]
+[00:01:32]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.7790334949493408, (1577, 19, 1873, 76)]
+[00:01:33]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [1.7417689094543456, (1576, 20, 1869, 73)]
+[00:01:34]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), None
+[00:01:34]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [1.7417689094543456, (1577, 19, 1873, 76)]
+[00:01:36]: DEBUG:HSR_Macro:navigate_to_domain: survival_guide matched [0.001, (457, 186, 498, 238)]
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (294, 481, 474, 511)]
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (294, 613, 474, 643)]
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:01:39]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (294, 745, 474, 775)]
+[00:01:40]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [1.551537109375, (294, 481, 474, 511)]
+[00:01:40]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [1.551537109375, (294, 613, 474, 643)]
+[00:01:40]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [1.551537109375, (294, 745, 474, 775)]
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (693, 291, 1656, 422)]
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_1 matched [0.001, (693, 423, 1656, 557)]
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_2 matched [0.001, (693, 558, 1656, 692)]
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:01:42]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_3 matched [0.001, (693, 693, 1656, 826)]
+[00:01:43]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1482, 963, 1701, 1005)]
+[00:01:44]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.7525108585357666, (1482, 963, 1701, 1005)]
+[00:01:45]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.521801544189453, (1482, 963, 1701, 1005)]
+[00:01:45]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:01:45]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:01:45]: DEBUG:HSR_Macro:is_calyx: Is calyx: True
+[00:01:45]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_2
+[00:01:45]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for add_count to match
+[00:01:48]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or cancel to match
+[00:01:48]: INFO:HSR_Macro:get_support: started
+[00:01:48]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:01:50]: INFO:HSR_Macro:select_prioritised_support: started
+[00:01:50]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:01:51]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:01:51]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:01:52]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:01:53]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye Acheron matched at (47, 496, 293, 546)
+[00:01:55]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye Acheron, (0, 100, 600, 1000), 0.85), (47, 496, 293, 546), 0.86
+[00:01:55]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:56]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:56]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:01:57]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 Acheron matched at (49, 600, 334, 645)
+[00:01:59]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (BangWoSu69 Acheron, (0, 100, 600, 1000), 0.85), (49, 600, 334, 645), 0.86
+[00:01:59]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:00]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:01]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:02]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 JingLiu matched at (77, 426, 333, 468)
+[00:02:02]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:03]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:04]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:05]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:05]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:06]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:07]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:08]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:09]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:10]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:11]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:02:11]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: BangWoSu69 Acheron (1)
+[00:02:11]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:02:13]: INFO:HSR_Macro:get_support: completed
+[00:02:13]: INFO:HSR_Macro:domain_start_farm: started, max_count=inf
+[00:02:15]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:02:20]: INFO:HSR_Macro:_start_battle_and_repeat: started
+[00:02:20]: INFO:HSR_Macro:select_auto_battle: started
+[00:02:20]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:02:20]: INFO:HSR_Macro:select_auto_battle: completed
+[00:02:20]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:03:52]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:03:54]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:03:55]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:05:19]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:05:22]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:05:22]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for battle to end
+[00:06:49]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for challenge again to match
+[00:06:51]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for auto_battle or not_enough_stamina to match
+[00:06:51]: DEBUG:HSR_Macro:_start_battle_and_repeat: not enough stamina / all chances used
+[00:06:51]: DEBUG:HSR_Macro:exit_challenge_reward: started
+[00:06:58]: DEBUG:HSR_Macro:exit_challenge_reward: ended
+[00:06:58]: INFO:HSR_Macro:_start_battle_and_repeat: completed, farmed 3 times
+[00:06:58]: INFO:HSR_Macro:domain_start_farm: completed
+[00:06:58]: INFO:HSR_Macro:navigate_to_domain: started
+[00:07:00]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.001, (1576, 20, 1869, 73)]
+[00:07:00]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.001, (1577, 19, 1873, 76)]
+[00:07:01]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [1.053124500274658, (1576, 20, 1869, 73)]
+[00:07:02]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), None
+[00:07:02]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [1.053124500274658, (1577, 19, 1873, 76)]
+[00:07:03]: DEBUG:HSR_Macro:navigate_to_domain: survival_guide matched [0.001, (457, 186, 498, 238)]
+[00:07:05]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (294, 481, 474, 511)]
+[00:07:05]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (294, 613, 474, 643)]
+[00:07:05]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:07:06]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (294, 745, 474, 775)]
+[00:07:07]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [1.4897948036193847, (294, 481, 474, 511)]
+[00:07:07]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [1.4897948036193847, (294, 613, 474, 643)]
+[00:07:07]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:07:08]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [1.4897948036193847, (294, 745, 474, 775)]
+[00:07:08]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (693, 291, 1656, 422)]
+[00:07:08]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_1 matched [0.001, (693, 423, 1656, 557)]
+[00:07:08]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_2 matched [0.001, (693, 558, 1656, 692)]
+[00:07:08]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:07:08]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:07:09]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_3 matched [0.001, (693, 693, 1656, 826)]
+[00:07:11]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1482, 963, 1701, 1005)]
+[00:07:12]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.8437915573120117, (1482, 963, 1701, 1005)]
+[00:07:12]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.6188624629974364, (1482, 963, 1701, 1005)]
+[00:07:12]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:07:12]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for add_count to match
+[00:17:13]: ERROR:HSR_Macro:handle_terminating_error: 
+Traceback (most recent call last):
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1126, in session_catch
+    return self.session()
+           ^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1116, in session
+    return self.execute_session()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1094, in execute_session
+    self.domain_farm.retrying_domain_farm(self.cfg["category"], self.cfg["domain"])
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 909, in retrying_domain_farm
+    self.general_domain_farm(category, domain)
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 898, in general_domain_farm
+    self.calyx_farm_all()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 859, in calyx_farm_all
+    data = button_matcher.wait_and_match()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 91, in wait_and_match
+    return self.wait_for_matches(timeout=timeout)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 108, in wait_for_matches
+    raise TimeoutError
+TimeoutError
+[00:17:13]: INFO:HSR_Macro:handle_terminating_error: Terminated
+[00:17:13]: INFO:HSR_Macro:shut_down: Execute shut down command
+[00:17:14]: DEBUG:HSR_Macro:leave_summary_notif: Created message: Terminated [TimeoutError]
+
+[Date: 2025-06-25 : Time: 23:01:33 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:03]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:03]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:07]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:07]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : True,
+  "log in (default server)"              : True,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : True,
+  "sleep when done"                      : False,
+  "shut down when done"                  : True,
+}>
+[00:00:07]: INFO:HSR_Macro:launch_game: ok
+[00:00:07]: INFO:HSR_Macro:log_in_to_game: started
+[00:00:12]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1326, 816, 1582, 867) 1.3265624771118163
+[00:00:12]: DEBUG:HSR_Macro:log_in_to_game: hsr_icon matched (177, 779, 232, 836) 1.3265624771118163
+[00:00:14]: DEBUG:HSR_Macro:log_in_to_game: hsr_logo matched (305, 105, 476, 193) 1.3265624771118163
+[00:00:14]: DEBUG:HSR_Macro:log_in_to_game: launcher_play matched (1326, 816, 1582, 867) 3.9107535610198974
+[00:00:16]: DEBUG:HSR_Macro:log_in_to_game: hsr_icon matched (177, 779, 232, 836) 3.9107535610198974
+[00:00:18]: DEBUG:HSR_Macro:log_in_to_game: hsr_logo matched (305, 105, 476, 193) 3.9107535610198974
+[00:01:01]: DEBUG:HSR_Macro:log_in_to_game: start_game matched (871, 815, 1066, 862) 1.1158993968963622
+[00:01:12]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (399, 116, 1485, 1039) 1.0854287872314452
+[00:01:15]: DEBUG:HSR_Macro:log_in_to_game: click_to_start matched (394, 114, 1480, 1037) 4.036913944244384
+[00:01:28]: DEBUG:HSR_Macro:log_in_to_game: menu_bar_3_0 matched (1576, 20, 1869, 73) 2.0709999332427977
+[00:01:28]: INFO:HSR_Macro:log_in_to_game: completed
+[00:01:28]: INFO:HSR_Macro:navigate_to_domain: started
+[00:01:30]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [0.001, (1576, 20, 1869, 73)]
+[00:01:30]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [0.001, (1577, 19, 1873, 76)]
+[00:01:31]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_0 matched [1.0074623355865477, (1576, 20, 1869, 73)]
+[00:01:32]: INFO:HSR_Macro:click_nav: clicked (menu_bar_3_0, (1557, 4, 1891, 91), 0.7), (1576, 20, 1869, 73), None
+[00:01:32]: DEBUG:HSR_Macro:navigate_to_domain: menu_bar_3_1 matched [1.0074623355865477, (1577, 19, 1873, 76)]
+[00:01:34]: DEBUG:HSR_Macro:navigate_to_domain: survival_guide matched [0.001, (457, 186, 498, 238)]
+[00:01:36]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (294, 481, 474, 511)]
+[00:01:36]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (294, 613, 474, 643)]
+[00:01:36]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:01:36]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (294, 745, 474, 775)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [1.5300751457214354, (294, 481, 474, 511)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [1.5300751457214354, (294, 613, 474, 643)]
+[00:01:37]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [1.5300751457214354, (294, 745, 474, 775)]
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (693, 291, 1656, 422)]
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_1 matched [0.001, (693, 423, 1656, 557)]
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_2 matched [0.001, (693, 558, 1656, 692)]
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:01:38]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:01:39]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_3 matched [0.001, (693, 693, 1656, 826)]
+[00:01:40]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1483, 963, 1702, 1005)]
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.4515424499511719, (1482, 963, 1701, 1005)]
+[00:01:41]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.9348140487670898, (1482, 963, 1701, 1005)]
+[00:01:42]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.34943111038208, (1482, 963, 1701, 1005)]
+[00:01:42]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:01:42]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:01:42]: DEBUG:HSR_Macro:is_calyx: Is calyx: True
+[00:01:42]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_2
+[00:01:42]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for add_count to match
+[00:01:45]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or cancel to match
+[00:01:45]: DEBUG:HSR_Macro:calyx_farm_all: exiting (click cancel)
+[00:01:47]: DEBUG:HSR_Macro:calyx_farm_all: exited
+[00:02:00]: DEBUG:HSR_Macro:calyx_farm_all: add button matched, clicking; (add_count, (1700, 830, 1920, 910), 0.8), (1748, 858, 1884, 890), 0.82
+[00:02:01]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+
+[Date: 2025-06-25 : Time: 23:26:32 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:16]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:16]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:19]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:19]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : False,
+  "log in (default server)"              : False,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : False,
+  "sleep when done"                      : False,
+  "shut down when done"                  : False,
+}>
+[00:00:19]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: calyx_gold matched [0.001, (294, 481, 474, 511)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (294, 613, 474, 643)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: target category found
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: open_world_boss matched [0.001, (294, 745, 474, 775)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson matched [0.001, (693, 291, 1656, 422)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_1 matched [0.001, (693, 423, 1656, 557)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_2 matched [0.001, (693, 558, 1656, 692)]
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: target domain found
+[00:00:21]: DEBUG:HSR_Macro:navigate_to_domain: clicking teleport
+[00:00:23]: DEBUG:HSR_Macro:navigate_to_domain: calyx_crimson_3 matched [0.001, (693, 693, 1656, 826)]
+[00:00:24]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1482, 963, 1701, 1005)]
+[00:00:25]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.8745291957855225, (1482, 963, 1701, 1005)]
+[00:00:26]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.673947883605957, (1482, 963, 1701, 1005)]
+[00:00:26]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:00:26]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:00:26]: DEBUG:HSR_Macro:is_calyx: Is calyx: True
+[00:00:26]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_2
+[00:00:26]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus count to match
+[00:00:29]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or cancel to match
+[00:00:29]: DEBUG:HSR_Macro:calyx_farm_all: exiting (click cancel)
+[00:00:31]: DEBUG:HSR_Macro:calyx_farm_all: exited
+[00:00:31]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus count to match
+
+[Date: 2025-06-25 : Time: 23:31:42 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:06]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:06]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:08]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:08]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : False,
+  "log in (default server)"              : False,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : False,
+  "sleep when done"                      : False,
+  "shut down when done"                  : False,
+}>
+[00:00:08]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:10]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1482, 963, 1701, 1005)]
+[00:00:10]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.45712430572509766, (1482, 963, 1701, 1005)]
+[00:00:11]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.055349899291992, (1482, 963, 1701, 1005)]
+[00:00:11]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:00:11]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:00:11]: DEBUG:HSR_Macro:is_calyx: Is calyx: True
+[00:00:11]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_2
+[00:00:11]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus_count to match
+[00:00:11]: DEBUG:HSR_Macro:calyx_add_to_max_count: Add count not matched; Already at max count, skipping
+[00:00:13]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or cancel to match
+[00:00:13]: DEBUG:HSR_Macro:calyx_farm_all: exiting (click cancel)
+[00:00:15]: DEBUG:HSR_Macro:calyx_farm_all: exited
+[00:00:15]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus_count to match
+[00:00:15]: DEBUG:HSR_Macro:calyx_add_to_max_count: Add count not matched; Already at max count, skipping
+[00:00:15]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:00:16]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:00:18]: INFO:HSR_Macro:get_support: started
+[00:00:18]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:00:20]: INFO:HSR_Macro:select_prioritised_support: started
+[00:00:20]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:00:20]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:00:20]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:00:21]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:00:22]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye Acheron matched at (47, 496, 293, 546)
+[00:00:24]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye Acheron, (0, 100, 600, 1000), 0.85), (47, 496, 293, 546), 0.86
+[00:00:24]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:25]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 Acheron matched at (49, 900, 334, 945)
+[00:00:27]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (BangWoSu69 Acheron, (0, 100, 600, 1000), 0.85), (49, 900, 334, 945), 0.86
+[00:00:27]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:29]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:29]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:30]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:31]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:32]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:33]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:33]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:34]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:35]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:36]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:37]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:37]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:38]: ERROR:HSR_Macro:handle_terminating_error: 
+Traceback (most recent call last):
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\exceptions.py", line 25, in _screenshot_with_error
+    return _original_screenshot()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\.venv\Lib\site-packages\pyscreeze\__init__.py", line 512, in _screenshot_win32
+    im = ImageGrab.grab()
+         ^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\.venv\Lib\site-packages\PIL\ImageGrab.py", line 47, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: screen grab failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1138, in session_catch
+    return self.session()
+           ^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1128, in session
+    return self.execute_session()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1106, in execute_session
+    self.domain_farm.retrying_domain_farm(self.cfg["category"], self.cfg["domain"])
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 921, in retrying_domain_farm
+    self.general_domain_farm(category, domain)
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 910, in general_domain_farm
+    self.calyx_farm_all()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 903, in calyx_farm_all
+    self.domain_start_farm(1)
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 779, in domain_start_farm
+    self.get_support()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 670, in get_support
+    self.select_prioritised_support()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 632, in select_prioritised_support
+    for data in support_matcher.get_matching_templates_data():
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 71, in get_matching_templates_data
+    screenshot = pyautogui.screenshot()  # pyautogui screenshot is BGR
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\exceptions.py", line 27, in _screenshot_with_error
+    raise ScreenCaptureFailedError()
+exceptions.ScreenCaptureFailedError
+[00:00:38]: INFO:HSR_Macro:handle_terminating_error: Terminated
+
+[Date: 2025-06-25 : Time: 23:34:00 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:02]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:02]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:12]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:12]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : False,
+  "log in (default server)"              : False,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : True,
+  "sleep when done"                      : False,
+  "shut down when done"                  : False,
+}>
+[00:00:12]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:17]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1495, 963, 1714, 1005)]
+[00:00:18]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.4134181270599365, (1482, 963, 1701, 1005)]
+[00:00:18]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.8381157646179199, (1482, 963, 1701, 1005)]
+[00:00:18]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.2427514324188231, (1482, 963, 1701, 1005)]
+[00:00:18]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:00:18]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:00:18]: DEBUG:HSR_Macro:is_calyx: Is calyx: True
+[00:00:18]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_2
+[00:00:18]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus_count to match
+[00:00:21]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or cancel to match
+[00:00:22]: DEBUG:HSR_Macro:calyx_farm_all: exiting (click cancel)
+[00:00:23]: DEBUG:HSR_Macro:calyx_farm_all: exited
+[00:00:23]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus_count to match
+[00:00:23]: DEBUG:HSR_Macro:calyx_add_to_max_count: Add count not matched; Already at max count, skipping
+[00:00:23]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:00:24]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:00:26]: INFO:HSR_Macro:get_support: started
+[00:00:26]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:00:28]: INFO:HSR_Macro:select_prioritised_support: started
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:00:30]: DEBUG:HSR_Macro:select_prioritised_support: c6 acheron matched at (50, 501, 138, 591)
+[00:00:32]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (c6 acheron, (0, 100, 600, 1000), 0.85), (50, 501, 138, 591), 0.94
+[00:00:32]: INFO:HSR_Macro:select_prioritised_support: found most prioritized support
+[00:00:32]: DEBUG:HSR_Macro:select_prioritised_support: waiting for c6 acheron to unmatch (turn white)
+[00:01:35]: ERROR:HSR_Macro:handle_terminating_error: 
+Traceback (most recent call last):
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\exceptions.py", line 25, in _screenshot_with_error
+    return _original_screenshot()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\.venv\Lib\site-packages\pyscreeze\__init__.py", line 512, in _screenshot_win32
+    im = ImageGrab.grab()
+         ^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\.venv\Lib\site-packages\PIL\ImageGrab.py", line 47, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: screen grab failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1138, in session_catch
+    return self.session()
+           ^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1128, in session
+    return self.execute_session()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 1106, in execute_session
+    self.domain_farm.retrying_domain_farm(self.cfg["category"], self.cfg["domain"])
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 921, in retrying_domain_farm
+    self.general_domain_farm(category, domain)
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 910, in general_domain_farm
+    self.calyx_farm_all()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 903, in calyx_farm_all
+    self.domain_start_farm(1)
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 779, in domain_start_farm
+    self.get_support()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 670, in get_support
+    self.select_prioritised_support()
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\hsr\honkai_star_rail_macro.py", line 642, in select_prioritised_support
+    Matcher(data.template.as_threshold(data.threshold * 0.975)).while_exist_do(
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 135, in while_exist_do
+    while self.exists() and start_time + self.timeout > time.time():
+          ^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 52, in exists
+    return bool(self.get_matching_templates_data())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\matcher.py", line 71, in get_matching_templates_data
+    screenshot = pyautogui.screenshot()  # pyautogui screenshot is BGR
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\user\PycharmProjects\Macro_Automation\srcs\classes\exceptions.py", line 27, in _screenshot_with_error
+    raise ScreenCaptureFailedError()
+exceptions.ScreenCaptureFailedError
+[00:01:35]: INFO:HSR_Macro:handle_terminating_error: Terminated
+
+[Date: 2025-06-25 : Time: 23:38:24 : Program Name: HSR_Macro]
+[00:00:00]: DEBUG:HSR_Macro:option_menu: Started
+[00:00:05]: DEBUG:HSR_Macro:preprocess_options: detected FARM; BATTLE_REPEAT_EXPLICIT=False
+[00:00:05]: INFO:HSR_Macro:ui_choose_domain: selecting domain and category
+[00:00:07]: INFO:HSR_Macro:ui_choose_domain: category=calyx_crimson, domain=calyx_crimson_2
+[00:00:07]: DEBUG:HSR_Macro:option_menu: options: <RunOptions, dict={
+  "launch game"                          : False,
+  "log in (default server)"              : False,
+  "update domain templates"              : False,
+  "    use previous screenshot"          : False,
+  "navigate to domain"                   : True,
+  "start battle and repeat (explicit)"   : False,
+  "start domain farm (all stamina)"      : True,
+  "    get support (from first friend)"  : True,
+  "claim dailies"                        : False,
+  "sleep when done"                      : False,
+  "shut down when done"                  : False,
+}>
+[00:00:07]: INFO:HSR_Macro:navigate_to_domain: started
+[00:00:11]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.001, (1490, 963, 1709, 1005)]
+[00:00:12]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [0.713735652923584, (1482, 963, 1701, 1005)]
+[00:00:12]: DEBUG:HSR_Macro:navigate_to_domain: start_challenge matched [1.2309234867095946, (1482, 963, 1701, 1005)]
+[00:00:12]: INFO:HSR_Macro:navigate_to_domain: completed
+[00:00:12]: DEBUG:HSR_Macro:is_calyx: Waiting for start_challenge to match
+[00:00:12]: DEBUG:HSR_Macro:is_calyx: Is calyx: True
+[00:00:12]: INFO:HSR_Macro:calyx_farm_all: started, category=calyx_crimson, domain=calyx_crimson_2
+[00:00:12]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus_count to match
+[00:00:15]: DEBUG:HSR_Macro:calyx_farm_all: Waiting for start_challenge or cancel to match
+[00:00:15]: DEBUG:HSR_Macro:calyx_farm_all: exiting (click cancel)
+[00:00:17]: DEBUG:HSR_Macro:calyx_farm_all: exited
+[00:00:17]: DEBUG:HSR_Macro:calyx_add_to_max_count: Waiting for add_count or minus_count to match
+[00:00:17]: DEBUG:HSR_Macro:calyx_add_to_max_count: Add count not matched; Already at max count, skipping
+[00:00:17]: DEBUG:HSR_Macro:calyx_farm_all: waiting for reduce_button to match
+[00:00:18]: DEBUG:HSR_Macro:calyx_farm_all: waiting for start_challenge to match
+[00:00:20]: INFO:HSR_Macro:get_support: started
+[00:00:20]: DEBUG:HSR_Macro:get_support: clicking get_support
+[00:00:23]: INFO:HSR_Macro:select_prioritised_support: started
+[00:00:23]: DEBUG:HSR_Macro:select_prioritised_support: waiting for support_list_title to match
+[00:00:23]: DEBUG:HSR_Macro:select_prioritised_support: found support_list_title
+[00:00:23]: DEBUG:HSR_Macro:select_prioritised_support: click second tab in list
+[00:00:24]: DEBUG:HSR_Macro:select_prioritised_support: first tab is not the most desired, click first tab
+[00:00:25]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:26]: DEBUG:HSR_Macro:select_prioritised_support: SengKhye Acheron matched at (47, 346, 293, 396)
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (SengKhye Acheron, (0, 100, 600, 1000), 0.85), (47, 346, 293, 396), 0.90
+[00:00:28]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:29]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:29]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:30]: DEBUG:HSR_Macro:select_prioritised_support: BangWoSu69 Acheron matched at (49, 450, 334, 495)
+[00:00:32]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (BangWoSu69 Acheron, (0, 100, 600, 1000), 0.85), (49, 450, 334, 495), 0.87
+[00:00:32]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:33]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:34]: DEBUG:HSR_Macro:select_prioritised_support: scrolling down [5]
+[00:00:35]: DEBUG:HSR_Macro:select_prioritised_support: c6 acheron matched at (48, 416, 324, 536)
+[00:00:37]: DEBUG:HSR_Macro:select_prioritised_support: clicked on: (c6 acheron, (0, 100, 600, 1000), 0.85), (48, 416, 324, 536), 0.92
+[00:00:37]: INFO:HSR_Macro:select_prioritised_support: found most prioritized support
+[00:00:37]: DEBUG:HSR_Macro:select_prioritised_support: waiting for c6 acheron to unmatch (turn white)
+[00:00:37]: INFO:HSR_Macro:select_prioritised_support: completed, selected support: c6 acheron (0)
+[00:00:37]: DEBUG:HSR_Macro:get_support: clicking add_to_team
+[00:00:39]: INFO:HSR_Macro:get_support: completed
+[00:00:39]: INFO:HSR_Macro:domain_start_farm: started, max_count=1
+[00:00:41]: DEBUG:HSR_Macro:domain_start_farm: Waiting for auto_battle or menu_bar to match
+[00:00:45]: INFO:HSR_Macro:_start_battle_and_repeat: started
+[00:00:45]: INFO:HSR_Macro:select_auto_battle: started
+[00:00:45]: DEBUG:HSR_Macro:select_auto_battle: waiting for auto_battle to match
+[00:00:48]: INFO:HSR_Macro:select_auto_battle: completed
+[00:00:48]: DEBUG:HSR_Macro:_start_battle_and_repeat: Waiting for exit challenge to match
+[00:02:03]: DEBUG:HSR_Macro:_start_battle_and_repeat: clicking exit challenge
+[00:02:03]: DEBUG:HSR_Macro:exit_challenge_reward: started
+[00:02:08]: DEBUG:HSR_Macro:exit_challenge_reward: ended
+[00:02:08]: INFO:HSR_Macro:_start_battle_and_repeat: completed, farmed 1 times
+[00:02:08]: INFO:HSR_Macro:domain_start_farm: completed
+[00:02:08]: INFO:HSR_Macro:calyx_farm_all: ended
